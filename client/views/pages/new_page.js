@@ -8,10 +8,12 @@ Template.newPage.events({
 		}
 
 		Meteor.call('page', page, function(error, id) {
-			if (error)
-				return alert(error.reason);
-			
-			Router.go('/admin/pages', page);
+			if (error){
+				//call custom throwError function
+				throwError(error.reason);
+			} else {
+				Router.go('/admin/pages', page);
+			}
 		})
 	}
 });

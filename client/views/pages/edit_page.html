@@ -1,6 +1,13 @@
 <template name="editPage">
+	<h1>{{title}}</h1>
 	<form class="form">
-		<h1>{{title}}</h1>
+		<label for="title">Title</label>
+		<input name="title" type="text" value="{{title}}"/>
+		
+		<label for="slug">Slug</label>
+		<input name="slug" type="text" value="{{slug}}"/>
+
+		<input type="submit" value="Update" class="btn"/>
 		<a href="#" id="delete-page-btn">Delete Page</a>
 	</form>
 </template>
