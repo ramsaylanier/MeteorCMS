@@ -3,15 +3,16 @@ Pages = new Meteor.Collection('pages');
 
 
 Pages.allow({
-	insert: function(userId, doc){
-		return !! userId;
-	}
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
 });
 
 Meteor.methods({
 	page: function(pageAttributes){
 		var user = Meteor.user(),
 			pageWithSameSlug = Pages.findOne({slug: pageAttributes.slug});
+			pageWithSameTitle = Pages.findOne({title: pageAttributes.title});
 	
 		//make sure used is logged in before adding pages
 		if (!user)
@@ -27,6 +28,10 @@ Meteor.methods({
 
 		if (pageAttributes.slug && pageWithSameSlug){
 			throw new Meteor.Error(302, 'This slug has already been used', pageWithSameSlug._id);
+		}
+
+		if (pageAttributes.title && pageWithSameTitle){
+			throw new Meteor.Error(302, 'This page already exists', pageWithSameTitle._id);
 		}
 
 		var page = _.extend(_.pick(pageAttributes, 'title', 'slug'), {
