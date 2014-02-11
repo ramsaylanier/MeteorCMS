@@ -1,0 +1,11 @@
+<template name="pagesList">
+	<h1>PAGES</h1>
+
+	<ul>
+	{{#each pages}}
+		<li><a href="{{pathFor 'editPage'}}">{{title}}</a></li>
+	{{/each}}
+	</ul>
+
+	<a href="{{pathFor 'newPage'}}">Add a new page</a>
+</template>
