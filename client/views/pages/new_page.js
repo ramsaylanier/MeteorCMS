@@ -17,6 +17,22 @@ Template.newPage.events({
 		})
 	},
 	'keyup #title':function(e){
-		Session.set('value', 'test');
+		Session.set('value', encodeURI(e.target.value));
+	},
+	'change #slug':function(e){
+		Session.set('value', encodeURI(e.target.value));
+	},
+	'click .edit-slug': function(e){
+		e.preventDefault();
+		$('.editable-slug').toggleClass('hidden');
+		$('#slug').toggleClass('hidden');
 	}
 });
+
+Template.newPage.value = function(){
+	return Session.get('value');
+};
+
+Template.newPage.url = function(){
+	return Meteor.absoluteUrl()
+}

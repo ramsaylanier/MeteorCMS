@@ -2,6 +2,10 @@
 	opacity: 1.0 !important;
 }
 
+.hidden{
+	display: none;
+}
+
 .pull-left{
 	float: left;
 }
@@ -66,17 +70,6 @@
 
 .full-width{
 	width: 100%;
-}
-
-// ******** BUTTONS **********
-
-.btn{
-	padding: .5rem;
-}
-
-.blue-btn{
-	background-color: $blue;
-	color: white;
 }
 
 
