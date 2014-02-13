@@ -1,0 +1,108 @@
+.show{
+	opacity: 1.0 !important;
+}
+
+.pull-left{
+	float: left;
+}
+
+.pull-right{
+	float: right;
+}
+
+.strong{
+	font-weight: 600;
+}
+
+.light{
+	font-weight: 100;
+}
+
+.centered{
+	text-align: center;
+}
+
+.align-left{
+	text-align: left;
+}
+
+.align-right{
+	text-align: right;
+}
+
+.transition-1000{
+	@include transition(all 1000ms);
+}
+
+// ******** TYPOGRAPHY **********
+
+.script{
+	font-family: $script;
+}
+
+.futura{
+	font-family: $futura;
+}
+
+// ******** POSITIONING **********
+
+.fixed{
+	position: fixed;
+}
+
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+// ******** HEIGHT **********
+
+.full-height{
+	height: 100%;
+}
+
+// ******** BUTTONS **********
+
+.btn{
+	padding: .5rem;
+}
+
+.blue-btn{
+	background-color: $blue;
+	color: white;
+}
+
+
+// ******** MARGIN **********
+
+.left-right-margin-2{
+	margin: 0 2rem;
+}
+
+.top-margin-1{
+	margin-top: 1rem;
+}
+
+.left-margin-1{
+	margin-left: 1rem;
+}
+
+// ********PADDING**********
+
+.p-1{
+	padding: 1rem;
+}
+
+.p-2{
+	padding: 2rem;
+}
+
+.p-top-2{
+	padding-top: 2rem;
+}
+.p-bottom-2{
+	padding-bottom: 2rem;
+}

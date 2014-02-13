@@ -1,0 +1,49 @@
+.sidebar{
+	position: fixed;
+	width: 160px;
+	height: 100%;
+	left: 0px;
+	background-color: $dark-grey;
+
+	.nav{
+		.nav-links{
+			li{
+				text-align: center;
+				padding: .5rem;
+
+				@include transition(300ms);
+
+				&:hover{
+					background-color: $midnight;
+
+					a{
+						color: $dark-blue;
+					}
+
+					.submenu{
+						display: block;
+					}
+				}
+
+				a{
+					color: $grey;
+				}
+			}
+
+			.submenu{
+				display: none;
+				position: absolute;
+				left: 160px;
+				width: 160px;
+				top: 45px;
+				background-color: $dark-grey;
+
+				li{
+					a{
+						color: $grey;
+					}
+				}
+			}
+		}
+	}
+}

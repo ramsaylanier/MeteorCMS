@@ -1,11 +1,39 @@
 <template name="pagesList">
-	<h1>PAGES</h1>
+	<span class="gamma page-title">Pages</span>
+	<a class="btn blue-btn left-margin-1" href="{{pathFor 'newPage'}}">Add a new page</a>
 
-	<ul>
+	<table class="page-table table top-margin-1">
+		<thead>
+			<tr>
+				<th scope="col" id="title" class="column column-title">
+					<span>Title</span>
+				</th>
+				<th scope="col" id="slug" class="column column-slug">
+					<span>Slug</span>
+				</th>
+				<th scope="col" id="created" class="column column-created">
+					<span>Created On</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
 	{{#each pages}}
-		<li><a href="{{pathFor 'editPage'}}">{{title}}</a></li>
+		<tr class="row-{{title}}">
+			<td class="column-title">
+				<a href="{{pathFor 'editPage'}}">{{title}}</a>
+				<ul class="row-actions">
+					<li class="edit-page"><a href="{{pathFor 'editPage'}}">Edit</a></li>
+					<li class="delete-page"><a href="#">Delete</a></li>
+				</ul>
+			</td>
+			<td class="column-slug">
+				<span>/{{slug}}</span>
+			</td>
+			<td class="column-timestamp">
+				<span>{{prettyDate submitted}}</span>
+			</td>
+		</tr>
 	{{/each}}
-	</ul>
-
-	<a href="{{pathFor 'newPage'}}">Add a new page</a>
+		</tbody>
+	</table>
 </template>

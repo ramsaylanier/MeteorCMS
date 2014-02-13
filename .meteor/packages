@@ -9,3 +9,4 @@ iron-router
 spin
 accounts-ui
 accounts-password
+moment

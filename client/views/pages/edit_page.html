@@ -1,5 +1,7 @@
 <template name="editPage">
-	<h1>{{title}}</h1>
+		<span class="gamma page-title">Edit Page</span>
+	<a class="btn blue-btn left-margin-1" href="{{pathFor 'newPage'}}">Add a new page</a>
+
 	<form class="form">
 		<label for="title">Title</label>
 		<input name="title" type="text" value="{{title}}"/>

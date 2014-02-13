@@ -1,0 +1,45 @@
+@import "breakpoints";
+@import "colors";
+@import "compass/reset";
+@import "compass/css3";
+@import "typeplate";
+@import "vars-typeplate";
+@import "grid";
+@import "mixins";
+@import "sidebar";
+@import "header";
+@import "footer";
+@import "titles";
+@import "tables";
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+html{
+	@media #{$mobile}{
+		font: normal 70%/1.65 serif;
+	}
+}
+
+a{
+	color: $blue;
+	text-decoration: none;
+	@include transition(all 300ms);
+
+	&:hover{
+		color: $dark-blue;
+	}
+}
+
+.main{
+	margin-left: 160px;
+	margin-top: 35px;
+}
+
+.content{
+	padding: 1rem;
+}
