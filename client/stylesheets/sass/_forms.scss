@@ -1,0 +1,17 @@
+.form-control{
+
+	margin-bottom: 1rem;
+
+	.label{
+		display: block;
+	}
+
+	input[type="text"]{
+		width: 100%;
+		height: 2rem;
+
+		&:focus{
+			outline: none;
+		}
+	}
+}

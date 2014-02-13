@@ -1083,48 +1083,53 @@ p + .drop-cap {
   height: 100%;
 }
 
-/* line 69, sass/_mixins.scss */
+/* line 67, sass/_mixins.scss */
+.full-width {
+  width: 100%;
+}
+
+/* line 73, sass/_mixins.scss */
 .btn {
   padding: .5rem;
 }
 
-/* line 73, sass/_mixins.scss */
+/* line 77, sass/_mixins.scss */
 .blue-btn {
   background-color: #47c6d9;
   color: white;
 }
 
-/* line 81, sass/_mixins.scss */
+/* line 85, sass/_mixins.scss */
 .left-right-margin-2 {
   margin: 0 2rem;
 }
 
-/* line 85, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .top-margin-1 {
   margin-top: 1rem;
 }
 
-/* line 89, sass/_mixins.scss */
+/* line 93, sass/_mixins.scss */
 .left-margin-1 {
   margin-left: 1rem;
 }
 
-/* line 95, sass/_mixins.scss */
+/* line 99, sass/_mixins.scss */
 .p-1 {
   padding: 1rem;
 }
 
-/* line 99, sass/_mixins.scss */
+/* line 103, sass/_mixins.scss */
 .p-2 {
   padding: 2rem;
 }
 
-/* line 103, sass/_mixins.scss */
+/* line 107, sass/_mixins.scss */
 .p-top-2 {
   padding-top: 2rem;
 }
 
-/* line 106, sass/_mixins.scss */
+/* line 110, sass/_mixins.scss */
 .p-bottom-2 {
   padding-bottom: 2rem;
 }
@@ -1224,8 +1229,26 @@ p + .drop-cap {
   text-align: center;
 }
 
+/* line 1, sass/_forms.scss */
+.form-control {
+  margin-bottom: 1rem;
+}
+/* line 5, sass/_forms.scss */
+.form-control .label {
+  display: block;
+}
+/* line 9, sass/_forms.scss */
+.form-control input[type="text"] {
+  width: 100%;
+  height: 2rem;
+}
+/* line 13, sass/_forms.scss */
+.form-control input[type="text"]:focus {
+  outline: none;
+}
+
 /* apply a natural box layout model to all elements */
-/* line 16, sass/main.min.scss */
+/* line 17, sass/main.min.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1233,13 +1256,13 @@ p + .drop-cap {
 }
 
 @media only screen and (max-width: 529px) {
-  /* line 22, sass/main.min.scss */
+  /* line 23, sass/main.min.scss */
   html {
     font: normal 70%/1.65 serif;
   }
 }
 
-/* line 28, sass/main.min.scss */
+/* line 29, sass/main.min.scss */
 a {
   color: #47c6d9;
   text-decoration: none;
@@ -1248,18 +1271,18 @@ a {
   -o-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 33, sass/main.min.scss */
+/* line 34, sass/main.min.scss */
 a:hover {
   color: #2f9baa;
 }
 
-/* line 38, sass/main.min.scss */
+/* line 39, sass/main.min.scss */
 .main {
   margin-left: 160px;
   margin-top: 35px;
 }
 
-/* line 43, sass/main.min.scss */
+/* line 44, sass/main.min.scss */
 .content {
   padding: 1rem;
 }

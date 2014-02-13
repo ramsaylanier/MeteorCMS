@@ -15,5 +15,8 @@ Template.newPage.events({
 				Router.go('/admin/pages', page);
 			}
 		})
+	},
+	'keyup #title':function(e){
+		Session.set('value', 'test');
 	}
 });

@@ -1,11 +1,17 @@
 <template name="newPage">
-	<form class="form">
-		<label class="label" for="title">Title</label>
-		<input name="title" type="text" value=""/>
+	<form class="form pure-g">
+		<div class="page-content pure-u-2-3"> 
+			<div class="form-control">
+				<label class="label" for="title">Title</label>
+				<input id="title" name="title" type="text" value=""/>
+			</div>
 
-		<label class="label" for="slug">Slug</label>
-		<input name="slug" type="text" value=""/>
+			<div class="form-control">
+				<label class="label" for="slug">Slug</label>
+				<input id="slug" name="slug" type="text" value="{{{value}}}"/>
+			</div>
 
-		<input type="submit" value="Add Page" class="btn"/>
+			<input type="submit" value="Add Page" class="btn"/>
+		</div>
 	</form>
 </template>
