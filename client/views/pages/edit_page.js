@@ -28,3 +28,11 @@ Template.editPage.events({
 		}
 	}
 });
+
+//reset Session variable to the current page title when editing pages
+Template.editPage.rendered = function(){
+	//only run this code on the first rendering, not on a re-render
+		var val = $('#slug').val();
+		Session.set('value', val.toLowerCase());
+		this.rendered = true;
+}

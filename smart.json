@@ -2,6 +2,7 @@
   "packages": {
     "iron-router": {},
     "spin": {},
-    "moment": {}
+    "moment": {},
+    "user-session": {}
   }
 }

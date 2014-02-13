@@ -34,7 +34,7 @@ Meteor.methods({
 			throw new Meteor.Error(302, 'This page already exists', pageWithSameTitle._id);
 		}
 
-		var page = _.extend(_.pick(pageAttributes, 'title', 'slug'), {
+		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'displayTitle'), {
 			submitted: new Date().getTime()
 		});
 

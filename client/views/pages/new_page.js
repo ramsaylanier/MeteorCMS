@@ -4,7 +4,8 @@ Template.newPage.events({
 
 		var page ={
 			title: $(e.target).find('[name=title]').val(),
-			slug: $(e.target).find('[name=slug]').val()
+			slug: $(e.target).find('[name=slug]').val(),
+			displayTitle: $(e.target).find('[name=hide-title]').val()
 		}
 
 		Meteor.call('page', page, function(error, id) {
@@ -15,12 +16,22 @@ Template.newPage.events({
 				Router.go('/admin/pages', page);
 			}
 		})
-	},
+	}
+});
+
+//reset Session variable that stores the slug for New Pages
+Template.newPage.created = function(){
+	var val = $('#title').val();
+	Session.set('value', '');
+}
+
+//live update the slug based on the title being typed in
+Template.displayPageAdmin.events({
 	'keyup #title':function(e){
-		Session.set('value', encodeURI(e.target.value));
+		Session.set('value', encodeURI(e.target.value).toLowerCase());
 	},
 	'change #slug':function(e){
-		Session.set('value', encodeURI(e.target.value));
+		Session.set('value', encodeURI(e.target.value).toLowerCase());
 	},
 	'click .edit-slug': function(e){
 		e.preventDefault();
@@ -29,10 +40,10 @@ Template.newPage.events({
 	}
 });
 
-Template.newPage.value = function(){
+Template.displayPageAdmin.value = function(){
 	return Session.get('value');
-};
+}
 
-Template.newPage.url = function(){
+Template.displayPageAdmin.url = function(){
 	return Meteor.absoluteUrl()
 }

@@ -10,3 +10,4 @@ accounts-ui
 accounts-password
 moment
 preserve-inputs
+user-session

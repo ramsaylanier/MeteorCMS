@@ -1,15 +1,4 @@
 <template name="editPage">
-		<span class="gamma page-title">Edit Page</span>
-	<a class="btn blue-btn left-margin-1" href="{{pathFor 'newPage'}}">Add a new page</a>
-
-	<form class="form">
-		<label for="title">Title</label>
-		<input name="title" type="text" value="{{title}}"/>
-		
-		<label for="slug">Slug</label>
-		<input name="slug" type="text" value="{{slug}}"/>
-
-		<input type="submit" value="Update" class="btn"/>
-		<a href="#" id="delete-page-btn">Delete Page</a>
-	</form>
+	<h3>Edit Page</h3>
+	{{> displayPageAdmin}}
 </template>
