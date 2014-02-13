@@ -1,0 +1,20 @@
+<template name="header">
+	<header class="header" role="header">
+		<h3 class="red">Ramsay Lanier</h3>
+
+		<nav class="nav">
+			<ul class="nav-links">
+				<li><a href="{{pathFor 'workList'}}">Home</a>
+				{{#each pages}}
+					<li><a href="{{slug}}">{{title}}</a></li>
+				{{/each}}
+			</ul>
+		</nav>
+	</header>
+</template>
+
+<template name="adminHeader">
+	<header class="admin-header">
+		{{loginButtons}}
+	</header>
+</template>
