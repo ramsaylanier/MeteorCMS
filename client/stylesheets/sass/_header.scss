@@ -9,3 +9,18 @@
 #login-buttons{
 	float:right;
 }
+
+.header{
+	position: fixed;
+	width: 220px;
+	height: 100%;
+	left: 0px;
+	background-color: $red;
+
+	.logo{
+		.logo-letter{
+			font-weight: 900;
+			line-height: 2.5rem;
+		}
+	}
+}

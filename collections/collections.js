@@ -1,5 +1,5 @@
-Works = new Meteor.Collection('works');
 Pages = new Meteor.Collection('pages');
+Blocks = new Meteor.Collection('blocks');
 
 
 Pages.allow({
@@ -7,6 +7,12 @@ Pages.allow({
 	update: isAdmin,
 	remove: isAdmin
 });
+
+Blocks.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
+})
 
 Meteor.methods({
 	page: function(pageAttributes){
@@ -34,7 +40,7 @@ Meteor.methods({
 			throw new Meteor.Error(302, 'This page already exists', pageWithSameTitle._id);
 		}
 
-		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'displayTitle'), {
+		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'hideTitle', 'content'), {
 			submitted: new Date().getTime()
 		});
 

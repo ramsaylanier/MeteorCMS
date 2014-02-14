@@ -1,5 +1,5 @@
-Meteor.publish('works',function(){
-	return Works.find();
+Meteor.publish('blocks',function(){
+	return Blocks.find();
 });
 
 Meteor.publish('pages',function(){

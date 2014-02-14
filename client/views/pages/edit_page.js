@@ -7,6 +7,8 @@ Template.editPage.events({
 		var pageProperties = {
 			title: $(e.target).find('[name=title]').val(),
 			slug: $(e.target).find('[name=slug]').val(),
+			hideTitle: checkOptions($('#show-title')),
+			content: $(e.target).find('[name=editor]').val()
 		}
 
 		Pages.update(currentPageId, {$set: pageProperties}, function(error){
@@ -32,7 +34,14 @@ Template.editPage.events({
 //reset Session variable to the current page title when editing pages
 Template.editPage.rendered = function(){
 	//only run this code on the first rendering, not on a re-render
-		var val = $('#slug').val();
-		Session.set('value', val.toLowerCase());
-		this.rendered = true;
+	var val = $('#slug').val();
+	Session.set('slug', val.toLowerCase());
+}
+
+function checkOptions(option){
+	if (option.is(':checked')){
+		return 'checked'
+	} else {
+		return ''
+	}
 }

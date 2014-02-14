@@ -38,15 +38,12 @@
 	@include transition(all 1000ms);
 }
 
-// ******** TYPOGRAPHY **********
+// ******** BORDERS **********
 
-.script{
-	font-family: $script;
+.border-bottom-pink{
+	border-bottom: 2px solid $pink1;
 }
 
-.futura{
-	font-family: $futura;
-}
 
 // ******** POSITIONING **********
 

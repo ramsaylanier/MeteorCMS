@@ -3,6 +3,7 @@
     "iron-router": {},
     "spin": {},
     "moment": {},
-    "user-session": {}
+    "user-session": {},
+    "bootstrap-wysiwyg": {}
   }
 }
