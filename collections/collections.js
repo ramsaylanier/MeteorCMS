@@ -2,14 +2,39 @@ Pages = new Meteor.Collection('pages');
 Blocks = new Meteor.Collection('blocks');
 
 //CollectionFS collection used for file uploads
-imageStore = new FS.Store.FileSystem("images", {
-  path: "~/public",
-  maxTries: 3
+Media = new CollectionFS('media', { autopublish: false });
+
+Media.fileHandlers({
+  default: function(options) { // Options contains blob and fileRecord — same is expected in return if should be saved on filesytem, can be modified
+    console.log('I am handling default: ' + options.fileRecord.filename);
+    return { blob: options.blob, fileRecord: options.fileRecord }; // if no blob then save result in fileHandle (added createdAt)
+  },
+  thumb: function(options) {
+    if (options.fileRecord.contentType != 'image/jpeg')
+      return null; // jpeg files only  
+
+    var destination = options.destination();
+    var dest = destination.serverFilename;
+
+    // Uses meteorite graphicsmagick
+    gm(options.blob, dest).resize(60, 60).quality(90).write(dest, function(err) {
+      if (err) {
+       console.log('GraphicsMagick error ' + err);
+       return false;
+       // False will trigger rerun, could check options.sumFailes
+       // if we only want to rerun 2 times (default limit is 3,
+       // but sumFailes is reset at server idle + wait period)
+      } else {
+        console.log('Finished writing image.');
+         // We only return the url for the file, no blob to save since we took care of it
+      }
+   });
+
+   // I failed to deliver a url for this, but don't try again
+   return { blob: options.blob, fileRecord: options.fileRecord };
+  }
 });
 
-Images = new FS.Collection("images",{
-	stores: [imageStore]
-});
 
 
 Pages.allow({
@@ -24,7 +49,7 @@ Blocks.allow({
 	remove: isAdmin
 });
 
-Images.allow({
+Media.allow({
 	insert: isAdmin,
 	update: isAdmin,
 	remove: isAdmin

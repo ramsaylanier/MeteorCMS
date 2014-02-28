@@ -5,21 +5,6 @@
     "moment": {},
     "user-session": {},
     "bootstrap-wysiwyg": {},
-    "collectionFS": {
-      "git": "https://github.com/CollectionFS/Meteor-CollectionFS.git",
-      "branch": "devel"
-    },
-    "cfs-filesystem": {
-      "git": "https://github.com/CollectionFS/Meteor-cfs-filesystem.git",
-      "branch": "master"
-    },
-    "cfs-handlebars": {
-      "git": "https://github.com/CollectionFS/Meteor-cfs-handlebars.git",
-      "branch": "master"
-    },
-    "cfs-graphicsmagick": {
-      "git": "https://github.com/CollectionFS/Meteor-cfs-graphicsmagick.git",
-      "branch": "master"
-    }
+    "collectionFS": {}
   }
 }

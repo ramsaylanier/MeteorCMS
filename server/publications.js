@@ -6,6 +6,6 @@ Meteor.publish('pages',function(){
 	return Pages.find();
 });
 
-Meteor.publish('images', function() {
-    return Images.find();
+Meteor.publish('media', function() {
+	return Media.find();
 });

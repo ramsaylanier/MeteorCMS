@@ -43,13 +43,9 @@ Template.displayPageAdmin.events({
 		$('.editable-slug').toggleClass('hidden');
 		$('#slug').toggleClass('hidden');
 	},
-	'change .fileUploader':function(e){
-		var files = e.target.files;
-		for (var i = 0, ln = files.length; i < ln; i++) {
-      		Images.insert(files[i], function (err, id) {
-        		//Inserted new doc with _id = id, and kicked off the data upload using DDP
-	      	});
-		}
+	'change .fileUploader': function(e) {
+	    var files = e.target.files;
+    	Assets.storeFiles(files);
 	}
 });
 

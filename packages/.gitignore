@@ -24,3 +24,7 @@ http-methods
 cfs-tempstore
 reactive-property
 micro-queue
+graphicsmagick
+cfs-gridfs
+cfs-upload-ddp
+cfs-upload-http
