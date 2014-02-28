@@ -12,7 +12,7 @@ Template.newPage.events({
 		Meteor.call('page', page, function(error, id) {
 			if (error){
 				//call custom throwError function
-				throwError(error.reason);
+				throwError(error.reason, 'error');
 			} else {
 				Router.go('/admin/pages', page);
 			}
@@ -42,6 +42,14 @@ Template.displayPageAdmin.events({
 		e.preventDefault();
 		$('.editable-slug').toggleClass('hidden');
 		$('#slug').toggleClass('hidden');
+	},
+	'change .fileUploader':function(e){
+		var files = e.target.files;
+		for (var i = 0, ln = files.length; i < ln; i++) {
+      		Images.insert(files[i], function (err, id) {
+        		//Inserted new doc with _id = id, and kicked off the data upload using DDP
+	      	});
+		}
 	}
 });
 

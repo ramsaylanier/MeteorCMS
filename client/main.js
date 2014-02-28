@@ -3,3 +3,4 @@ Accounts.config({
 });
 
 Meteor.subscribe('pages');
+Meteor.subscribe('images');

@@ -1,0 +1,17 @@
+.errors{
+
+	color: $dark-grey;
+	
+	.alert{
+		padding: 5px;
+		margin-bottom: 1rem;
+	}
+
+	.success{
+		background-color: $green;
+	}
+
+	.error{
+		background-color: $light-red;
+	}
+}

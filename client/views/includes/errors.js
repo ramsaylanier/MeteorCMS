@@ -10,3 +10,9 @@ Template.error.rendered = function(){
 		Errors.update(error._id, {$set: {seen: true}});
 	});
 }
+
+Template.error.events({
+	'click .close': function(e){
+		$(e.target).parent('.alert').remove();
+	}
+});

@@ -12,4 +12,20 @@
 .blue-btn{
 	background-color: $blue;
 	color: white;
+
+	&:hover{
+		background-color: $dark-blue;
+		color: white;
+	}
+}
+
+.white-btn{
+	background-color: white;
+	color: $red;
+}
+
+button{
+	border: none;
+	cursor: pointer;
+	@include transition(300ms);
 }

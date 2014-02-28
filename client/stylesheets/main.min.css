@@ -1,19 +1,20 @@
-/* line 14, sass/_colors.scss */
+@charset "UTF-8";
+/* line 16, sass/_colors.scss */
 .pink1 {
   color: #f7c7c5;
 }
 
-/* line 18, sass/_colors.scss */
+/* line 20, sass/_colors.scss */
 .pink2 {
   color: #f59c9a;
 }
 
-/* line 22, sass/_colors.scss */
+/* line 24, sass/_colors.scss */
 .pink3 {
   color: #f59c9a;
 }
 
-/* line 17, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -35,45 +36,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../Downloads/compass.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -102,7 +103,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
  */
 /* line 35, sass/_typeplate.scss */
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "proxima-nova", sans-serif;
 }
 
 /* line 39, sass/_typeplate.scss */
@@ -1254,9 +1255,9 @@ p + .drop-cap {
 
 /* line 1, sass/_forms.scss */
 .form-control {
-  margin-bottom: 1rem;
+  margin: .5rem 0rem;
 }
-/* line 3, sass/_forms.scss */
+/* line 5, sass/_forms.scss */
 .form-control .inline {
   display: inline;
   width: auto;
@@ -1270,52 +1271,6 @@ p + .drop-cap {
 /* line 18, sass/_forms.scss */
 .form-control input[type="text"]:focus {
   outline: none;
-}
-
-/* line 24, sass/_forms.scss */
-#editor {
-  max-height: 250px;
-  height: 250px;
-  background-color: white;
-  border-collapse: separate;
-  border: 1px solid #cccccc;
-  padding: 4px;
-  box-sizing: content-box;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.07451) 0px 1px 1px 0px inset;
-  box-shadow: rgba(0, 0, 0, 0.07451) 0px 1px 1px 0px inset;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  border-top-left-radius: 3px;
-  overflow: scroll;
-  outline: none;
-}
-
-/* line 39, sass/_forms.scss */
-#voiceBtn {
-  width: 20px;
-  color: transparent;
-  background-color: transparent;
-  transform: scale(2, 2);
-  -webkit-transform: scale(2, 2);
-  -moz-transform: scale(2, 2);
-  border: transparent;
-  cursor: pointer;
-  box-shadow: none;
-  -webkit-box-shadow: none;
-}
-
-/* line 52, sass/_forms.scss */
-div[data-role="editor-toolbar"] {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* line 59, sass/_forms.scss */
-.dropdown-menu a {
-  cursor: pointer;
 }
 
 /* line 3, sass/_buttons.scss */
@@ -1334,14 +1289,53 @@ div[data-role="editor-toolbar"] {
   background-color: #47c6d9;
   color: white;
 }
+/* line 16, sass/_buttons.scss */
+.blue-btn:hover {
+  background-color: #2f9baa;
+  color: white;
+}
+
+/* line 22, sass/_buttons.scss */
+.white-btn {
+  background-color: white;
+  color: #ee373a;
+}
+
+/* line 27, sass/_buttons.scss */
+button {
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
 
 /* line 1, sass/_blocks.scss */
 .block {
   padding: 1rem;
 }
 
+/* line 1, sass/_errors.scss */
+.errors {
+  color: #232221;
+}
+/* line 5, sass/_errors.scss */
+.errors .alert {
+  padding: 5px;
+  margin-bottom: 1rem;
+}
+/* line 10, sass/_errors.scss */
+.errors .success {
+  background-color: #aced8f;
+}
+/* line 14, sass/_errors.scss */
+.errors .error {
+  background-color: #f46264;
+}
+
 /* apply a natural box layout model to all elements */
-/* line 19, sass/main.min.scss */
+/* line 20, sass/main.min.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1349,13 +1343,13 @@ div[data-role="editor-toolbar"] {
 }
 
 @media only screen and (max-width: 529px) {
-  /* line 25, sass/main.min.scss */
+  /* line 26, sass/main.min.scss */
   html {
     font: normal 70%/1.65 serif;
   }
 }
 
-/* line 31, sass/main.min.scss */
+/* line 32, sass/main.min.scss */
 a {
   color: #47c6d9;
   text-decoration: none;
@@ -1364,23 +1358,23 @@ a {
   -o-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 36, sass/main.min.scss */
+/* line 37, sass/main.min.scss */
 a:hover {
   color: #2f9baa;
 }
 
-/* line 42, sass/main.min.scss */
+/* line 43, sass/main.min.scss */
 .main {
   margin-left: 220px;
   margin-top: 35px;
 }
 
-/* line 47, sass/main.min.scss */
+/* line 48, sass/main.min.scss */
 .admin .main {
   margin-left: 160px;
 }
 
-/* line 51, sass/main.min.scss */
+/* line 52, sass/main.min.scss */
 .content {
   padding: 1rem;
 }

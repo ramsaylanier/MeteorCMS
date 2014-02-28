@@ -11,3 +11,8 @@ accounts-password
 moment
 preserve-inputs
 user-session
+cfs-public-folder
+collectionFS
+cfs-filesystem
+cfs-handlebars
+cfs-graphicsmagick

@@ -11,11 +11,11 @@ Template.editPage.events({
 			content: $(e.target).find('[name=editor]').val()
 		}
 
-		Pages.update(currentPageId, {$set: pageProperties}, function(error){
+		Pages.update(currentPageId, {$set: pageProperties}, function(error, id){
 			if(error){
-				alert(error.reason);
+				throwError(error.reason, 'error');
 			} else {
-				Router.go('/admin/pages');
+				throwError('Published!', 'success');
 			}
 		});
 	},

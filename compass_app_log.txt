@@ -143,3 +143,39 @@
 2014-02-14 00:46:25 overwrite client/stylesheets/main.min.css 
 2014-02-14 00:46:28 identical client/stylesheets/main.min.css 
 2014-02-14 02:19:55    create stylesheets/main.min.css 
+2014-02-14 09:53:22 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:54:01 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:54:28 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:54:42 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:55:05 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:55:49 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:56:09 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:56:20 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:56:56 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:57:06 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:57:18 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:57:36 overwrite client/stylesheets/main.min.css 
+2014-02-14 09:58:04 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:12:00 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:12:13 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:12:26 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:12:55 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:38:17 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:39:53 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:40:02     error client/stylesheets/sass/main.min.scss (Line 9 of client/stylesheets/sass/_errors.scss: Undefined variable: "$green".)
+2014-02-14 10:40:02 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:40:20     error client/stylesheets/sass/main.min.scss (Line 9 of client/stylesheets/sass/_errors.scss: Undefined variable: "$green".)
+2014-02-14 10:40:20 identical client/stylesheets/main.min.css 
+2014-02-14 10:40:34     error client/stylesheets/sass/main.min.scss (Line 9 of client/stylesheets/sass/_errors.scss: Undefined variable: "$green".)
+2014-02-14 10:40:34 identical client/stylesheets/main.min.css 
+2014-02-14 10:40:50 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:42:28     error client/stylesheets/sass/main.min.scss (Line 2 of client/stylesheets/sass/_colors.scss: Invalid CSS after "$light-red: ": expected expression (e.g. 1px, bold), was "##F46264;")
+2014-02-14 10:42:28 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:42:32     error client/stylesheets/sass/main.min.scss (Line 2 of client/stylesheets/sass/_colors.scss: Invalid CSS after "$light-red: ": expected expression (e.g. 1px, bold), was "##F46264;")
+2014-02-14 10:42:32 identical client/stylesheets/main.min.css 
+2014-02-14 10:42:39 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:43:41 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:43:56 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:44:33 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:44:50 overwrite client/stylesheets/main.min.css 
+2014-02-14 10:45:04 overwrite client/stylesheets/main.min.css 

@@ -5,3 +5,7 @@ Meteor.publish('blocks',function(){
 Meteor.publish('pages',function(){
 	return Pages.find();
 });
+
+Meteor.publish('images', function() {
+    return Images.find();
+});
