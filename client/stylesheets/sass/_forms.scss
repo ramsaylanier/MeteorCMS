@@ -2,13 +2,8 @@
 
 	margin: .5rem 0rem;
 
-	.inline{
-		display: inline;
-		width: auto;
-		border: none;
-	}
-
 	.label{
+
 	}
 
 	input[type="text"]{
@@ -19,4 +14,36 @@
 			outline: none;
 		}
 	}
+
+	input[type="file"]{
+		height: 2rem;
+	}
+
+	select[type="select"]{
+		height: 1.5rem;
+		border: 1px solid $grey;
+	}
+}
+
+input[type="submit"]{
+	border: none;
+	padding: .5rem;
+	font-size: 1rem;
+	background-color: $grey;
+	color: white;
+	cursor: pointer;
+	@include transition(300ms);
+
+	&:hover{
+		background-color: $dark-grey;
+	}
+}
+
+.modal{
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	background-color: rgba($dark-grey, .7);
 }

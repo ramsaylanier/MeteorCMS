@@ -1,4 +1,5 @@
 Pages = new Meteor.Collection('pages');
+Posts = new Meteor.Collection('posts');
 Blocks = new Meteor.Collection('blocks');
 
 //CollectionFS collection used for file uploads
@@ -43,6 +44,12 @@ Pages.allow({
 	remove: isAdmin
 });
 
+Posts.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
+})
+
 Blocks.allow({
 	insert: isAdmin,
 	update: isAdmin,
@@ -81,7 +88,7 @@ Meteor.methods({
 			throw new Meteor.Error(302, 'This page already exists', pageWithSameTitle._id);
 		}
 
-		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'hideTitle', 'content'), {
+		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'hideTitle', 'pageTemplate', 'content'), {
 			submitted: new Date().getTime()
 		});
 
@@ -89,7 +96,7 @@ Meteor.methods({
 
 		return pageId;
 	},
-	updatePage: function(pageAttributes){
+	updatePage: function(pageID, pageAttributes){
 		var user = Meteor.user();
 	
 		//make sure used is logged in before adding pages
@@ -104,13 +111,78 @@ Meteor.methods({
 		if (!pageAttributes.slug)
 			throw new Meteor.Error(422, 'Please enter a page slug');
 
-		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'hideTitle', 'content'), {
+		var page = _.extend(_.pick(pageAttributes, 'title', 'slug', 'hideTitle', 'pageTemplate', 'content'), {
 			submitted: new Date().getTime()
 		});
 
-		var pageId = Pages.update(page);
+		var pageId = Pages.update(pageID, page);
 
 		return pageId;
 
+	},
+	post: function(postAttributes){
+		var user = Meteor.user(),
+			postWithSameSlug = Posts.findOne({slug: postAttributes.slug});
+			postWithSameTitle = Posts.findOne({title: postAttributes.title});
+	
+		//make sure used is logged in before adding pages
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add posts");
+
+		//ensure post has a title
+		if (!postAttributes.title)
+			throw new Meteor.Error(422, 'Please enter a post title');
+
+		//ensure post has a slug
+		if (!postAttributes.slug)
+			throw new Meteor.Error(422, 'Please enter a post slug');
+
+		//if no excerpt is set, set excerpt to post content
+		if (!postAttributes.excerpt)
+			postAttributes.excerpt = postAttributes.content;
+
+		if (postAttributes.slug && postWithSameSlug){
+			throw new Meteor.Error(302, 'This slug has already been used', postWithSameSlug._id);
+		}
+
+		if (postAttributes.title && postWithSameTitle){
+			throw new Meteor.Error(302, 'This page already exists', postWithSameTitle._id);
+		}
+
+		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt'), {
+			submitted: new Date().getTime()
+		});
+
+		var postId = Posts.insert(post);
+
+		return postId;
+	},
+	updatePost: function(postID, postAttributes){
+		var user = Meteor.user();
+	
+		//make sure used is logged in before adding pages
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add posts");
+
+		//ensure post has a title
+		if (!postAttributes.title)
+			throw new Meteor.Error(422, 'Please enter a post title');
+
+		//ensure post has a slug
+		if (!postAttributes.slug)
+			throw new Meteor.Error(422, 'Please enter a post slug');
+
+		if (!postAttributes.excerpt){
+			postAttributes.excerpt = postAttributes.content.substring(0,250) + "\u2026";
+		}
+
+
+		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt'), {
+			submitted: new Date().getTime()
+		});
+
+		var postId = Posts.update(postID, post);
+
+		return postId;
 	}
 });

@@ -1,39 +1,37 @@
-Template.newPage.events({
+Template.newPost.events({
 	'submit form': function(e){
 		e.preventDefault();
 
-		var page ={
+		var post ={
 			title: $(e.target).find('[name=title]').val(),
 			slug: Session.get('slug'),
-			hideTitle: checkOptions($('#show-title')),
-			pageTemplate: $(e.target).find('[name=template-type]').val(),
-			content: $(e.target).find('[name=editor]').val()
+			content: $(e.target).find('[name=editor]').val(),
+			excerpt: $(e.target).find('[name=excerpt]').val()
 		}
 
-		Meteor.call('page', page, function(error, id) {
+		Meteor.call('post', post, function(error, id) {
 			if (error){
 				//call custom throwError function
 				throwError(error.reason, 'error');
 			} else {
-				Router.go('/admin/pages', page);
+				Router.go('/admin/posts', post);
 			}
 		});
 	}
 });
 
-//reset Session variable that stores the slug for New Pages
-Template.newPage.created = function(){
+//reset Session variable that stores the slug for New Posts
+Template.newPost.created = function(){
 	var val = $('#title').val();
 	Session.set('slug', encodeURI(val).toLowerCase());
 }
 
-Template.displayPageAdmin.rendered = function(){
+Template.displayPostAdmin.rendered = function(){
 	$('#editor').cleditor();
-
 }
 
 //live update the slug based on the title being typed in
-Template.displayPageAdmin.events({
+Template.displayPostAdmin.events({
 	'keyup #title':function(e){
 		Session.set('slug', encodeURI(e.target.value).toLowerCase());
 	},
@@ -47,27 +45,27 @@ Template.displayPageAdmin.events({
 	},
 	'change .fileUploader': function(e) {
 	    var files = e.target.files;
-    	Media.storeFiles(files);
+    	Assets.storeFiles(files);
+	},
+	'click #featured-image-btn':function(e){
+		e.preventDefault();
+		var frag = Meteor.render(Template.setFeaturedImage);
+		$('body').append(frag);
 	}
 });
 
-Template.displayPageAdmin.helpers({
+Template.displayPostAdmin.helpers({
 	value: function(){
 		return Session.get('slug');
 	},
 	url: function(){
 		return Meteor.absoluteUrl();
-	},
-	getTemplates: function(){
-		var templates = _.filter(_.keys(Template), function(name){return name.match('template');});
-		return templates;
 	}
 });
 
-function checkOptions(option){
-	if (option.is(':checked')){
-		return 'checked'
-	} else {
-		return ''
+Template.setFeaturedImage.helpers({
+	media: function(){
+		return Media.find({}, { sort: { uploadDate:-1 } });
 	}
-}
+})
+

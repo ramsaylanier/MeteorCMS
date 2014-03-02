@@ -1,11 +1,11 @@
-<template name="newPage">
-	<h3>Add New Page</h3>
-	{{> displayPageAdmin}}
+<template name="newPost">
+	<h3>Add New Post</h3>
+	{{> displayPostAdmin}}
 </template>
 
-<template name="displayPageAdmin">
+<template name="displayPostAdmin">
 	<form class="form pure-g">
-		<div class="page-content block pure-u-2-3"> 
+		<div class="post-content block pure-u-2-3"> 
 			<div class="form-control">
 				<label class="label" for="title">Title</label>
 				<input id="title" name="title" type="text" value="{{title}}"/>
@@ -25,29 +25,33 @@
 
 			<div class="form-control">
 				<textarea id="editor" name="editor" rows="10" cols="80">{{{content}}}</textarea>
-            </script>
 			</div>	
 
+			<div class="form-control">
+				<label class="label" for="excerpt">Excerpt</label>
+				<textarea id="excerpt" name="excerpt" class="full-width" row="5">{{excerpt}}</textarea>
+			</div>
+
 			<input type="submit" value="Publish" class="btn"/>
-
 		</div>
-
-		<div class="page-options block pure-u-1-3">
-			<h4>Page Options</h4>
+		
+		<div class="post-options block pure-u-1-3">
+			<h4>Post Options</h4>
 			<div class="form-control">
-				<input type="checkbox" name="hide-title" id="show-title" value="checked" {{hideTitle}}/>
-				<label class="label inline" for="hide-title">Hide Page Title</label>
+				<input type="text" name="featured-image" class="hidden"/>
+				<a href="#" id="featured-image-btn" class="label">Set Featured Image</a>
 			</div>
-
-			<div class="form-control">
-				<label class="label" for="template-type">Select Template Type</label>
-				<select type="select" name="template-type" id="template-type">
-					{{#each getTemplates}}
-						<option value="{{this}}">{{this}}</option>
-					{{/each}}
-				</select>
-			</div>
-
 		</div>
 	</form>
+</template>
+
+<template name="setFeaturedImage">
+	<div class="modal p-2">
+		<div class="container wrapper pure-g white-bg p-1">
+			<h3>Set Featured Image</h3>
+			{{#each files}}
+				test
+			{{/each}}
+		</div>
+	</div>
 </template>

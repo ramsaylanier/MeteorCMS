@@ -4,14 +4,15 @@ Template.editPage.events({
 
 		var currentPageId = this._id;
 
-		var pageProperties = {
+		var pageAttributes = {
 			title: $(e.target).find('[name=title]').val(),
 			slug: $(e.target).find('[name=slug]').val(),
 			hideTitle: checkOptions($('#show-title')),
+			pageTemplate: $(e.target).find('[name=template-type]').val(),
 			content: $(e.target).find('[name=editor]').val()
 		}
 
-		Pages.update(currentPageId, {$set: pageProperties}, function(error, id){
+		Meteor.call('updatePage', currentPageId, pageAttributes, function(error, id) {
 			if(error){
 				throwError(error.reason, 'error');
 			} else {

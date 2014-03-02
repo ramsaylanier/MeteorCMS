@@ -8,6 +8,7 @@
 	.nav{
 		.nav-links{
 			li{
+				position: relative;
 				text-align: center;
 				padding: .5rem;
 
@@ -33,9 +34,9 @@
 			.submenu{
 				display: none;
 				position: absolute;
+				top: 0px;
 				left: 160px;
 				width: 160px;
-				top: 45px;
 				background-color: $dark-grey;
 
 				li{

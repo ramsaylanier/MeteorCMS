@@ -1,8 +1,8 @@
-<template name="pagesList">
-	<span class="gamma page-title">Pages</span>
-	<a class="btn blue-btn left-margin-1" href="{{pathFor 'newPage'}}">Add a new page</a>
+<template name="postsList">
+	<span class="gamma page-title">Posts</span>
+	<a class="btn blue-btn left-margin-1" href="{{pathFor 'newPost'}}">Add a new post</a>
 
-	<table class="page-table table top-margin-1">
+	<table class="post-table table top-margin-1">
 		<thead>
 			<tr>
 				<th scope="col" id="title" class="column column-title">
@@ -14,19 +14,16 @@
 				<th scope="col" id="created" class="column column-created">
 					<span>Created On</span>
 				</th>
-				<th scope="col" id="template" class="column column-created">
-					<span>Template</span>
-				</th>
 			</tr>
 		</thead>
 		<tbody>
-	{{#each pages}}
+	{{#each posts}}
 		<tr class="row-{{title}}">
 			<td class="column-title">
-				<a href="{{pathFor 'editPage'}}">{{title}}</a>
+				<a href="{{pathFor 'editPost'}}">{{title}}</a>
 				<ul class="row-actions">
-					<li class="edit-page"><a href="{{pathFor 'editPage'}}">Edit</a></li>
-					<li class="delete-page"><a href="#">Delete</a></li>
+					<li class="edit-post"><a href="{{pathFor 'editPost'}}">Edit</a></li>
+					<li class="delete-post"><a href="#">Delete</a></li>
 				</ul>
 			</td>
 			<td class="column-slug">
@@ -34,9 +31,6 @@
 			</td>
 			<td class="column-timestamp">
 				<span>{{prettyDate submitted}}</span>
-			</td>
-			<td class="columb-template">
-				<span>{{pageTemplate}}</span>
 			</td>
 		</tr>
 	{{/each}}

@@ -1,0 +1,40 @@
+<template name="media">
+	<header class="media-header p-1">
+		<h3 class="pull-left m-r-1">Media Library</h3>
+     {{> addMedia}}
+	</header>
+	{{> imageList}}
+</template>
+
+<template name="addMedia">
+  <div class="form-control inline">
+    <input name="files" type="file" id="fileUploader" class="fileUploader hidden" multiple>
+    <button title="Upload Image" id="add-media-btn" class="btn blue-btn">Add Media</button>
+  </div>
+</template>
+
+<template name="imageList">
+  <ul class='file-list'>
+    {{#each files}}
+      <li class="file-row row pure-g">
+        <div class="pure-u-1-7">
+          <img class="max-100 p-1" src="{{cfsFileUrl 'thumb'}}">
+        </a>
+
+        </div>
+        <div class="pure-u-3-7 p-1">
+          <a href="{{cfsFileUrl 'default'}}">{{filename}}</a>
+        </div>
+        <div class="pure-u-1-7 p-1">
+          <span class="file-size">{{cfsFormattedSize}}</span>
+        </div>
+
+        <div class="pure-u-2-7 p-1">
+          <button class="alert button delete-file btn blue-btn">Delete</button>
+        </div>
+      </li>
+    {{else}}
+      <li class='no-files'>No images uploaded.</li>
+    {{/each}}
+  </ul>
+</template>

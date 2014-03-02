@@ -14,6 +14,11 @@
   color: #f59c9a;
 }
 
+/* line 28, sass/_colors.scss */
+.white-bg {
+  background-color: white;
+}
+
 /* line 17, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -471,552 +476,557 @@ p + .drop-cap {
  * Extend this object into your markup.
  *
  */
-/* line 1, sass/_grid.scss */
+/* line 2, sass/_grid.scss */
+.row:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+/* line 8, sass/_grid.scss */
 .pure-g {
   text-rendering: optimizespeed;
   width: 100%;
 }
-/* line 5, sass/_grid.scss */
+/* line 12, sass/_grid.scss */
 .pure-g:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* line 13, sass/_grid.scss */
+/* line 20, sass/_grid.scss */
 .pure-u {
   float: left;
   zoom: 1;
   vertical-align: top;
 }
 
-/* line 20, sass/_grid.scss */
+/* line 27, sass/_grid.scss */
 .pure-u-1, .pure-u-1-2, .pure-u-1-3, .pure-u-2-3, .pure-u-1-4, .pure-u-3-4, .pure-u-1-5, .pure-u-2-5, .pure-u-3-5, .pure-u-4-5, .pure-u-1-6, .pure-u-5-6, .pure-u-1-7, .pure-u-2-7, .pure-u-3-7, .pure-u-4-7, .pure-u-5-7, .pure-u-6-7, .pure-u-1-8, .pure-u-3-8, .pure-u-5-8, .pure-u-7-8, .pure-u-1-9, .pure-u-2-9, .pure-u-4-9, .pure-u-5-9, .pure-u-6-9, .pure-u-7-9, .pure-u-8-9, .pure-u-1-10, .pure-u-3-10, .pure-u-7-10, .pure-u-9-10, .pure-u-1-11, .pure-u-2-11, .pure-u-3-11, .pure-u-4-11, .pure-u-5-11, .pure-u-6-11, .pure-u-7-11, .pure-u-8-11, .pure-u-9-11, .pure-u-10-11, .pure-u-1-12, .pure-u-5-12, .pure-u-7-12, .pure-u-9-12, .pure-u-11-12 {
   float: left;
   zoom: 1;
   vertical-align: top;
 }
 
-/* line 26, sass/_grid.scss */
+/* line 33, sass/_grid.scss */
 .pure-u-1-2 {
   width: 50%;
 }
 
-/* line 30, sass/_grid.scss */
+/* line 37, sass/_grid.scss */
 .pure-offset-1-2 {
   margin-left: 50%;
 }
 
-/* line 34, sass/_grid.scss */
+/* line 41, sass/_grid.scss */
 .pure-u-1-3 {
   width: 33.33333%;
 }
 
-/* line 38, sass/_grid.scss */
+/* line 45, sass/_grid.scss */
 .pure-offset-1-3 {
   margin-left: 33.33333%;
 }
 
-/* line 42, sass/_grid.scss */
+/* line 49, sass/_grid.scss */
 .pure-u-2-3 {
   width: 66.66667%;
 }
 
-/* line 46, sass/_grid.scss */
+/* line 53, sass/_grid.scss */
 .pure-offset-2-3 {
   margin-left: 66.66667%;
 }
 
-/* line 50, sass/_grid.scss */
+/* line 57, sass/_grid.scss */
 .pure-u-1-4 {
   width: 25%;
 }
 
-/* line 54, sass/_grid.scss */
+/* line 61, sass/_grid.scss */
 .pure-offset-1-4 {
   margin-left: 25%;
 }
 
-/* line 58, sass/_grid.scss */
+/* line 65, sass/_grid.scss */
 .pure-u-3-4 {
   width: 75%;
 }
 
-/* line 62, sass/_grid.scss */
+/* line 69, sass/_grid.scss */
 .pure-offset-3-4 {
   margin-left: 75%;
 }
 
-/* line 66, sass/_grid.scss */
+/* line 73, sass/_grid.scss */
 .pure-u-1-5 {
   width: 20%;
 }
 
-/* line 70, sass/_grid.scss */
+/* line 77, sass/_grid.scss */
 .pure-offset-1-5 {
   margin-left: 20%;
 }
 
-/* line 74, sass/_grid.scss */
+/* line 81, sass/_grid.scss */
 .pure-u-2-5 {
   width: 40%;
 }
 
-/* line 78, sass/_grid.scss */
+/* line 85, sass/_grid.scss */
 .pure-offset-2-5 {
   margin-left: 40%;
 }
 
-/* line 82, sass/_grid.scss */
+/* line 89, sass/_grid.scss */
 .pure-u-3-5 {
   width: 60%;
 }
 
-/* line 86, sass/_grid.scss */
+/* line 93, sass/_grid.scss */
 .pure-offset-3-5 {
   margin-left: 60%;
 }
 
-/* line 90, sass/_grid.scss */
+/* line 97, sass/_grid.scss */
 .pure-u-4-5 {
   width: 80%;
 }
 
-/* line 94, sass/_grid.scss */
+/* line 101, sass/_grid.scss */
 .pure-offset-4-5 {
   margin-left: 80%;
 }
 
-/* line 98, sass/_grid.scss */
+/* line 105, sass/_grid.scss */
 .pure-u-1-6 {
   width: 16.66667%;
 }
 
-/* line 102, sass/_grid.scss */
+/* line 109, sass/_grid.scss */
 .pure-offset-1-6 {
   margin-left: 16.66667%;
 }
 
-/* line 106, sass/_grid.scss */
+/* line 113, sass/_grid.scss */
 .pure-u-5-6 {
   width: 83.33333%;
 }
 
-/* line 110, sass/_grid.scss */
+/* line 117, sass/_grid.scss */
 .pure-offset-5-6 {
   margin-left: 83.33333%;
 }
 
-/* line 114, sass/_grid.scss */
+/* line 121, sass/_grid.scss */
 .pure-u-1-7 {
   width: 14.28571%;
 }
 
-/* line 118, sass/_grid.scss */
+/* line 125, sass/_grid.scss */
 .pure-offset-1-7 {
   margin-left: 14.28571%;
 }
 
-/* line 122, sass/_grid.scss */
+/* line 129, sass/_grid.scss */
 .pure-u-2-7 {
   width: 28.57143%;
 }
 
-/* line 126, sass/_grid.scss */
+/* line 133, sass/_grid.scss */
 .pure-offset-2-7 {
   margin-left: 28.57143%;
 }
 
-/* line 130, sass/_grid.scss */
+/* line 137, sass/_grid.scss */
 .pure-u-3-7 {
   width: 42.85714%;
 }
 
-/* line 134, sass/_grid.scss */
+/* line 141, sass/_grid.scss */
 .pure-offset-3-7 {
   margin-left: 42.85714%;
 }
 
-/* line 138, sass/_grid.scss */
+/* line 145, sass/_grid.scss */
 .pure-u-4-7 {
   width: 57.14286%;
 }
 
-/* line 142, sass/_grid.scss */
+/* line 149, sass/_grid.scss */
 .pure-offset-4-7 {
   margin-left: 57.14286%;
 }
 
-/* line 146, sass/_grid.scss */
+/* line 153, sass/_grid.scss */
 .pure-u-5-7 {
   width: 71.42857%;
 }
 
-/* line 150, sass/_grid.scss */
+/* line 157, sass/_grid.scss */
 .pure-offset-5-7 {
   margin-left: 71.42857%;
 }
 
-/* line 154, sass/_grid.scss */
+/* line 161, sass/_grid.scss */
 .pure-u-6-7 {
   width: 85.71429%;
 }
 
-/* line 158, sass/_grid.scss */
+/* line 165, sass/_grid.scss */
 .pure-offset-6-7 {
   margin-left: 85.71429%;
 }
 
-/* line 162, sass/_grid.scss */
+/* line 169, sass/_grid.scss */
 .pure-u-1-8 {
   width: 12.5%;
 }
 
-/* line 166, sass/_grid.scss */
+/* line 173, sass/_grid.scss */
 .pure-offset-1-8 {
   margin-left: 12.5%;
 }
 
-/* line 170, sass/_grid.scss */
+/* line 177, sass/_grid.scss */
 .pure-u-3-8 {
   width: 37.5%;
 }
 
-/* line 174, sass/_grid.scss */
+/* line 181, sass/_grid.scss */
 .pure-offset-3-8 {
   margin-left: 37.5%;
 }
 
-/* line 178, sass/_grid.scss */
+/* line 185, sass/_grid.scss */
 .pure-u-5-8 {
   width: 62.5%;
 }
 
-/* line 182, sass/_grid.scss */
+/* line 189, sass/_grid.scss */
 .pure-offset-5-8 {
   margin-left: 62.5%;
 }
 
-/* line 186, sass/_grid.scss */
+/* line 193, sass/_grid.scss */
 .pure-u-7-8 {
   width: 87.5%;
 }
 
-/* line 190, sass/_grid.scss */
+/* line 197, sass/_grid.scss */
 .pure-offset-7-8 {
   margin-left: 87.5%;
 }
 
-/* line 194, sass/_grid.scss */
+/* line 201, sass/_grid.scss */
 .pure-u-1-9 {
   width: 11.11111%;
 }
 
-/* line 198, sass/_grid.scss */
+/* line 205, sass/_grid.scss */
 .pure-offset-1-9 {
   margin-left: 11.11111%;
 }
 
-/* line 202, sass/_grid.scss */
+/* line 209, sass/_grid.scss */
 .pure-u-2-9 {
   width: 22.22222%;
 }
 
-/* line 206, sass/_grid.scss */
+/* line 213, sass/_grid.scss */
 .pure-offset-2-9 {
   margin-left: 22.22222%;
 }
 
-/* line 210, sass/_grid.scss */
+/* line 217, sass/_grid.scss */
 .pure-u-4-9 {
   width: 44.44444%;
 }
 
-/* line 214, sass/_grid.scss */
+/* line 221, sass/_grid.scss */
 .pure-offset-4-9 {
   margin-left: 44.44444%;
 }
 
-/* line 218, sass/_grid.scss */
+/* line 225, sass/_grid.scss */
 .pure-u-5-9 {
   width: 55.55556%;
 }
 
-/* line 222, sass/_grid.scss */
+/* line 229, sass/_grid.scss */
 .pure-offset-5-9 {
   margin-left: 55.55556%;
 }
 
-/* line 226, sass/_grid.scss */
+/* line 233, sass/_grid.scss */
 .pure-u-6-9 {
   width: 66.66667%;
 }
 
-/* line 230, sass/_grid.scss */
+/* line 237, sass/_grid.scss */
 .pure-offset-6-9 {
   margin-left: 66.66667%;
 }
 
-/* line 234, sass/_grid.scss */
+/* line 241, sass/_grid.scss */
 .pure-u-7-9 {
   width: 77.77778%;
 }
 
-/* line 238, sass/_grid.scss */
+/* line 245, sass/_grid.scss */
 .pure-offset-7-9 {
   margin-left: 77.77778%;
 }
 
-/* line 242, sass/_grid.scss */
+/* line 249, sass/_grid.scss */
 .pure-u-8-9 {
   width: 88.88889%;
 }
 
-/* line 246, sass/_grid.scss */
+/* line 253, sass/_grid.scss */
 .pure-offset-8-9 {
   margin-left: 88.88889%;
 }
 
-/* line 250, sass/_grid.scss */
+/* line 257, sass/_grid.scss */
 .pure-u-1-10 {
   width: 10%;
 }
 
-/* line 254, sass/_grid.scss */
+/* line 261, sass/_grid.scss */
 .pure-offset-1-10 {
   margin-left: 10%;
 }
 
-/* line 258, sass/_grid.scss */
+/* line 265, sass/_grid.scss */
 .pure-u-3-10 {
   width: 30%;
 }
 
-/* line 262, sass/_grid.scss */
+/* line 269, sass/_grid.scss */
 .pure-offset-3-10 {
   margin-left: 30%;
 }
 
-/* line 266, sass/_grid.scss */
+/* line 273, sass/_grid.scss */
 .pure-u-7-10 {
   width: 70%;
 }
 
-/* line 270, sass/_grid.scss */
+/* line 277, sass/_grid.scss */
 .pure-offset-7-10 {
   margin-left: 70%;
 }
 
-/* line 274, sass/_grid.scss */
+/* line 281, sass/_grid.scss */
 .pure-u-9-10 {
   width: 90%;
 }
 
-/* line 278, sass/_grid.scss */
+/* line 285, sass/_grid.scss */
 .pure-offset-9-10 {
   margin-left: 90%;
 }
 
-/* line 282, sass/_grid.scss */
+/* line 289, sass/_grid.scss */
 .pure-u-1-11 {
   width: 9.09091%;
 }
 
-/* line 286, sass/_grid.scss */
+/* line 293, sass/_grid.scss */
 .pure-offset-1-11 {
   margin-left: 9.09091%;
 }
 
-/* line 290, sass/_grid.scss */
+/* line 297, sass/_grid.scss */
 .pure-u-2-11 {
   width: 18.18182%;
 }
 
-/* line 294, sass/_grid.scss */
+/* line 301, sass/_grid.scss */
 .pure-offset-2-11 {
   margin-left: 18.18182%;
 }
 
-/* line 298, sass/_grid.scss */
+/* line 305, sass/_grid.scss */
 .pure-u-3-11 {
   width: 27.27273%;
 }
 
-/* line 302, sass/_grid.scss */
+/* line 309, sass/_grid.scss */
 .pure-offset-3-11 {
   margin-left: 27.27273%;
 }
 
-/* line 306, sass/_grid.scss */
+/* line 313, sass/_grid.scss */
 .pure-u-4-11 {
   width: 36.36364%;
 }
 
-/* line 310, sass/_grid.scss */
+/* line 317, sass/_grid.scss */
 .pure-offset-4-11 {
   margin-left: 36.36364%;
 }
 
-/* line 314, sass/_grid.scss */
+/* line 321, sass/_grid.scss */
 .pure-u-5-11 {
   width: 45.45455%;
 }
 
-/* line 318, sass/_grid.scss */
+/* line 325, sass/_grid.scss */
 .pure-offset-5-11 {
   margin-left: 45.45455%;
 }
 
-/* line 322, sass/_grid.scss */
+/* line 329, sass/_grid.scss */
 .pure-u-6-11 {
   width: 54.54545%;
 }
 
-/* line 326, sass/_grid.scss */
+/* line 333, sass/_grid.scss */
 .pure-offset-6-11 {
   margin-left: 54.54545%;
 }
 
-/* line 330, sass/_grid.scss */
+/* line 337, sass/_grid.scss */
 .pure-u-7-11 {
   width: 63.63636%;
 }
 
-/* line 334, sass/_grid.scss */
+/* line 341, sass/_grid.scss */
 .pure-offset-7-11 {
   margin-left: 63.63636%;
 }
 
-/* line 338, sass/_grid.scss */
+/* line 345, sass/_grid.scss */
 .pure-u-8-11 {
   width: 72.72727%;
 }
 
-/* line 342, sass/_grid.scss */
+/* line 349, sass/_grid.scss */
 .pure-offset-8-11 {
   margin-left: 72.72727%;
 }
 
-/* line 346, sass/_grid.scss */
+/* line 353, sass/_grid.scss */
 .pure-u-9-11 {
   width: 81.81818%;
 }
 
-/* line 350, sass/_grid.scss */
+/* line 357, sass/_grid.scss */
 .pure-offset-9-11 {
   margin-left: 81.81818%;
 }
 
-/* line 354, sass/_grid.scss */
+/* line 361, sass/_grid.scss */
 .pure-u-10-11 {
   width: 90.90909%;
 }
 
-/* line 358, sass/_grid.scss */
+/* line 365, sass/_grid.scss */
 .pure-offset-10-11 {
   margin-left: 90.90909%;
 }
 
-/* line 362, sass/_grid.scss */
+/* line 369, sass/_grid.scss */
 .pure-u-1-12 {
   width: 8.33333%;
 }
 
-/* line 366, sass/_grid.scss */
+/* line 373, sass/_grid.scss */
 .pure-offset-1-12 {
   margin-left: 8.33333%;
 }
 
-/* line 370, sass/_grid.scss */
+/* line 377, sass/_grid.scss */
 .pure-u-5-12 {
   width: 41.66667%;
 }
 
-/* line 374, sass/_grid.scss */
+/* line 381, sass/_grid.scss */
 .pure-offset-5-12 {
   margin-left: 41.66667%;
 }
 
-/* line 378, sass/_grid.scss */
+/* line 385, sass/_grid.scss */
 .pure-u-7-12 {
   width: 58.33333%;
 }
 
-/* line 382, sass/_grid.scss */
+/* line 389, sass/_grid.scss */
 .pure-offset-7-12 {
   margin-left: 58.33333%;
 }
 
-/* line 386, sass/_grid.scss */
+/* line 393, sass/_grid.scss */
 .pure-u-9-12 {
   width: 75%;
 }
 
-/* line 390, sass/_grid.scss */
+/* line 397, sass/_grid.scss */
 .pure-offset-9-12 {
   margin-left: 75%;
 }
 
-/* line 394, sass/_grid.scss */
+/* line 401, sass/_grid.scss */
 .pure-u-11-12 {
   width: 91.66667%;
 }
 
-/* line 398, sass/_grid.scss */
+/* line 405, sass/_grid.scss */
 .pure-offset-11-12 {
   margin-left: 91.66667%;
 }
 
-/* line 402, sass/_grid.scss */
+/* line 409, sass/_grid.scss */
 .pure-g-r img {
   max-width: 100%;
 }
 
 @media (min-width: 980px) {
-  /* line 409, sass/_grid.scss */
+  /* line 416, sass/_grid.scss */
   .pure-visible-phone {
     display: none;
   }
 
-  /* line 410, sass/_grid.scss */
+  /* line 417, sass/_grid.scss */
   .pure-visible-tablet {
     display: none;
   }
 
-  /* line 414, sass/_grid.scss */
+  /* line 421, sass/_grid.scss */
   .pure-hidden-desktop {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  /* line 421, sass/_grid.scss */
+  /* line 428, sass/_grid.scss */
   .pure-g-r > [class^="pure-u"] {
     width: 100%;
   }
 }
 @media (max-width: 767px) {
-  /* line 430, sass/_grid.scss */
+  /* line 437, sass/_grid.scss */
   .pure-g-r > [class^="pure-u"] {
     width: 100%;
   }
 
-  /* line 434, sass/_grid.scss */
+  /* line 441, sass/_grid.scss */
   .pure-hidden-phone {
     display: none;
   }
 
-  /* line 436, sass/_grid.scss */
+  /* line 443, sass/_grid.scss */
   .pure-visible-desktop {
     display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 443, sass/_grid.scss */
+  /* line 450, sass/_grid.scss */
   .pure-hidden-tablet {
     display: none;
   }
 
-  /* line 445, sass/_grid.scss */
+  /* line 452, sass/_grid.scss */
   .pure-visible-desktop {
     display: none;
   }
@@ -1109,37 +1119,57 @@ p + .drop-cap {
   width: 100%;
 }
 
-/* line 79, sass/_mixins.scss */
+/* line 76, sass/_mixins.scss */
+.max-100 {
+  max-width: 100%;
+}
+
+/* line 83, sass/_mixins.scss */
+.m-1 {
+  margin: 1rem;
+}
+
+/* line 87, sass/_mixins.scss */
+.left-right-margin-1 {
+  margin: 0 1rem;
+}
+
+/* line 91, sass/_mixins.scss */
 .left-right-margin-2 {
   margin: 0 2rem;
 }
 
-/* line 83, sass/_mixins.scss */
+/* line 95, sass/_mixins.scss */
 .top-margin-1 {
   margin-top: 1rem;
 }
 
-/* line 87, sass/_mixins.scss */
+/* line 99, sass/_mixins.scss */
 .left-margin-1 {
   margin-left: 1rem;
 }
 
-/* line 93, sass/_mixins.scss */
+/* line 103, sass/_mixins.scss */
+.m-r-1 {
+  margin-right: 1rem;
+}
+
+/* line 109, sass/_mixins.scss */
 .p-1 {
   padding: 1rem;
 }
 
-/* line 97, sass/_mixins.scss */
+/* line 113, sass/_mixins.scss */
 .p-2 {
   padding: 2rem;
 }
 
-/* line 101, sass/_mixins.scss */
+/* line 117, sass/_mixins.scss */
 .p-top-2 {
   padding-top: 2rem;
 }
 
-/* line 104, sass/_mixins.scss */
+/* line 120, sass/_mixins.scss */
 .p-bottom-2 {
   padding-bottom: 2rem;
 }
@@ -1154,6 +1184,7 @@ p + .drop-cap {
 }
 /* line 10, sass/_sidebar.scss */
 .sidebar .nav .nav-links li {
+  position: relative;
   text-align: center;
   padding: .5rem;
   -webkit-transition: 300ms;
@@ -1161,32 +1192,32 @@ p + .drop-cap {
   -o-transition: 300ms;
   transition: 300ms;
 }
-/* line 16, sass/_sidebar.scss */
+/* line 17, sass/_sidebar.scss */
 .sidebar .nav .nav-links li:hover {
   background-color: #171616;
 }
-/* line 19, sass/_sidebar.scss */
+/* line 20, sass/_sidebar.scss */
 .sidebar .nav .nav-links li:hover a {
   color: #2f9baa;
 }
-/* line 23, sass/_sidebar.scss */
+/* line 24, sass/_sidebar.scss */
 .sidebar .nav .nav-links li:hover .submenu {
   display: block;
 }
-/* line 28, sass/_sidebar.scss */
+/* line 29, sass/_sidebar.scss */
 .sidebar .nav .nav-links li a {
   color: #999a9a;
 }
-/* line 33, sass/_sidebar.scss */
+/* line 34, sass/_sidebar.scss */
 .sidebar .nav .nav-links .submenu {
   display: none;
   position: absolute;
+  top: 0px;
   left: 160px;
   width: 160px;
-  top: 45px;
   background-color: #232221;
 }
-/* line 42, sass/_sidebar.scss */
+/* line 43, sass/_sidebar.scss */
 .sidebar .nav .nav-links .submenu li a {
   color: #999a9a;
 }
@@ -1230,7 +1261,7 @@ p + .drop-cap {
 }
 /* line 14, sass/_tables.scss */
 .table tbody tr:nth-of-type(odd) {
-  background-color: #efefef;
+  background-color: #f9f9f9;
 }
 /* line 19, sass/_tables.scss */
 .table tbody tr:hover .row-actions {
@@ -1257,20 +1288,51 @@ p + .drop-cap {
 .form-control {
   margin: .5rem 0rem;
 }
-/* line 5, sass/_forms.scss */
-.form-control .inline {
-  display: inline;
-  width: auto;
-  border: none;
-}
-/* line 14, sass/_forms.scss */
+/* line 9, sass/_forms.scss */
 .form-control input[type="text"] {
   width: 100%;
   height: 2rem;
 }
-/* line 18, sass/_forms.scss */
+/* line 13, sass/_forms.scss */
 .form-control input[type="text"]:focus {
   outline: none;
+}
+/* line 18, sass/_forms.scss */
+.form-control input[type="file"] {
+  height: 2rem;
+}
+/* line 22, sass/_forms.scss */
+.form-control select[type="select"] {
+  height: 1.5rem;
+  border: 1px solid #999a9a;
+}
+
+/* line 28, sass/_forms.scss */
+input[type="submit"] {
+  border: none;
+  padding: .5rem;
+  font-size: 1rem;
+  background-color: #999a9a;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+/* line 37, sass/_forms.scss */
+input[type="submit"]:hover {
+  background-color: #232221;
+}
+
+/* line 42, sass/_forms.scss */
+.modal {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(35, 34, 33, 0.7);
 }
 
 /* line 3, sass/_buttons.scss */
@@ -1363,18 +1425,25 @@ a:hover {
   color: #2f9baa;
 }
 
-/* line 43, sass/main.min.scss */
+/* line 42, sass/main.min.scss */
+.wrapper {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* line 49, sass/main.min.scss */
 .main {
   margin-left: 220px;
   margin-top: 35px;
 }
 
-/* line 48, sass/main.min.scss */
+/* line 54, sass/main.min.scss */
 .admin .main {
   margin-left: 160px;
 }
 
-/* line 52, sass/main.min.scss */
+/* line 58, sass/main.min.scss */
 .content {
   padding: 1rem;
 }

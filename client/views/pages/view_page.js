@@ -4,9 +4,13 @@ Template.viewPage.helpers({
 	},
 	showTitle: function(){
 		if (Pages.findOne({_id: this._id}).hideTitle === 'checked'){
-			return false
+			return false;
 		} else{
-			return true
+			return true;
 		}
-	}
+	},
+	pageTemplate: function(){
+		var templateName = Pages.findOne({_id: this._id}).pageTemplate;
+		return Template[templateName](Pages.findOne({_id: this._id}));
+	},
 });

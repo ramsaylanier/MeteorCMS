@@ -1,3 +1,10 @@
+.row{
+    &:nth-of-type(odd){
+        background-color: $light-grey;
+    }
+}
+
+
 .pure-g {
     text-rendering: optimizespeed;
     width: 100%;

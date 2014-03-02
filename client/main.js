@@ -3,4 +3,4 @@ Accounts.config({
 });
 
 Meteor.subscribe('pages');
-Meteor.subscribe('media');
+Meteor.subscribe('posts');
