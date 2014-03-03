@@ -29,11 +29,35 @@ Media.fileHandlers({
         console.log('Finished writing image.');
          // We only return the url for the file, no blob to save since we took care of it
       }
-   });
+    });
 
    // I failed to deliver a url for this, but don't try again
    return { blob: options.blob, fileRecord: options.fileRecord };
-  }
+  },
+  medium: function(options) {
+    if (options.fileRecord.contentType != 'image/jpeg')
+      return null; // jpeg files only  
+
+    var destination = options.destination();
+    var dest = destination.serverFilename;
+
+    // Uses meteorite graphicsmagick
+    gm(options.blob, dest).resize(120, 120).quality(90).write(dest, function(err) {
+      if (err) {
+       console.log('GraphicsMagick error ' + err);
+       return false;
+       // False will trigger rerun, could check options.sumFailes
+       // if we only want to rerun 2 times (default limit is 3,
+       // but sumFailes is reset at server idle + wait period)
+      } else {
+        console.log('Finished writing image.');
+         // We only return the url for the file, no blob to save since we took care of it
+      }
+		});
+
+		// I failed to deliver a url for this, but don't try again
+		return { blob: options.blob, fileRecord: options.fileRecord };
+	}
 });
 
 
@@ -149,7 +173,7 @@ Meteor.methods({
 			throw new Meteor.Error(302, 'This page already exists', postWithSameTitle._id);
 		}
 
-		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt'), {
+		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt', 'featuredImage'), {
 			submitted: new Date().getTime()
 		});
 
@@ -177,7 +201,7 @@ Meteor.methods({
 		}
 
 
-		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt'), {
+		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt', 'featuredImage'), {
 			submitted: new Date().getTime()
 		});
 

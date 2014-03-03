@@ -35,10 +35,10 @@ Template.displayPageAdmin.rendered = function(){
 //live update the slug based on the title being typed in
 Template.displayPageAdmin.events({
 	'keyup #title':function(e){
-		Session.set('slug', encodeURI(e.target.value).toLowerCase());
+		Session.set('slug', encodeURI(e.target.value.replace(/\s+/g, '-').toLowerCase()));
 	},
 	'change #slug':function(e){
-		Session.set('slug', encodeURI(e.target.value).toLowerCase());
+		Session.set('slug', encodeURI(e.target.value.replace(/\s+/g, '-').toLowerCase()));
 	},
 	'click .edit-slug': function(e){
 		e.preventDefault();

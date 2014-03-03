@@ -8,7 +8,8 @@ Template.editPost.events({
 			title: $(e.target).find('[name=title]').val(),
 			slug: $(e.target).find('[name=slug]').val(),
 			content: $(e.target).find('[name=editor]').val(),
-			excerpt: $(e.target).find('[name=excerpt]').val()
+			excerpt: $(e.target).find('[name=excerpt]').val(),
+			featuredImage: $(e.target).find('[name=featured-image]').val()
 		}
 
 		Meteor.call('updatePost', currentPostId, postAttributes, function(error, id) {

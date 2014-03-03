@@ -6,7 +6,8 @@ Template.newPost.events({
 			title: $(e.target).find('[name=title]').val(),
 			slug: Session.get('slug'),
 			content: $(e.target).find('[name=editor]').val(),
-			excerpt: $(e.target).find('[name=excerpt]').val()
+			excerpt: $(e.target).find('[name=excerpt]').val(),
+			featuredImage: $(e.target).find('[name=featured-image]').val()
 		}
 
 		Meteor.call('post', post, function(error, id) {
@@ -33,10 +34,10 @@ Template.displayPostAdmin.rendered = function(){
 //live update the slug based on the title being typed in
 Template.displayPostAdmin.events({
 	'keyup #title':function(e){
-		Session.set('slug', encodeURI(e.target.value).toLowerCase());
+		Session.set('slug', encodeURI(e.target.value.replace(/\s+/g, '-').toLowerCase()));
 	},
 	'change #slug':function(e){
-		Session.set('slug', encodeURI(e.target.value).toLowerCase());
+		Session.set('slug', encodeURI(e.target.value.replace(/\s+/g, '-').toLowerCase()));
 	},
 	'click .edit-slug': function(e){
 		e.preventDefault();
@@ -51,6 +52,11 @@ Template.displayPostAdmin.events({
 		e.preventDefault();
 		var frag = Meteor.render(Template.setFeaturedImage);
 		$('body').append(frag);
+	},
+	'click #remove-image-btn':function(e){
+		e.preventDefault();
+		var currentPostId = this._id;
+		Posts.update(currentPostId, {$set: {featuredImage: ""}});
 	}
 });
 
@@ -63,9 +69,17 @@ Template.displayPostAdmin.helpers({
 	}
 });
 
-Template.setFeaturedImage.helpers({
-	media: function(){
-		return Media.find({}, { sort: { uploadDate:-1 } });
+Template.setFeaturedImage.files = function(){
+	return Media.find({}, { sort: { uploadDate:-1 } });
+}
+
+Template.setFeaturedImage.events({
+	'click .set-featured-image': function(e){
+		e.preventDefault();
+		var url = $(e.target).closest('img').attr('src');
+		$('body').find('[name=featured-image]').val(url);
+		$('.featured-image').attr('src', url);
+		$('.modal').remove();
 	}
 })
 

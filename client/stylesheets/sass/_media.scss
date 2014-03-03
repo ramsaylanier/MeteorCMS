@@ -1,0 +1,24 @@
+.attachment-preview{
+	width: 120px;
+	height: 120px;
+	float: left;
+	overflow: hidden;
+	position: relative;
+
+	.centered{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		@include translate(50%, 50%);
+	}
+
+	img{
+		width: auto;
+		max-height: 120px;
+
+		@include translate(-50%, -50%);
+	}
+}
