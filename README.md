@@ -16,6 +16,24 @@ First, install Meteor if you haven't done so. Check out the [Meteor docs](http:/
 ```bash
 $curl https://install.meteor.com/ | sh
 ```
+Also, you might want to install Meteorite [atmosphere.meteor.com](https://atmosphere.meteor.com). Meteorite is a Meteor package manager that allows you to install many unofficial packages for further expansion.
+
+Then, make a new directory for the app
+```bash
+$ mkdir MeteorCMS
+```
+
+Next, clone MeteorCMS to the new directory
+
+```bash
+$ git clone https://github.com/ramsaylanier/MeteorCMS.git MeteorCMS
+```
+
+Finally, start the Meteor server
+```bash
+$ cd MeteorCMS
+$ Meteor
+```
 
 
 
