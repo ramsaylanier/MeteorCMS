@@ -7,7 +7,8 @@
       "moment": {},
       "user-session": {},
       "bootstrap-wysiwyg": {},
-      "collectionFS": {}
+      "collectionFS": {},
+      "authorization": {}
     },
     "packages": {
       "iron-router": {
@@ -39,6 +40,11 @@
         "git": "https://github.com/raix/Meteor-CollectionFS.git",
         "tag": "v0.3.7",
         "commit": "34d9fb363472e44c6dba4a1473a9e106e107f5a9"
+      },
+      "authorization": {
+        "git": "https://github.com/deepwell/meteor-authorization.git",
+        "tag": "v2.0.3",
+        "commit": "55b9035f28130ca2a08089c8fc6506c6e54911b4"
       },
       "cfs-public-folder": {
         "git": "https://github.com/nooitaf/meteor-cfs-public-folder.git",
