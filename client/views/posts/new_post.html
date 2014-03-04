@@ -53,13 +53,13 @@
 			<div class="form-control">
 				<label class="label">Categories</label>
 				<ul class="category-choices">
-				{{#each categories}}
-					<li>
-						<input type="checkbox" name="category-{{name}}" class="category-option" value="{{name}}" {{isChecked ../categories}}/>
-						<label class="label inline" for="category-{{name}}">{{name}}</label>
-					</li>
-				{{/each}}
-			</ul>
+					{{#each categories}}
+						<li>
+							<input type="checkbox" name="category-{{name}}" class="category-option" value="{{name}}" {{isChecked ../categories}}/>
+							<label class="label inline" for="category-{{name}}">{{name}}</label>
+						</li>
+					{{/each}}
+				</ul>
 			</div>
 		</div>
 	</form>

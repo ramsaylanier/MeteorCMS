@@ -9,7 +9,7 @@
 					<span>Slug</span>
 				</th>
 				<th scope="col" id="created" class="column column-created">
-					<span>Created On</span>
+					<span>Number of Posts</span>
 				</th>
 			</tr>
 		</thead>
@@ -19,15 +19,14 @@
 			<td class="column-name">
 				<a href="{{pathFor 'editPage'}}">{{name}}</a>
 				<ul class="row-actions">
-					<li class="edit-page"><a href="{{pathFor 'editPage'}}">Edit</a></li>
-					<li class="delete-page"><a href="#">Delete</a></li>
+					<li><a class="delete-category" href="#">Delete</a></li>
 				</ul>
 			</td>
 			<td class="column-slug">
 				<span>/{{slug}}</span>
 			</td>
 			<td class="column-timestamp">
-				<span>{{prettyDate submitted}}</span>
+				<span>{{postCount name}}</span>
 			</td>
 		</tr>
 	{{/each}}
