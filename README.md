@@ -35,6 +35,18 @@ $ cd MeteorCMS
 $ Meteor
 ```
 
+That's it! You're app should be up and running at [localhost:3000](http://localhost:3000]!
+
+##Using the Admin Back-End
+
+Currently, the admin back-end is very simple, though functionality will be added over time. In order to access the admin login, go to the [admin login page](http://localhost:3000/admin) which is located at /admin. 
+
+The way the CMS is currently written, only one admin or user is allowed to register. When you first install the app, going to the login page will allow a user to create an account. Once an account is created, no other accounts can be created. This will change in the future, but I wrote this CMS in order to create a personal blog, so only one admin was needed.
+
+After creating an account, you can login with the username and password. 
+
+Adding pages, posts, and categories are all very straightforward. 
+
 
 
 
