@@ -1,0 +1,36 @@
+<template name="listCategories">
+	<table class="category-table table top-margin-1">
+		<thead>
+			<tr>
+				<th scope="col" id="name" class="column column-title">
+					<span>Name</span>
+				</th>
+				<th scope="col" id="slug" class="column column-slug">
+					<span>Slug</span>
+				</th>
+				<th scope="col" id="created" class="column column-created">
+					<span>Created On</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+	{{#each categories}}
+		<tr class="row-{{name}}">
+			<td class="column-name">
+				<a href="{{pathFor 'editPage'}}">{{name}}</a>
+				<ul class="row-actions">
+					<li class="edit-page"><a href="{{pathFor 'editPage'}}">Edit</a></li>
+					<li class="delete-page"><a href="#">Delete</a></li>
+				</ul>
+			</td>
+			<td class="column-slug">
+				<span>/{{slug}}</span>
+			</td>
+			<td class="column-timestamp">
+				<span>{{prettyDate submitted}}</span>
+			</td>
+		</tr>
+	{{/each}}
+		</tbody>
+	</table>
+</template>

@@ -1,6 +1,7 @@
 Pages = new Meteor.Collection('pages');
 Posts = new Meteor.Collection('posts');
 Blocks = new Meteor.Collection('blocks');
+Categories = new Meteor.Collection('categories');
 
 //CollectionFS collection used for file uploads
 Media = new CollectionFS('media', { autopublish: false });
@@ -81,6 +82,12 @@ Blocks.allow({
 });
 
 Media.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
+})
+
+Categories.allow({
 	insert: isAdmin,
 	update: isAdmin,
 	remove: isAdmin
@@ -173,7 +180,7 @@ Meteor.methods({
 			throw new Meteor.Error(302, 'This page already exists', postWithSameTitle._id);
 		}
 
-		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt', 'featuredImage'), {
+		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt', 'featuredImage', 'categories'), {
 			submitted: new Date().getTime()
 		});
 
@@ -201,12 +208,29 @@ Meteor.methods({
 		}
 
 
-		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt', 'featuredImage'), {
+		var post = _.extend(_.pick(postAttributes, 'title', 'slug', 'content', 'excerpt', 'featuredImage', 'categories'), {
 			submitted: new Date().getTime()
 		});
 
 		var postId = Posts.update(postID, post);
 
 		return postId;
+	},
+	category: function(categoryAttributes){
+		//ensure post has a title
+		if (!categoryAttributes.name)
+			throw new Meteor.Error(422, 'Please enter a category name');
+
+		//ensure post has a slug
+		if (!categoryAttributes.slug)
+			throw new Meteor.Error(422, 'Please enter a category slug');
+
+		var category = _.extend(_.pick(categoryAttributes, 'name', 'slug'), {
+			submitted: new Date().getTime()
+		});
+
+		var categoryId = Categories.insert(category);
+
+		return categoryId;
 	}
 });

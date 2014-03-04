@@ -14,3 +14,7 @@ Meteor.publish('blocks',function(){
 Meteor.publish('media', function() {
 	return Media.find();
 });
+
+Meteor.publish('categories', function(){
+	return Categories.find();
+});

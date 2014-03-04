@@ -3,13 +3,18 @@ Template.editPost.events({
 		e.preventDefault();
 
 		var currentPostId = this._id;
+		var categories = [];
+		$('.category-choices input[type="checkbox"]:checked').each(function(){
+              categories.push($(this).val());
+        });
 
 		var postAttributes = {
 			title: $(e.target).find('[name=title]').val(),
 			slug: $(e.target).find('[name=slug]').val(),
 			content: $(e.target).find('[name=editor]').val(),
 			excerpt: $(e.target).find('[name=excerpt]').val(),
-			featuredImage: $(e.target).find('[name=featured-image]').val()
+			featuredImage: $(e.target).find('[name=featured-image]').val(),
+			categories: categories
 		}
 
 		Meteor.call('updatePost', currentPostId, postAttributes, function(error, id) {

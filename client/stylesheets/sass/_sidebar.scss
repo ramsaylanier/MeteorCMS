@@ -4,6 +4,7 @@
 	height: 100%;
 	left: 0px;
 	background-color: $dark-grey;
+	z-index: 100;
 
 	.nav{
 		.nav-links{
@@ -38,6 +39,10 @@
 				left: 160px;
 				width: 160px;
 				background-color: $dark-grey;
+
+				&:hover{
+					display: block;
+				}
 
 				li{
 					a{

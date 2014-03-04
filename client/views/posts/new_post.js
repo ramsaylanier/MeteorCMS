@@ -2,12 +2,19 @@ Template.newPost.events({
 	'submit form': function(e){
 		e.preventDefault();
 
+		var categories = [];
+		$('.category-choices input[type="checkbox"]:checked').each(function(){
+              categories.push($(this).val());
+        });
+
+
 		var post ={
 			title: $(e.target).find('[name=title]').val(),
 			slug: Session.get('slug'),
 			content: $(e.target).find('[name=editor]').val(),
 			excerpt: $(e.target).find('[name=excerpt]').val(),
-			featuredImage: $(e.target).find('[name=featured-image]').val()
+			featuredImage: $(e.target).find('[name=featured-image]').val(),
+			categories: categories
 		}
 
 		Meteor.call('post', post, function(error, id) {
@@ -61,12 +68,26 @@ Template.displayPostAdmin.events({
 });
 
 Template.displayPostAdmin.helpers({
+	posts: function(){
+		Posts.find();
+	},
 	value: function(){
 		return Session.get('slug');
 	},
 	url: function(){
 		return Meteor.absoluteUrl();
-	}
+	},
+	categories: function(){
+		return Categories.find();
+	},
+	isChecked: function(name){
+		if (name){
+			for (var i=0; i<name.length; i++){
+				if (this.name == name[i])
+					return 'checked';
+			}
+		}
+	}		
 });
 
 Template.setFeaturedImage.files = function(){

@@ -1,6 +1,6 @@
 <template name="newPost">
 	<h3>Add New Post</h3>
-	{{> displayPostAdmin}}
+	{{> displayPostAdmin }}
 </template>
 
 <template name="displayPostAdmin">
@@ -49,6 +49,17 @@
 				{{else}}
 					<a href="#" id="featured-image-btn" class="label">Set Featured Image</a>
 				{{/if}}
+			</div>
+			<div class="form-control">
+				<label class="label">Categories</label>
+				<ul class="category-choices">
+				{{#each categories}}
+					<li>
+						<input type="checkbox" name="category-{{name}}" class="category-option" value="{{name}}" {{isChecked ../categories}}/>
+						<label class="label inline" for="category-{{name}}">{{name}}</label>
+					</li>
+				{{/each}}
+			</ul>
 			</div>
 		</div>
 	</form>

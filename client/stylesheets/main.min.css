@@ -1181,8 +1181,9 @@ p + .drop-cap {
   height: 100%;
   left: 0px;
   background-color: #232221;
+  z-index: 100;
 }
-/* line 10, sass/_sidebar.scss */
+/* line 11, sass/_sidebar.scss */
 .sidebar .nav .nav-links li {
   position: relative;
   text-align: center;
@@ -1192,23 +1193,23 @@ p + .drop-cap {
   -o-transition: 300ms;
   transition: 300ms;
 }
-/* line 17, sass/_sidebar.scss */
+/* line 18, sass/_sidebar.scss */
 .sidebar .nav .nav-links li:hover {
   background-color: #171616;
 }
-/* line 20, sass/_sidebar.scss */
+/* line 21, sass/_sidebar.scss */
 .sidebar .nav .nav-links li:hover a {
   color: #2f9baa;
 }
-/* line 24, sass/_sidebar.scss */
+/* line 25, sass/_sidebar.scss */
 .sidebar .nav .nav-links li:hover .submenu {
   display: block;
 }
-/* line 29, sass/_sidebar.scss */
+/* line 30, sass/_sidebar.scss */
 .sidebar .nav .nav-links li a {
   color: #999a9a;
 }
-/* line 34, sass/_sidebar.scss */
+/* line 35, sass/_sidebar.scss */
 .sidebar .nav .nav-links .submenu {
   display: none;
   position: absolute;
@@ -1218,6 +1219,10 @@ p + .drop-cap {
   background-color: #232221;
 }
 /* line 43, sass/_sidebar.scss */
+.sidebar .nav .nav-links .submenu:hover {
+  display: block;
+}
+/* line 48, sass/_sidebar.scss */
 .sidebar .nav .nav-links .submenu li a {
   color: #999a9a;
 }
@@ -1261,7 +1266,7 @@ p + .drop-cap {
 }
 /* line 14, sass/_tables.scss */
 .table tbody tr:nth-of-type(odd) {
-  background-color: #f9f9f9;
+  background-color: white;
 }
 /* line 19, sass/_tables.scss */
 .table tbody tr:hover .row-actions {
@@ -1291,7 +1296,7 @@ p + .drop-cap {
 /* line 9, sass/_forms.scss */
 .form-control input[type="text"] {
   width: 100%;
-  height: 2rem;
+  height: 1.5rem;
 }
 /* line 13, sass/_forms.scss */
 .form-control input[type="text"]:focus {
@@ -1444,6 +1449,11 @@ button {
 }
 
 /* line 33, sass/main.min.scss */
+body {
+  background-color: #f9f9f9;
+}
+
+/* line 37, sass/main.min.scss */
 a {
   color: #47c6d9;
   text-decoration: none;
@@ -1452,30 +1462,30 @@ a {
   -o-transition: all 300ms;
   transition: all 300ms;
 }
-/* line 38, sass/main.min.scss */
+/* line 42, sass/main.min.scss */
 a:hover {
   color: #2f9baa;
 }
 
-/* line 43, sass/main.min.scss */
+/* line 47, sass/main.min.scss */
 .wrapper {
   position: relative;
   max-width: 980px;
   margin: 0 auto;
 }
 
-/* line 50, sass/main.min.scss */
+/* line 54, sass/main.min.scss */
 .main {
   margin-left: 220px;
   margin-top: 35px;
 }
 
-/* line 55, sass/main.min.scss */
+/* line 59, sass/main.min.scss */
 .admin .main {
   margin-left: 160px;
 }
 
-/* line 59, sass/main.min.scss */
+/* line 63, sass/main.min.scss */
 .content {
   padding: 1rem;
 }
