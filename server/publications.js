@@ -1,3 +1,7 @@
+Meteor.publish('usernames', function(){
+	return Meteor.users.find({}, {fields: {username: 1}});
+});
+
 Meteor.publish('pages',function(){
 	return Pages.find();
 });
@@ -9,7 +13,6 @@ Meteor.publish('posts',function(){
 Meteor.publish('blocks',function(){
 	return Blocks.find();
 });
-
 
 Meteor.publish('media', function() {
 	return Media.find();

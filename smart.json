@@ -5,7 +5,6 @@
     "moment": {},
     "user-session": {},
     "bootstrap-wysiwyg": {},
-    "collectionFS": {},
-    "authorization": {}
+    "collectionFS": {}
   }
 }
