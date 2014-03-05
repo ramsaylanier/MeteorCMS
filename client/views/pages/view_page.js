@@ -10,7 +10,8 @@ Template.viewPage.helpers({
 		}
 	},
 	pageTemplate: function(){
-		var templateName = Pages.findOne({_id: this._id}).pageTemplate;
+		var templateName = Pages.findOne({_id: this._id}).pageTemplate.replace(/ /g, '_');
+		console.log(templateName);
 		return Template[templateName](Pages.findOne({_id: this._id}));
 	},
 });

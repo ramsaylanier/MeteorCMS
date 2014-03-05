@@ -21,8 +21,6 @@
 				</span>
 			</div>
 
-			{{> addMedia}}
-
 			<div class="form-control">
 				<textarea id="editor" name="editor" rows="10" cols="80">{{{content}}}</textarea>
 			</div>	
@@ -36,22 +34,22 @@
 		</div>
 		
 		<div class="post-options block pure-u-1-3">
-			<h4>Post Options</h4>
+			<h3>Post Options</h3>
 			<div class="form-control">
 				{{#if featuredImage}}
-					<h5>Featured Image</h5>
+					<h4>Featured Image</h4>
 				{{/if}}
 					<img class="full-width featured-image" src="{{featuredImage}}"/>
 					<input type="text" name="featured-image" class="hidden"/>
 				{{#if featuredImage}}
-					<a href="#" id="featured-image-btn" class="label pull-left">Change Image</a>
+					<a href="#" id="featured-image-btn" class="label">Change Image</a>
 					<a href="#" id="remove-image-btn" class="label pull-right">Remove Featured Image</a>
 				{{else}}
 					<a href="#" id="featured-image-btn" class="label">Set Featured Image</a>
 				{{/if}}
 			</div>
 			<div class="form-control">
-				<label class="label">Categories</label>
+				<label class="label delta heading">Categories</label>
 				<ul class="category-choices">
 					{{#each categories}}
 						<li>

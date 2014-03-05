@@ -1,3 +1,7 @@
 <template name="posts_list_excerpt_template">
-	<h3>POSTS LIST EXCERPT</h3>
+	<div class="posts-container wrapper">
+		{{#each posts}}
+			{{> viewPostExcerpt}}
+		{{/each}}
+	</div>
 </template>

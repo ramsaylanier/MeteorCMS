@@ -8,7 +8,7 @@ Template.editPage.events({
 			title: $(e.target).find('[name=title]').val(),
 			slug: $(e.target).find('[name=slug]').val(),
 			hideTitle: checkOptions($('#show-title')),
-			pageTemplate: $(e.target).find('[name=template-type]').val(),
+			pageTemplate: $(e.target).find('[name=template-type]').val().replace(/_/g, ' '),
 			content: $(e.target).find('[name=editor]').val()
 		}
 

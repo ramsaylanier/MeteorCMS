@@ -1,24 +1,30 @@
 <template name="viewPostExcerpt">
-	<div class="post p-1">
-		<h4 class="post-title">{{title}}</h4>
+	<div class="post white-bg p-1 m-b-2">
+		<h2 class="red post-title strong">{{title}}</h2>
 		<div class="post-meta">
 			<span>{{prettyDate submitted}}</span>
 		</div>
+		<div class="featured-image full-width m-b-1">
+			<img src="{{featuredImage}}"/>
+		</div>
 		<div class="post-content">
-			{{{excerpt}}} <a href="{{pathFor 'viewPostSingle'}}" class="">Read More</a>
+			<p>{{{excerpt}}}</p>
+			<a href="{{pathFor 'viewPostSingle'}}" class="btn blue-btn">Read More</a>
 		</div>
 	</div>
 </template>
 
 <template name="viewPostSingle">
-	<div class="post p-1">
-		<h1>test</h1>
-		<h4 class="post-title">{{title}}</h4>
+	<div class="post white-bg p-1 wrapper">
+		<h2 class="red post-title strong">{{title}}</h2>
 		<div class="post-meta">
 			<span>{{prettyDate submitted}}</span>
 		</div>
+		<div class="featured-image full-width m-b-1">
+			<img src="{{featuredImage}}"/>
+		</div>
 		<div class="post-content">
-			{{{content}}}
+			<p>{{{content}}}</p>
 		</div>
 	</div>
 </template>

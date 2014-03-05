@@ -6,7 +6,7 @@ Template.newPage.events({
 			title: $(e.target).find('[name=title]').val(),
 			slug: Session.get('slug'),
 			hideTitle: checkOptions($('#show-title')),
-			pageTemplate: $(e.target).find('[name=template-type]').val(),
+			pageTemplate: $(e.target).find('[name=template-type]').val().replace(/_/g, ' '),
 			content: $(e.target).find('[name=editor]').val()
 		}
 
@@ -60,7 +60,12 @@ Template.displayPageAdmin.helpers({
 	},
 	getTemplates: function(){
 		var templates = _.filter(_.keys(Template), function(name){return name.match('template');});
-		return templates;
+		return _.map(templates, function(name){ return name.replace(/_/g, ' ');});
+	},
+	isSelected: function(name, pageTemplate){
+		if (name == pageTemplate){
+			return "selected='selected'";
+		}
 	}
 });
 

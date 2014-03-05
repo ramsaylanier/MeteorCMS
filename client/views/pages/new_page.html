@@ -21,8 +21,6 @@
 				</span>
 			</div>
 
-			{{> addMedia}}
-
 			<div class="form-control">
 				<textarea id="editor" name="editor" rows="10" cols="80">{{{content}}}</textarea>
             </script>
@@ -43,7 +41,7 @@
 				<label class="label" for="template-type">Select Template Type</label>
 				<select type="select" name="template-type" id="template-type">
 					{{#each getTemplates}}
-						<option value="{{this}}">{{this}}</option>
+						<option value="{{this}}" {{isSelected this ../pageTemplate}}>{{this}}</option>
 					{{/each}}
 				</select>
 			</div>
