@@ -2,10 +2,9 @@
 	<div class="settings">
 		<h3>SETTINGS</h3>
 		<form class="form">
-			{{#each settings}}
 			<div class="settings-block header-settings">
 				{{> settingsHeader header}}
-				{{> headerSettings}}
+				{{> headerSettings settings}}
 			</div>
 			<div class="settings-block menu-settings">
 				{{> settingsHeader menus}}
@@ -13,7 +12,6 @@
 			</div>
 
 			<input type="submit" class="btn blue-btn" value="Save"/>
-			{{/each}}
 		</form>
 	</div>
 </template>

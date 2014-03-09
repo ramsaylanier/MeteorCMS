@@ -26,7 +26,7 @@ Template.settings.events({
 });
 
 Template.settings.settings = function(){
-	return Settings.find();
+	return Settings.findOne();
 }
 
 Template.settings.menus = {
