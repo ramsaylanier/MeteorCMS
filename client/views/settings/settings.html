@@ -1,0 +1,26 @@
+<template name="settings">
+	<div class="settings">
+		<h3>SETTINGS</h3>
+		<form class="form">
+			{{#each settings}}
+			<div class="settings-block header-settings">
+				{{> settingsHeader header}}
+				{{> headerSettings}}
+			</div>
+			<div class="settings-block menu-settings">
+				{{> settingsHeader menus}}
+				{{> menuSettings}}
+			</div>
+
+			<input type="submit" class="btn blue-btn" value="Save"/>
+			{{/each}}
+		</form>
+	</div>
+</template>
+
+
+<template name="settingsHeader">
+	<div class="settings-header">
+		<span class="settings-title delta">{{title}}</span>
+	</div>
+</template>

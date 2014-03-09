@@ -40,7 +40,7 @@
 					<h4>Featured Image</h4>
 				{{/if}}
 					<img class="full-width featured-image" src="{{featuredImage}}"/>
-					<input type="text" name="featured-image" class="hidden"/>
+					<input type="text" name="featured-image" value="{{featuredImage}}" class="hidden"/>
 				{{#if featuredImage}}
 					<a href="#" id="featured-image-btn" class="label">Change Image</a>
 					<a href="#" id="remove-image-btn" class="label pull-right">Remove Featured Image</a>
@@ -66,7 +66,7 @@
 <template name="setFeaturedImage">
 	<div class="modal p-2">
 		<div class="container wrapper pure-g white-bg p-1">
-			<h3>Set Featured Image</h3>
+			<h3>Media</h3>
 			{{#each files}}
 				<div class="attachment-preview">
 					<div class="centered">

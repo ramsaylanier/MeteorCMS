@@ -1,7 +1,7 @@
 <template name="adminSidebar">
 	<aside class="sidebar" role="sidebar">
 		<nav class="nav">
-			<ul class="nav-links">
+			<ul class="main-admin-nav nav-links">
 				<li><a href="/admin">Home</a></li>
 				<li><a href="{{pathFor 'media'}}">Media</a></li>
 				<li><a href="{{pathFor 'pagesList'}}">Pages</a>
@@ -17,7 +17,10 @@
 						<li><a href="{{pathFor 'categories'}}">Categories</a></li>
 					</ul>
 				</li>
+				<li class="separator"></li>
+				<li><a href="{{pathFor 'settings'}}">Settings</a></li>
 			</ul>
+
 		</nav>
 	</aside>
 </template>

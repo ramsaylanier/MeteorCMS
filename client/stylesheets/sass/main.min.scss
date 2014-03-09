@@ -75,3 +75,43 @@ a{
 		width: 100%;
 	}
 }
+
+//***************** SETTINGS ************************
+
+.settings{
+	width: 33.3%;
+	position: relative;
+
+	.settings-block{
+		margin: 1rem;
+		background-color: white;
+		position: relative;
+
+		.settings-header{
+			padding: .5rem;
+			border-bottom: 1px solid $light-grey;
+			cursor: pointer;
+			background-color: rgba($dark-grey, .1);
+			@include transition (300ms);
+
+			&:hover{
+				background-color: rgba($dark-grey, .2); 
+			}
+		}
+
+		.settings-title{
+			font-family: $heading-font;
+			font-weight: 600;
+		}
+
+		.arrow{
+			position: absolute;
+			right: 2rem;
+			top: 1rem;
+		}
+
+		.settings-content{
+			padding: .5rem;
+		}
+	}
+}

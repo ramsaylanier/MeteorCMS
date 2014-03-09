@@ -1104,107 +1104,112 @@ p + .drop-cap {
   border-bottom: 2px solid #f7c7c5;
 }
 
-/* line 49, sass/_mixins.scss */
+/* line 47, sass/_mixins.scss */
+.separator {
+  border-bottom: 1px solid #47c6d9;
+}
+
+/* line 53, sass/_mixins.scss */
 .heading {
   font-family: "brandon-grotesque", sans-serif;
 }
 
-/* line 56, sass/_mixins.scss */
+/* line 60, sass/_mixins.scss */
 .fixed {
   position: fixed;
 }
 
-/* line 60, sass/_mixins.scss */
+/* line 64, sass/_mixins.scss */
 .relative {
   position: relative;
 }
 
-/* line 64, sass/_mixins.scss */
+/* line 68, sass/_mixins.scss */
 .absolute {
   position: absolute;
 }
 
-/* line 68, sass/_mixins.scss */
+/* line 72, sass/_mixins.scss */
 .inline {
   display: inline;
 }
 
-/* line 74, sass/_mixins.scss */
+/* line 78, sass/_mixins.scss */
 .full-height {
   height: 100%;
 }
 
-/* line 78, sass/_mixins.scss */
+/* line 82, sass/_mixins.scss */
 .full-width {
   width: 100%;
 }
 
-/* line 82, sass/_mixins.scss */
+/* line 86, sass/_mixins.scss */
 .max-100 {
   max-width: 100%;
 }
 
-/* line 89, sass/_mixins.scss */
+/* line 93, sass/_mixins.scss */
 .m-1 {
   margin: 1rem;
 }
 
-/* line 93, sass/_mixins.scss */
+/* line 97, sass/_mixins.scss */
 .left-right-margin-1 {
   margin: 0 1rem;
 }
 
-/* line 97, sass/_mixins.scss */
+/* line 101, sass/_mixins.scss */
 .left-right-margin-2 {
   margin: 0 2rem;
 }
 
-/* line 101, sass/_mixins.scss */
+/* line 105, sass/_mixins.scss */
 .top-margin-1 {
   margin-top: 1rem;
 }
 
-/* line 105, sass/_mixins.scss */
+/* line 109, sass/_mixins.scss */
 .m-t-1 {
   margin-top: 1rem;
 }
 
-/* line 109, sass/_mixins.scss */
+/* line 113, sass/_mixins.scss */
 .m-b-1 {
   margin-bottom: 1rem;
 }
 
-/* line 113, sass/_mixins.scss */
+/* line 117, sass/_mixins.scss */
 .m-b-2 {
   margin-bottom: 2rem;
 }
 
-/* line 117, sass/_mixins.scss */
+/* line 121, sass/_mixins.scss */
 .m-l-1 {
   margin-left: 1rem;
 }
 
-/* line 121, sass/_mixins.scss */
+/* line 125, sass/_mixins.scss */
 .m-r-1 {
   margin-right: 1rem;
 }
 
-/* line 127, sass/_mixins.scss */
+/* line 131, sass/_mixins.scss */
 .p-1 {
   padding: 1rem;
 }
 
-/* line 131, sass/_mixins.scss */
+/* line 135, sass/_mixins.scss */
 .p-2 {
   padding: 2rem;
 }
 
-/* line 135, sass/_mixins.scss */
+/* line 139, sass/_mixins.scss */
 .p-top-2 {
   padding-top: 2rem;
 }
 
-/* line 138, sass/_mixins.scss */
+/* line 142, sass/_mixins.scss */
 .p-bottom-2 {
   padding-bottom: 2rem;
 }
@@ -1278,16 +1283,49 @@ p + .drop-cap {
 
 /* line 13, sass/_header.scss */
 .header {
-  position: fixed;
-  width: 220px;
-  height: 100%;
-  left: 0px;
   background-color: #ee373a;
 }
-/* line 21, sass/_header.scss */
+/* line 17, sass/_header.scss */
 .header .logo .logo-letter {
   font-weight: 900;
   line-height: 2.5rem;
+}
+
+/* line 25, sass/_header.scss */
+.header-right {
+  position: fixed;
+  right: 0px;
+  height: 100%;
+  width: 220px;
+}
+/* line 31, sass/_header.scss */
+.header-right .logo-image {
+  max-width: 100%;
+}
+
+/* line 36, sass/_header.scss */
+.header-left {
+  position: fixed;
+  left: 0px;
+  height: 100%;
+  width: 220px;
+}
+/* line 42, sass/_header.scss */
+.header-left .logo-image {
+  max-width: 100%;
+}
+
+/* line 47, sass/_header.scss */
+.header-top {
+  top: 0px;
+  width: 100%;
+}
+
+/* line 53, sass/_header.scss */
+.header-bottom {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
 }
 
 /* line 2, sass/_tables.scss */
@@ -1534,4 +1572,46 @@ a:hover {
 /* line 74, sass/main.min.scss */
 .featured-image img {
   width: 100%;
+}
+
+/* line 81, sass/main.min.scss */
+.settings {
+  width: 33.3%;
+  position: relative;
+}
+/* line 85, sass/main.min.scss */
+.settings .settings-block {
+  margin: 1rem;
+  background-color: white;
+  position: relative;
+}
+/* line 90, sass/main.min.scss */
+.settings .settings-block .settings-header {
+  padding: .5rem;
+  border-bottom: 1px solid #f9f9f9;
+  cursor: pointer;
+  background-color: rgba(35, 34, 33, 0.1);
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+/* line 97, sass/main.min.scss */
+.settings .settings-block .settings-header:hover {
+  background-color: rgba(35, 34, 33, 0.2);
+}
+/* line 102, sass/main.min.scss */
+.settings .settings-block .settings-title {
+  font-family: "brandon-grotesque", sans-serif;
+  font-weight: 600;
+}
+/* line 107, sass/main.min.scss */
+.settings .settings-block .arrow {
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+/* line 113, sass/main.min.scss */
+.settings .settings-block .settings-content {
+  padding: .5rem;
 }

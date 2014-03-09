@@ -11,10 +11,6 @@
 }
 
 .header{
-	position: fixed;
-	width: 220px;
-	height: 100%;
-	left: 0px;
 	background-color: $red;
 
 	.logo{
@@ -22,5 +18,40 @@
 			font-weight: 900;
 			line-height: 2.5rem;
 		}
+
 	}
+}
+
+.header-right{
+	position: fixed;
+	right: 0px;
+	height: 100%;
+	width: 220px;
+
+	.logo-image{
+		max-width: 100%;
+	}
+}
+
+.header-left{
+	position: fixed;
+	left: 0px;
+	height: 100%;
+	width: 220px;
+
+	.logo-image{
+		max-width: 100%;
+	}
+}
+
+.header-top{
+	top: 0px;
+	width: 100%;
+
+}
+
+.header-bottom{
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 }

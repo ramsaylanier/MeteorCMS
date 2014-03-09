@@ -1,0 +1,38 @@
+<template name="headerSettings">
+	<div class="settings-content">
+		<div class="form-control">
+			<label class="label" for="header-location m-r-1">Header Location:</label>
+			<select name="header-location" class="header-location">
+				<option value="top" {{isSelected}}>Top</option>
+				<option value="left" {{isSelected}}>Left</option>
+				<option value="right" {{isSelected}}>Right</option>
+				<option value="bottom" {{isSelected}}>Bottom</option>
+			</select>
+		</div>
+
+		<div class="form-control">
+			<label class="label" for="header-image">Header Image:</label>
+			<img class="full-width featured-image" src="{{headerImage}}"/>
+			<input type="text" name="featured-image" value="{{headerImage}}" class="hidden"/>
+			{{#if headerImage}}
+				<a href="#" id="header-image-btn" class="label">Change Image</a>
+				<a href="#" id="remove-image-btn" class="label pull-right">Remove Featured Image</a> 
+			{{else}}
+				<a href="#" id="header-image-btn" class="label">Set Header Image</a>
+			{{/if}}
+		</div>
+
+		<div class="form-control">
+			<label class="label" for="resize-header-image">Resize Header Image?</label>
+			<input type="radio" class="resize-header-image" name="resize-header-image" value="yes">Yes</input>
+			<input type="radio" class="resize-header-image" name="resize-header-image" value="no">No</input>
+		</div>
+
+		<div class="form-control header-resize-form hidden">
+			<label class="label" for="header-image-height">Image Height (in pixels)</label>
+			<input type="text" name="header-image-height" value="{{headerHeight}}"></input>
+			<label class="label" for="header-image-height">Image Width (in pixels)</label>
+			<input type="text" name="header-image-width" value="{{headerWidth}}"></input>
+		</div>
+	</div>
+</template>

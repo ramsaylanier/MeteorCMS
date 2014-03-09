@@ -2,9 +2,15 @@ Pages = new Meteor.Collection('pages');
 Posts = new Meteor.Collection('posts');
 Blocks = new Meteor.Collection('blocks');
 Categories = new Meteor.Collection('categories');
+Settings = new Meteor.Collection('settings');
 
 //CollectionFS collection used for file uploads
 Media = new CollectionFS('media', { autopublish: false });
+Media.filter({
+	allow: {
+		contentTypes: ['image/*']
+	}
+});
 
 Media.fileHandlers({
   default: function(options) { // Options contains blob and fileRecord — same is expected in return if should be saved on filesytem, can be modified
@@ -12,9 +18,6 @@ Media.fileHandlers({
     return { blob: options.blob, fileRecord: options.fileRecord }; // if no blob then save result in fileHandle (added createdAt)
   },
   thumb: function(options) {
-    if (options.fileRecord.contentType != 'image/jpeg')
-      return null; // jpeg files only  
-
     var destination = options.destination();
     var dest = destination.serverFilename;
 
@@ -36,9 +39,6 @@ Media.fileHandlers({
    return { blob: options.blob, fileRecord: options.fileRecord };
   },
   medium: function(options) {
-    if (options.fileRecord.contentType != 'image/jpeg')
-      return null; // jpeg files only  
-
     var destination = options.destination();
     var dest = destination.serverFilename;
 
@@ -88,6 +88,12 @@ Media.allow({
 })
 
 Categories.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
+})
+
+Settings.allow({
 	insert: isAdmin,
 	update: isAdmin,
 	remove: isAdmin
@@ -232,5 +238,20 @@ Meteor.methods({
 		var categoryId = Categories.insert(category);
 
 		return categoryId;
+	},
+	updateSettings: function(settingsID, settingsOptions){
+		var user = Meteor.user();
+	
+		//make sure used is logged in before adding pages
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add posts");
+
+		var settings = _.extend(_.pick(settingsOptions, 'headerLocation', 'headerImage', 'headerHeight', 'headerWidth'), {
+			submitted: new Date().getTime()
+		});
+
+		var settingsId = Settings.upsert(settingsID, settings);
+
+		return settings;
 	}
 });

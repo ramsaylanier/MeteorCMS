@@ -21,3 +21,7 @@ Meteor.publish('media', function() {
 Meteor.publish('categories', function(){
 	return Categories.find();
 });
+
+Meteor.publish('settings', function(){
+	return Settings.find();
+});
