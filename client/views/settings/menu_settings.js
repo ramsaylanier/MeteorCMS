@@ -22,7 +22,7 @@ Template.menuSettings.events({
 	'click .page-menu-option': function(e){
 		e.preventDefault();
 		var link = $(e.target).html();
-		var linkURL = "/" + encodeURI(link).toLowerCase();
+		var linkURL = "/" + encodeURI(link.replace(/\s+/g, '-')).toLowerCase();
 		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
 		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Page"}}});
 	},
@@ -35,7 +35,7 @@ Template.menuSettings.events({
 	'click .add-link-button': function(e){
 		e.preventDefault();
 		var link = $('.link-name').val();
-		var linkURL = encodeURI($('.link-url').val()).toLowerCase();
+		var linkURL = encodeURI($('.link-url').val().replace(/\s+/g, '-')).toLowerCase();
 		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
 		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Custom"}}});
 	},
@@ -45,7 +45,7 @@ Template.menuSettings.events({
 		var originalTitle = $(e.target).attr('data-title');
 		var linkAttributes = {
 			linkTitle: $(e.target).parent().find('.update-link-title').val(),
-			linkURL: encodeURI($(e.target).parent().find('.update-link-url').val()).toLowerCase(),
+			linkURL: encodeURI($(e.target).parent().find('.update-link-url').val().replace(/\s+/g, '-')).toLowerCase(),
 			linkType: $(e.target).parent().find('.update-link-type').val()
 		}
 		console.log(linkAttributes.linkTitle);
