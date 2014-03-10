@@ -25,5 +25,4 @@ Template.headerSettings.events({
 			$('.header-resize-form').slideUp();
 		}
 	}
-
 });

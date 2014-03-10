@@ -28,9 +28,6 @@
 
 input[type="submit"]{
 	border: none;
-	padding: .5rem;
-	font-size: 1rem;
-	background-color: $grey;
 	color: white;
 	cursor: pointer;
 	@include transition(300ms);

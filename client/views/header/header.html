@@ -1,6 +1,7 @@
 <template name="header">
 	<header class="header header-{{settings.headerLocation}}" role="header">
-		<div class="logo p-2">
+		{{#constant}}
+		<div class="logo">
 			{{#if settings.headerImage}}
 				<a href="/">
 					<img class="logo-image" src="{{settings.headerImage}}" 
@@ -17,17 +18,14 @@
 			<h1 class="logo-letter centered pink3">AY</h1>
 			{{/if}}
 		</div>
-
-		<div class="separator left-right-margin-2 border-bottom-pink"></div>
+		{{/constant}}
 
 		<nav class="nav">
 			<ul class="nav-links">
 				{{#if headerMenu}}
-					<ul>
 					{{#each headerMenu.links}}
 						<li><a href="{{this.linkURL}}">{{this.linkTitle}}</a></li>
 					{{/each}}
-					</ul>
 				{{/if}}
 			</ul>
 		</nav>

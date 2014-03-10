@@ -11,12 +11,11 @@
 		</div>
 
 		<div class="form-control">
-			<label class="label" for="header-image">Header Image:</label>
-			<img class="full-width featured-image" src="{{headerImage}}"/>
+			<img class="" src="{{headerImage}}" height="{{headerHeight}}"/>
 			<input type="text" name="featured-image" value="{{headerImage}}" class="hidden"/>
 			{{#if headerImage}}
 				<a href="#" id="header-image-btn" class="label">Change Image</a>
-				<a href="#" id="remove-image-btn" class="label pull-right">Remove Featured Image</a> 
+				<a href="#" id="remove-image-btn" class="label pull-right">Remove Header Image</a> 
 			{{else}}
 				<a href="#" id="header-image-btn" class="label">Set Header Image</a>
 			{{/if}}
