@@ -40,6 +40,10 @@
 
 // ******** BORDERS **********
 
+.bordered{
+	border: 1px solid $light-grey;
+}
+
 .border-bottom-pink{
 	border-bottom: 2px solid $pink1;
 }
@@ -52,6 +56,10 @@
 
 .heading{
 	font-family: $heading-font;
+}
+
+.small{
+	font-size: 90%;
 }
 
 
@@ -127,6 +135,14 @@
 }
 
 // ********PADDING**********
+
+.p-1-4{
+	padding: .25rem;
+}
+
+.p-1-2{
+	padding: .5rem;
+}
 
 .p-1{
 	padding: 1rem;

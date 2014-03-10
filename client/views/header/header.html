@@ -22,10 +22,13 @@
 
 		<nav class="nav">
 			<ul class="nav-links">
-				<li><a href="{{pathFor 'workList'}}">Home</a>
-				{{#each pages}}
-					<li><a href="/{{slug}}">{{title}}</a></li>
-				{{/each}}
+				{{#if headerMenu}}
+					<ul>
+					{{#each headerMenu.links}}
+						<li><a href="{{this.linkURL}}">{{this.linkTitle}}</a></li>
+					{{/each}}
+					</ul>
+				{{/if}}
 			</ul>
 		</nav>
 	</header>

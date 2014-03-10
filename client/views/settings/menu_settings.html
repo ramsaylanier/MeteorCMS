@@ -1,3 +1,101 @@
 <template name="menuSettings">
+	<div class="settings-content pure-g">
+		<div class="menu-selection form-control">
+			<label class="label" for="menu-select">Select a Menu: </label>
+			<select name="menu-select" class="menu-select">
+				{{#each menus}}
+					<option value="{{title}}">{{title}}</option>
+				{{/each}}
+			</select>
+			<span> or </span><a href="#" class="create-new-menu settings-header">Create a new menu</a>	
+			<div class="new-menu settings-content hidden">
+				<label class="label inline" for="new-menu-title">Menu Title</label>
+				<input type="text" name="new-menu-title" class="new-menu-title"/>
+				<button class="add-menu-button small-btn blue-btn">Add Menu</button>
+			</div>
+		</div>
 
+		<div class="menu-choices pure-u-3-7">
+			<div class="pages-list light-grey-bg m-r-1">
+				<div class="settings-header">
+					<span class="epsilon heading">Pages (click to add)</span>
+				</div>
+				<div class="settings-content">
+					{{#if pages}}
+						<ul>
+						{{#each pages}}
+							<li><a href="#" class="page-menu-option">{{title}}</a><li>
+						{{/each}}
+					{{else}}
+						<p> No pages </p>
+					{{/if}}
+				</div>
+			</div>
+			<div class="custom-list light-grey-bg m-r-1">
+				<div class="settings-header">
+					<span class="epsilon heading">Custom</span>
+				</div>
+				<div class="settings-content hidden">
+					<div class="form-control">
+						<label class="label" for="link-url">URL</label>
+						<input type="text" name="link-url" class="link-url full-width"/>
+					</div>
+					<div class="form-control">
+						<label class="label" for="link-name">Link Name</label>
+						<input type="text" name="link-name" class="link-name full-width"/>
+					</div>
+					<button class="add-link-button small-btn blue-btn">Add Link</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="menu-layout pure-u-4-7">
+			<div class="settings-header light-grey-bg">
+				<span class="epsilon heading">Menu Layout</span>
+			</div>
+			<div class="settings-content">
+				<div class="form-control">
+					<label class="label" for="menu-name">Menu name: </label>
+						<input type="text" name="menu-name" class="menu-name" value="{{currentMenuTitle}}">
+				</div>
+				<div class="form-control">
+					<label class="label" for="menu-location">Menu location: </label>
+					<select name="menu-location" class="menu-location">
+						<option value="header">Header</option>
+						<option value="footer">Footer</option>
+						<option value="sidebar">Sidebar</option>
+					</select>
+				</div>
+				<div class="menu-layout-structure">
+					<div class="menu-links-list pure-g">
+						<ul class="pure-g">
+							{{#each menuLinks.links}}
+								{{#if this.linkTitle}}
+								<li class="full-width m-b-1 light-grey-bg">
+									<div class="settings-header">
+										<span>{{this.linkTitle}}<button class="remove-menu-link small-btn red-btn pull-right" data-link="{{this.linkTitle}}">remove</button> <span class="pull-right small m-r-1">{{this.linkType}}</span></span>
+									</div>
+									<div class="settings-content hidden">
+										<div class="form-control">
+											<label class="label" for="update-link-title">Link Title</label>
+											<input type="text" name="update-link-title" class="update-link-title" value="{{this.linkTitle}}"/>
+										</div>
+										<div class="form-control">
+											<label class="label" for="update-link-url">Link URL</label>
+											<input type="text" name="update-link-url" class="update-link-url" value="{{this.linkURL}}"/>
+											<input type="hidden" class="hidden update-link-type" value="{{this.linkType}}"/>
+										</div>
+										<button class="small-btn blue-btn update-link-button" data-title="{{this.linkTitle}}">Update Link</button>
+									</div>
+								</li>
+								{{/if}}
+							{{/each}}
+						</ul>
+					</div>
+					<button class="btn blue-btn save-menu-button pull-left">Save Menu</button>
+					<button class="btn red-btn delete-menu-button pull-right">Delete Menu</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>

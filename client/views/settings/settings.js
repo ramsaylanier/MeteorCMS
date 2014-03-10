@@ -29,6 +29,10 @@ Template.settings.settings = function(){
 	return Settings.findOne();
 }
 
+Template.settings.pages = function(){
+	return Pages.find();
+}
+
 Template.settings.menus = {
 	title: "Menus"
 }

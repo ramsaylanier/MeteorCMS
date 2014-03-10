@@ -3,6 +3,7 @@ Posts = new Meteor.Collection('posts');
 Blocks = new Meteor.Collection('blocks');
 Categories = new Meteor.Collection('categories');
 Settings = new Meteor.Collection('settings');
+Menus = new Meteor.Collection('menus');
 
 //CollectionFS collection used for file uploads
 Media = new CollectionFS('media', { autopublish: false });
@@ -94,6 +95,12 @@ Categories.allow({
 })
 
 Settings.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
+})
+
+Menus.allow({
 	insert: isAdmin,
 	update: isAdmin,
 	remove: isAdmin
@@ -253,5 +260,39 @@ Meteor.methods({
 		var settingsId = Settings.upsert(settingsID, settings);
 
 		return settings;
+	},
+	addMenu: function(title){
+		var user = Meteor.user();
+	
+		//make sure used is logged in before adding pages
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add posts");
+
+		if (!title.title)
+			throw new Meteor.Error(422, 'Please enter a menu title');
+
+		var menu = _.extend(_.pick(title, 'title'));
+
+		var menuId = Menus.insert(menu)
+
+		return menuId;
+	},
+	updateLink: function(menu, originalTitle, linkAttributes){
+		var user = Meteor.user();
+		
+		//make sure used is logged in before adding pages
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add menus");
+
+		//ensure page has a title
+		if (!linkAttributes.linkTitle)
+			throw new Meteor.Error(422, 'The link must have a title');
+
+		var link = _.extend(_.pick(linkAttributes, 'linkTitle', 'linkURL', 'linkType'));
+
+		var linkId = Menus.update({_id: menu._id, "links.linkTitle": originalTitle}, {$set: { "links.$.linkTitle" : linkAttributes.linkTitle, "links.$.linkURL": linkAttributes.linkURL}});
+		console.log(linkAttributes.linkTitle);
+
+		return linkId;
 	}
 });

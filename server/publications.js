@@ -25,3 +25,7 @@ Meteor.publish('categories', function(){
 Meteor.publish('settings', function(){
 	return Settings.find();
 });
+
+Meteor.publish('menus', function(){
+	return Menus.find();
+});

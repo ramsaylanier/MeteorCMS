@@ -19,6 +19,16 @@
 	}
 }
 
+.red-btn{
+	background-color: $red;
+	color: white;
+
+	&:hover{
+		background-color: $dark-red;
+		color: white;
+	}
+}
+
 .white-btn{
 	background-color: white;
 	color: $red;
@@ -27,5 +37,6 @@
 button{
 	border: none;
 	cursor: pointer;
+	font-size: 1rem;
 	@include transition(300ms);
 }

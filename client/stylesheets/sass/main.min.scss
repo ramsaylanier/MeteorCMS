@@ -79,19 +79,15 @@ a{
 //***************** SETTINGS ************************
 
 .settings{
-	width: 33.3%;
 	position: relative;
 
 	.settings-block{
-		margin: 1rem;
-		background-color: white;
 		position: relative;
+		padding: .5rem;
 
 		.settings-header{
 			padding: .5rem;
-			border-bottom: 1px solid $light-grey;
 			cursor: pointer;
-			background-color: rgba($dark-grey, .1);
 			@include transition (300ms);
 
 			&:hover{
@@ -111,6 +107,8 @@ a{
 		}
 
 		.settings-content{
+			position: relative;
+			background-color: white;
 			padding: .5rem;
 		}
 	}

@@ -4,5 +4,8 @@ Template.header.helpers({
 	},
 	settings: function(){
 		return Settings.findOne();
+	},
+	headerMenu: function(){
+		return Menus.findOne({location: "header"});
 	}
 });

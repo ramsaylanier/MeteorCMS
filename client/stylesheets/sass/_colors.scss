@@ -1,7 +1,7 @@
 $red: #ee373a;
 $light-red: #F46264;
 $dark-red: #65120e;
-$light-grey: #F9F9F9;
+$light-grey: #F2F2F2;
 $grey: #999a9a;
 $dark-grey: #232221;
 $midnight: #171616;
@@ -39,4 +39,12 @@ $pink3: #f59c9a;
 
 .white-bg{
 	background-color: white;
+}
+
+.light-grey-bg{
+	background-color: $light-grey;
+}
+
+.dark-grey-bg{
+	background-color: rgba($dark-grey, .1);
 }
