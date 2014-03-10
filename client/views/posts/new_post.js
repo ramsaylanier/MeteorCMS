@@ -90,17 +90,3 @@ Template.displayPostAdmin.helpers({
 	}		
 });
 
-Template.setFeaturedImage.files = function(){
-	return Media.find({}, { sort: { uploadDate:-1 } });
-}
-
-Template.setFeaturedImage.events({
-	'click .set-featured-image': function(e){
-		e.preventDefault();
-		var url = $(e.target).closest('img').attr('src');
-		$('body').find('[name=featured-image]').val(url);
-		$('.featured-image').attr('src', url);
-		$('.modal').remove();
-	}
-})
-

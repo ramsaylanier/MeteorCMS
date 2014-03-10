@@ -23,6 +23,8 @@ Template.headerSettings.events({
 			$('.header-resize-form').slideDown();
 		} else {
 			$('.header-resize-form').slideUp();
+			$('.header-image-height').val('');
+			$('.header-image-width').val('');
 		}
 	}
 });

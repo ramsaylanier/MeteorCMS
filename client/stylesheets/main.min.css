@@ -1510,6 +1510,7 @@ p + .drop-cap {
 
 /* line 29, sass/_forms.scss */
 input[type="submit"] {
+  margin: 0;
   border: none;
   color: white;
   cursor: pointer;
@@ -1518,12 +1519,12 @@ input[type="submit"] {
   -o-transition: 300ms;
   transition: 300ms;
 }
-/* line 35, sass/_forms.scss */
+/* line 36, sass/_forms.scss */
 input[type="submit"]:hover {
   background-color: #232221;
 }
 
-/* line 40, sass/_forms.scss */
+/* line 41, sass/_forms.scss */
 .modal {
   position: fixed;
   height: 100%;
@@ -1719,10 +1720,12 @@ a:hover {
 /* line 84, sass/main.min.scss */
 .settings .settings-block {
   position: relative;
-  padding: .5rem;
+  padding: 0rem .5rem;
+  margin-bottom: .5rem;
 }
-/* line 88, sass/main.min.scss */
+/* line 89, sass/main.min.scss */
 .settings .settings-block .settings-header {
+  position: relative;
   padding: .5rem;
   cursor: pointer;
   -webkit-transition: 300ms;
@@ -1730,24 +1733,51 @@ a:hover {
   -o-transition: 300ms;
   transition: 300ms;
 }
-/* line 93, sass/main.min.scss */
+/* line 95, sass/main.min.scss */
 .settings .settings-block .settings-header:hover {
   background-color: rgba(35, 34, 33, 0.2);
 }
-/* line 98, sass/main.min.scss */
+/* line 100, sass/main.min.scss */
 .settings .settings-block .settings-title {
   font-family: "brandon-grotesque", sans-serif;
   font-weight: 600;
 }
-/* line 103, sass/main.min.scss */
+/* line 105, sass/main.min.scss */
 .settings .settings-block .arrow {
   position: absolute;
   right: 2rem;
   top: 1rem;
 }
-/* line 109, sass/main.min.scss */
+/* line 111, sass/main.min.scss */
 .settings .settings-block .settings-content {
   position: relative;
   background-color: white;
   padding: .5rem;
+}
+
+/* line 119, sass/main.min.scss */
+.toggle {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid rgba(35, 34, 33, 0.5);
+  /* arrow size */
+  right: 20px;
+  top: 20px;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+/* line 132, sass/main.min.scss */
+.toggle-active {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }

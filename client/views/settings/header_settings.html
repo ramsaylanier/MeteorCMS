@@ -1,5 +1,5 @@
 <template name="headerSettings">
-	<div class="settings-content">
+	<div class="settings-content hidden">
 		<div class="form-control">
 			<label class="label" for="header-location m-r-1">Header Location:</label>
 			<select name="header-location" class="header-location">
@@ -11,13 +11,15 @@
 		</div>
 
 		<div class="form-control">
-			<img class="" src="{{headerImage}}" height="{{headerHeight}}"/>
+			<img class="media-image" src="{{headerImage}}" height="{{headerHeight}}"/>
 			<input type="text" name="featured-image" value="{{headerImage}}" class="hidden"/>
 			{{#if headerImage}}
-				<a href="#" id="header-image-btn" class="label">Change Image</a>
-				<a href="#" id="remove-image-btn" class="label pull-right">Remove Header Image</a> 
+				<div class="header-image-buttons">
+				<button id="header-image-btn" class="btn blue-btn">Change Image</button>
+				<button id="remove-image-btn" class="btn red-btn pull-right">Remove Header Image</button> 
+				</div>
 			{{else}}
-				<a href="#" id="header-image-btn" class="label">Set Header Image</a>
+				<button id="header-image-btn" class="btn blue-btn">Set Header Image</button>
 			{{/if}}
 		</div>
 
@@ -27,11 +29,15 @@
 			<input type="radio" class="resize-header-image" name="resize-header-image" value="no">No</input>
 		</div>
 
-		<div class="form-control header-resize-form hidden">
-			<label class="label" for="header-image-height">Image Height (in pixels)</label>
-			<input type="text" name="header-image-height" value="{{headerHeight}}"></input>
-			<label class="label" for="header-image-height">Image Width (in pixels)</label>
-			<input type="text" name="header-image-width" value="{{headerWidth}}"></input>
+		<div class="form-control header-resize-form hidden pure-u-1-3">
+			<div class="form-control">
+				<label class="label" for="header-image-height">Image Height (in pixels)</label>
+				<input type="text" class="header-image-height pull-right" name="header-image-height" value="{{headerHeight}}"></input>
+			</div>
+			<div class="form-control">
+				<label class="label" for="header-image-height">Image Width (in pixels)</label>
+				<input type="text" class="header-image-width pull-right" name="header-image-width" value="{{headerWidth}}"></input>
+			</div>
 		</div>
 	</div>
 </template>

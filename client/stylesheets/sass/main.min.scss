@@ -83,9 +83,11 @@ a{
 
 	.settings-block{
 		position: relative;
-		padding: .5rem;
+		padding: 0rem .5rem;
+		margin-bottom: .5rem;
 
 		.settings-header{
+			position: relative;
 			padding: .5rem;
 			cursor: pointer;
 			@include transition (300ms);
@@ -112,4 +114,21 @@ a{
 			padding: .5rem;
 		}
 	}
+}
+
+.toggle{
+	content: ' ';
+	height: 0;
+	position: absolute;
+	width: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 15px solid rgba($dark-grey, .5); /* arrow size */
+	right: 20px;
+	top: 20px;
+	@include transition(300ms);
+}
+
+.toggle-active{
+	@include rotateZ(180deg);
 }

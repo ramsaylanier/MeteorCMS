@@ -40,3 +40,19 @@
     </ul>
   </div>
 </template>
+
+<template name="setFeaturedImage">
+  <div class="modal p-2">
+    <div class="container wrapper pure-g white-bg p-1">
+      <button class="close-button btn red-btn pull-right">Close</button>
+      <h3>Media</h3>
+      {{#each files}}
+        <div class="attachment-preview">
+          <div class="centered">
+            <a href="#" class="set-featured-image"><img  src="{{cfsFileUrl 'default'}}"/></a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

@@ -44,6 +44,7 @@ Template.settings.header = {
 Template.settings.events({
 	'click .settings-header':function(e){
 		e.preventDefault();
-		$(e.target).next('.settings-content').slideToggle('show');
+		$(e.target).next('.settings-content').slideToggle();
+		$(e.target).children('.toggle').toggleClass('toggle-active');
 	}
 });

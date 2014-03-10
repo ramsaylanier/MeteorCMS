@@ -39,7 +39,7 @@
 				{{#if featuredImage}}
 					<h4>Featured Image</h4>
 				{{/if}}
-					<img class="full-width featured-image" src="{{featuredImage}}"/>
+					<img class="media-image full-width featured-image" src="{{featuredImage}}"/>
 					<input type="text" name="featured-image" value="{{featuredImage}}" class="hidden"/>
 				{{#if featuredImage}}
 					<a href="#" id="featured-image-btn" class="label">Change Image</a>
@@ -61,19 +61,4 @@
 			</div>
 		</div>
 	</form>
-</template>
-
-<template name="setFeaturedImage">
-	<div class="modal p-2">
-		<div class="container wrapper pure-g white-bg p-1">
-			<h3>Media</h3>
-			{{#each files}}
-				<div class="attachment-preview">
-					<div class="centered">
-						<a href="#" class="set-featured-image"><img  src="{{cfsFileUrl 'default'}}"/></a>
-					</div>
-				</div>
-			{{/each}}
-		</div>
-	</div>
 </template>
