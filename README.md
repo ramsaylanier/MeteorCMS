@@ -7,7 +7,7 @@ I love the Wordpress admin interface but *hate* the markup that Wordpress produc
 
 ##Example
 
-Here is a [live example](http://ramsay.meteor.com/) of the CMS in action. As of the moment of this writing, there are no pages or posts added. Visit the [admin login](http://ramsay.meteor.com/admin) page and login using the Username: admin and Password: admin1 to access the backend. 
+Here is a [live example](http://meteorCMS.meteor.com/) of the CMS in action. As of the moment of this writing, there are no pages or posts added. Visit the [admin login](http://meteorCMS.meteor.com/admin) page and login using the Username: admin and Password: admin1 to access the backend. 
 
 ##Setup
 
