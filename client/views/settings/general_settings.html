@@ -1,0 +1,17 @@
+<template name="generalSettings">
+	<div class="settings-content pure-g">
+		<div class="form-control">
+			<label class="label pure-u-1-6" for="site-title">Site title </label>
+			<input class="site-title"type="text" name="site-title" value="{{siteTitle}}" size="50"/>
+		</div>
+
+		<div class="form-control ">
+			<label class="label pure-u-1-6" for="landing-page">Landing Page </label>
+			<select name="landing-page">
+				{{#each pages}}
+					<option value="{{title}}" {{isSelected this.title}}>{{title}}</option>
+				{{/each}}
+			</select>
+		</div>
+	</div>
+</template>

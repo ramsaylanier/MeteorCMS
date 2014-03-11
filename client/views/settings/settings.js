@@ -9,6 +9,8 @@ Template.settings.events({
 		}
 
 		var settings = {
+			siteTitle: $(e.target).find('[name=site-title]').val(),
+			landingPage: $(e.target).find('[name=landing-page]').val(),
 			headerLocation: $(e.target).find('[name=header-location]').val(),
 			headerImage: $(e.target).find('[name=featured-image]').val(),
 			headerHeight: $(e.target).find('[name=header-image-height]').val(),
@@ -34,11 +36,16 @@ Template.settings.pages = function(){
 }
 
 Template.settings.menus = {
-	title: "Menus"
+	title: "Menus",
 }
 
 Template.settings.header = {
 	title: "Header"
+}
+
+Template.settings.general = {
+	title: "General",
+	active: "toggle-active"
 }
 
 Template.settings.events({

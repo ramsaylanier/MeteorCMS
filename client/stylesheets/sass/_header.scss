@@ -28,20 +28,24 @@
 		.nav-links{
 			text-align: center;
 			li{
+				position: relative;
 
 				&:hover{
-					background-color: white;
+					background-color: $dark-red;
 
 					a{
-						color: $dark-red;
+						color: white;
 					}
 				}
 				a{
+					display: block;
+					padding: .5rem;
 					color: white;
 					font-weight: 600;
+					@include transition(100ms);
 
 					&:hover{
-						color: $dark-red;
+						color: $red;
 					}
 				}
 			}
@@ -81,8 +85,6 @@
 	.nav{
 		.nav-links{
 			li{
-				padding: .5rem;
-
 				&:hover{
 					&:after{
 						content: ' ';
@@ -93,6 +95,7 @@
 						border-top: 15px solid transparent;
 						border-right: 15px solid $light-grey; /* arrow size */
 						right: 0px;
+						top: 8px;
 					}
 				}
 			}

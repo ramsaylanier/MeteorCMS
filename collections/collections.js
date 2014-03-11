@@ -253,7 +253,7 @@ Meteor.methods({
 		if (!user)
 			throw new Meteor.Error(401, "You need to login to add posts");
 
-		var settings = _.extend(_.pick(settingsOptions, 'headerLocation', 'headerImage', 'headerHeight', 'headerWidth'), {
+		var settings = _.extend(_.pick(settingsOptions, 'siteTitle', 'landingPage', 'headerLocation', 'headerImage', 'headerHeight', 'headerWidth'), {
 			submitted: new Date().getTime()
 		});
 
@@ -277,16 +277,42 @@ Meteor.methods({
 
 		return menuId;
 	},
-	updateLink: function(menu, originalTitle, linkAttributes){
+	addLink: function(menu, linkAttributes){
 		var user = Meteor.user();
 		
-		//make sure used is logged in before adding pages
+		//make sure used is logged in before adding link
 		if (!user)
 			throw new Meteor.Error(401, "You need to login to add menus");
 
-		//ensure page has a title
+		//ensure link has a title
 		if (!linkAttributes.linkTitle)
 			throw new Meteor.Error(422, 'The link must have a title');
+
+		//ensure link has a URL
+		if (!linkAttributes.linkURL)
+			throw new Meteor.Error(422, 'The link must have a URL');
+
+		var link = _.extend(_.pick(linkAttributes, 'linkTitle', 'linkURL', 'linkType'));
+
+		var linkId = Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link.linkTitle, linkURL: link.linkURL, linkType: "Custom"}}});
+		console.log(link.linkTitle);
+
+		return linkId;
+	},
+	updateLink: function(menu, originalTitle, linkAttributes){
+		var user = Meteor.user();
+		
+		//make sure used is logged in before adding link
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add menus");
+
+		//ensure link has a title
+		if (!linkAttributes.linkTitle)
+			throw new Meteor.Error(422, 'The link must have a title');
+
+		//ensure link has a URL
+		if (!linkAttributes.linkURL)
+			throw new Meteor.Error(422, 'The link must have a URL');
 
 		var link = _.extend(_.pick(linkAttributes, 'linkTitle', 'linkURL', 'linkType'));
 

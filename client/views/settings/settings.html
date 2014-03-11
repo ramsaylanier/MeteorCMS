@@ -2,6 +2,10 @@
 	<div class="settings pure-g">
 		<h3>SETTINGS</h3>
 		<form class="form">
+			<div class="general-settings settings-block pure-u-3-5 ">
+				{{> settingsHeader general}}
+				{{> generalSettings settings}}
+			</div>
 			<div class="header-settings settings-block pure-u-3-5 ">
 				{{> settingsHeader header}}
 				{{> headerSettings settings}}
@@ -16,10 +20,9 @@
 	</div>
 </template>
 
-
 <template name="settingsHeader">
 	<div class="settings-header dark-grey-bg">
 		<span class="settings-title delta">{{title}}</span>
-		<span class="toggle"></span>
+		<span class="toggle {{active}}"></span>
 	</div>
 </template>

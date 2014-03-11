@@ -5,10 +5,6 @@ Template.menuSettings.helpers({
 	menus: function(){
 		return Menus.find();
 	},
-	menuLinks: function(){
-		var title = Session.get("currentMenuTitle");
-		return Menus.findOne({title: title}, {fields: {'links': 1}}); 
-	},
 	currentMenuTitle: function(){
 		return Session.get("currentMenuTitle");
 	}
@@ -34,10 +30,20 @@ Template.menuSettings.events({
 	},
 	'click .add-link-button': function(e){
 		e.preventDefault();
+		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
 		var link = $('.link-name').val();
 		var linkURL = encodeURI($('.link-url').val().replace(/\s+/g, '-')).toLowerCase();
-		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
-		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Custom"}}});
+		var linkAttributes = {
+			linkTitle: $('.link-name').val(),
+			linkURL: encodeURI($('.link-url').val().replace(/\s+/g, '-')).toLowerCase(),
+			linkType: "Custom"
+		}		
+
+		Meteor.call('addLink', menu, linkAttributes, function(error, id){
+			if(error){
+				throwError(error.reason, 'error');
+			}
+		});
 	},
 	'click .update-link-button': function(e){
 		e.preventDefault();
@@ -48,7 +54,6 @@ Template.menuSettings.events({
 			linkURL: encodeURI($(e.target).parent().find('.update-link-url').val().replace(/\s+/g, '-')).toLowerCase(),
 			linkType: $(e.target).parent().find('.update-link-type').val()
 		}
-		console.log(linkAttributes.linkTitle);
 
 		Meteor.call('updateLink', menu, originalTitle, linkAttributes, function(error, id){
 			if(error){
@@ -87,3 +92,13 @@ Template.menuSettings.rendered = function(){
 	var title = $('.menu-select').val();
 	Session.set("currentMenuTitle",title);
 }
+
+Template.menuLayout.helpers({
+	menuLinks: function(){
+		var title = Session.get("currentMenuTitle");
+		return Menus.findOne({title: title}, {fields: {'links': 1}}); 
+	},
+	currentMenuTitle: function(){
+		return Session.get("currentMenuTitle");
+	}
+});

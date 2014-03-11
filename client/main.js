@@ -2,7 +2,6 @@ Meteor.subscribe('pages');
 Meteor.subscribe('posts');
 Meteor.subscribe('media');
 Meteor.subscribe('categories');
-Meteor.subscribe('settings');
 Meteor.subscribe('menus');
 Meteor.subscribe('usernames', function () { 
 	//if there is a user and the username is "Admin", then disallow additional user creation
@@ -17,3 +16,19 @@ Meteor.subscribe('usernames', function () {
 Accounts.ui.config({
 	passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
+
+Handlebars.registerHelper('setTitle', function(title){
+	if (title){
+		document.title = title;
+	} else {
+		document.title = "Meteor CMS | Your Blank Canvas"
+	}
+});
+
+Handlebars.registerHelper('pages', function(){
+	return Pages.find();
+})
+
+Deps.autorun(function(){
+	Meteor.subscribe('settings');
+})

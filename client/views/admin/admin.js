@@ -7,5 +7,8 @@ Template.admin.helpers({
 	},
 	categoryCount: function(){
 		return Categories.find().count();
+	},
+	settings: function(){
+		return Settings.findOne();
 	}
 });

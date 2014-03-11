@@ -1329,56 +1329,62 @@ p + .drop-cap {
 .header .nav .nav-links {
   text-align: center;
 }
-/* line 32, sass/_header.scss */
+/* line 30, sass/_header.scss */
+.header .nav .nav-links li {
+  position: relative;
+}
+/* line 33, sass/_header.scss */
 .header .nav .nav-links li:hover {
-  background-color: white;
+  background-color: #65120e;
 }
-/* line 35, sass/_header.scss */
+/* line 36, sass/_header.scss */
 .header .nav .nav-links li:hover a {
-  color: #65120e;
+  color: white;
 }
-/* line 39, sass/_header.scss */
+/* line 40, sass/_header.scss */
 .header .nav .nav-links li a {
+  display: block;
+  padding: .5rem;
   color: white;
   font-weight: 600;
+  -webkit-transition: 100ms;
+  -moz-transition: 100ms;
+  -o-transition: 100ms;
+  transition: 100ms;
 }
-/* line 43, sass/_header.scss */
+/* line 47, sass/_header.scss */
 .header .nav .nav-links li a:hover {
-  color: #65120e;
+  color: #ee373a;
 }
 
-/* line 52, sass/_header.scss */
+/* line 56, sass/_header.scss */
 .header-right {
   position: fixed;
   right: 0px;
   height: 100%;
   width: 220px;
 }
-/* line 58, sass/_header.scss */
+/* line 62, sass/_header.scss */
 .header-right .logo-image {
   max-width: 100%;
 }
-/* line 64, sass/_header.scss */
+/* line 68, sass/_header.scss */
 .header-right .nav .nav-links li {
   padding: 1rem;
 }
 
-/* line 71, sass/_header.scss */
+/* line 75, sass/_header.scss */
 .header-left {
   position: fixed;
   left: 0px;
   height: 100%;
   width: 220px;
 }
-/* line 77, sass/_header.scss */
+/* line 81, sass/_header.scss */
 .header-left .logo-image {
   max-width: 100%;
 }
-/* line 83, sass/_header.scss */
-.header-left .nav .nav-links li {
-  padding: .5rem;
-}
-/* line 87, sass/_header.scss */
+/* line 89, sass/_header.scss */
 .header-left .nav .nav-links li:hover:after {
   content: ' ';
   height: 0;
@@ -1389,62 +1395,63 @@ p + .drop-cap {
   border-right: 15px solid #f2f2f2;
   /* arrow size */
   right: 0px;
+  top: 8px;
 }
 
-/* line 103, sass/_header.scss */
+/* line 106, sass/_header.scss */
 .header-top {
   top: 0px;
   width: 100%;
   height: 100px;
 }
-/* line 108, sass/_header.scss */
+/* line 111, sass/_header.scss */
 .header-top .logo {
   height: 100%;
   float: left;
 }
-/* line 111, sass/_header.scss */
+/* line 114, sass/_header.scss */
 .header-top .logo img {
   max-height: 100px;
 }
-/* line 116, sass/_header.scss */
+/* line 119, sass/_header.scss */
 .header-top .nav {
   height: 100%;
 }
-/* line 118, sass/_header.scss */
+/* line 121, sass/_header.scss */
 .header-top .nav .nav-links {
   height: 100%;
 }
-/* line 120, sass/_header.scss */
+/* line 123, sass/_header.scss */
 .header-top .nav .nav-links li {
   display: inline-block;
   padding: 1rem;
 }
 
-/* line 129, sass/_header.scss */
+/* line 132, sass/_header.scss */
 .header-bottom {
   position: fixed;
   bottom: 0px;
   width: 100%;
   z-index: 100;
 }
-/* line 135, sass/_header.scss */
+/* line 138, sass/_header.scss */
 .header-bottom .logo {
   height: 100%;
   float: left;
 }
-/* line 138, sass/_header.scss */
+/* line 141, sass/_header.scss */
 .header-bottom .logo img {
   max-height: 100px;
 }
-/* line 143, sass/_header.scss */
+/* line 146, sass/_header.scss */
 .header-bottom .nav {
   height: 100%;
 }
-/* line 145, sass/_header.scss */
+/* line 148, sass/_header.scss */
 .header-bottom .nav .nav-links {
   height: 100%;
 }
-/* line 147, sass/_header.scss */
+/* line 150, sass/_header.scss */
 .header-bottom .nav .nav-links li {
   display: inline-block;
   padding: 1rem;
@@ -1488,19 +1495,25 @@ p + .drop-cap {
 .form-control {
   margin: .5rem 0rem;
 }
-/* line 9, sass/_forms.scss */
+/* line 5, sass/_forms.scss */
+.form-control .label {
+  font-weight: 600;
+  font-size: .9rem;
+  margin-right: .5rem;
+}
+/* line 11, sass/_forms.scss */
 .form-control input[type="text"] {
   height: 1.5rem;
 }
-/* line 12, sass/_forms.scss */
+/* line 14, sass/_forms.scss */
 .form-control input[type="text"]:focus {
   outline: none;
 }
-/* line 17, sass/_forms.scss */
+/* line 19, sass/_forms.scss */
 .form-control input[type="file"] {
   height: 2rem;
 }
-/* line 21, sass/_forms.scss */
+/* line 23, sass/_forms.scss */
 .form-control select {
   height: 1.5rem;
   border: 1px solid white;
@@ -1508,7 +1521,7 @@ p + .drop-cap {
   font-size: .8rem;
 }
 
-/* line 29, sass/_forms.scss */
+/* line 31, sass/_forms.scss */
 input[type="submit"] {
   margin: 0;
   border: none;
@@ -1519,12 +1532,12 @@ input[type="submit"] {
   -o-transition: 300ms;
   transition: 300ms;
 }
-/* line 36, sass/_forms.scss */
+/* line 38, sass/_forms.scss */
 input[type="submit"]:hover {
   background-color: #232221;
 }
 
-/* line 41, sass/_forms.scss */
+/* line 43, sass/_forms.scss */
 .modal {
   position: fixed;
   height: 100%;
