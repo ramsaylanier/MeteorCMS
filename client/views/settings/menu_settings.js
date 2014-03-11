@@ -1,13 +1,16 @@
 Template.menuSettings.helpers({
-	pages: function(){
-		return Pages.find();
-	},
 	menus: function(){
 		return Menus.find();
 	},
-	currentMenuTitle: function(){
-		return Session.get("currentMenuTitle");
+	isSelected: function(title){
+		var currentTitle = Session.get("currentMenuTitle");
+		console.log(currentTitle);
+		console.log(title);
+		if (currentTitle == title){
+			return "selected='selected'";
+		}
 	}
+
 });
 
 Template.menuSettings.events({
@@ -22,11 +25,16 @@ Template.menuSettings.events({
 		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
 		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Page"}}});
 	},
+	'click .categories-menu-option': function(e){
+		e.preventDefault();
+		var link = $(e.target).html();
+		var linkURL = "/category/" + encodeURI(link.replace(/\s+/g, '-')).toLowerCase();
+		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
+		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Page"}}});
+	},
 	'click .remove-menu-link': function(e){
 		e.preventDefault();
-		var link = $(e.target).attr('data-link');
-		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
-		Menus.update({_id: menu._id}, {$pull: {links: {linkTitle: link}}});
+		$(e.target).parents('li').remove();
 	},
 	'click .add-link-button': function(e){
 		e.preventDefault();
@@ -63,13 +71,6 @@ Template.menuSettings.events({
 			}
 		});
 	},
-	'click .save-menu-button': function(e){
-		e.preventDefault();
-		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
-		var title = $('.menu-name').val();
-		var location = $('.menu-location').val();
-		Menus.update({_id: menu._id}, {$set: {title: title, location: location}});
-	},
 	'click .add-menu-button': function(e){
 		e.preventDefault();
 		var title = {title: $('.new-menu-title').val()};
@@ -80,18 +81,20 @@ Template.menuSettings.events({
 				throwError('Menu Added!', 'success');
 			}
 		});
-	},
-	'click .delete-menu-button': function(e){
-		e.preventDefault();
-		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
-		Menus.remove(menu._id);
 	}
 });
 
-Template.menuSettings.rendered = function(){
-	var title = $('.menu-select').val();
-	Session.set("currentMenuTitle",title);
+Template.menuSettings.created = function(){
+	var title = Menus.findOne().title;
+	console.log("created " + title);
+	Session.set("currentMenuTitle", title);
 }
+
+Template.menuChoices.helpers({
+	categories: function(){
+		return Categories.find();
+	}
+});
 
 Template.menuLayout.helpers({
 	menuLinks: function(){
@@ -100,5 +103,46 @@ Template.menuLayout.helpers({
 	},
 	currentMenuTitle: function(){
 		return Session.get("currentMenuTitle");
+	},
+	isSelected: function(location){
+		var menuLocation = Menus.findOne({title: Session.get("currentMenuTitle")}).location;
+		if (location == menuLocation){
+			return "selected='selected'";
+		}
 	}
 });
+
+Template.menuLayout.events({
+	'click .save-menu-button': function(e){
+		e.preventDefault();
+		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
+		var menuAttributes = {
+			title: $('.menu-name').val(),
+			location: $('.menu-location').val()
+		}
+
+		//get all the links and their attributes and store them as objects in an array
+		var links = [];
+		var i = 0;
+		$('.menu-links-list').children().children('li').each(function(){
+			links[i++] = {
+				linkTitle: $(this).find('.update-link-title').val(),
+				linkType: $(this).find('.update-link-type').val(),
+				linkURL: $(this).find('.update-link-url').val()
+			}
+		});
+
+		Meteor.call('updateMenu', menu._id, menuAttributes, links, function(error, id){
+			if(error){
+				throwError(error.reason, 'error');
+			} else{
+				throwError('Menu updated!', 'success');
+			}
+		});
+	},
+	'click .delete-menu-button': function(e){
+		e.preventDefault();
+		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
+		Menus.remove(menu._id);
+	}
+})

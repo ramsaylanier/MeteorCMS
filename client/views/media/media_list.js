@@ -1,7 +1,11 @@
 Template.addMedia.events({
   'change .fileUploader': function (e) {
     var files = e.target.files;
-    Media.storeFiles(files);
+    for (var i = 0, ln = files.length; i < ln; i++) {
+      Media.insert(files[i], function (err, id) {
+        //Inserted new doc with _id = id, and kicked off the data upload using DDP
+      });
+    }
   },
   'click #add-media-btn': function(e) {
     e.preventDefault();

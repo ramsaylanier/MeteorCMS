@@ -1,10 +1,10 @@
 <template name="header">
 	{{setTitle settings.siteTitle}}
 	<header class="header header-{{settings.headerLocation}}" role="header">
-		{{#constant}}
 		<div class="logo">
 			{{#if settings.headerImage}}
 				<a href="/">
+					{{#constant}}
 					<img class="logo-image" src="{{settings.headerImage}}" 
 					{{#if settings.headerHeight}}
 						height="{{settings.headerHeight}}"
@@ -12,6 +12,7 @@
 					{{#if settings.headerWidth}}
 						width="{{settings.headerWidth}}"
 					{{/if}}/>
+					{{/constant}}
 				</a>
 			{{else}}
 			<h1 class="logo-letter centered pink1">RA</h1>
@@ -19,7 +20,6 @@
 			<h1 class="logo-letter centered pink3">AY</h1>
 			{{/if}}
 		</div>
-		{{/constant}}
 
 		<nav class="nav">
 			<ul class="nav-links">

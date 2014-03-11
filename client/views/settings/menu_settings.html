@@ -4,7 +4,7 @@
 			<label class="label" for="menu-select">Select a Menu: </label>
 			<select name="menu-select" class="menu-select">
 				{{#each menus}}
-					<option value="{{title}}">{{title}}</option>
+					<option value="{{title}}" {{isSelected this.title}}>{{title}}</option>
 				{{/each}}
 			</select>
 			<span> or </span><button class="create-new-menu settings-header small-btn blue-btn">Create a new menu</button>	
@@ -16,39 +16,7 @@
 		</div>
 
 		<div class="menu-choices pure-u-3-7">
-			<div class="pages-list light-grey-bg m-r-1">
-				<div class="settings-header">
-					<span class="toggle toggle-active"></span>
-					<span class="epsilon heading">Pages (click to add)</span>
-				</div>
-				<div class="settings-content">
-					{{#if pages}}
-						<ul>
-						{{#each pages}}
-							<li><a href="#" class="page-menu-option">{{title}}</a><li>
-						{{/each}}
-					{{else}}
-						<p> No pages </p>
-					{{/if}}
-				</div>
-			</div>
-			<div class="custom-list light-grey-bg m-r-1">
-				<div class="settings-header">
-					<span class="toggle toggle-active"></span>
-					<span class="epsilon heading">Custom</span>
-				</div>
-				<div class="settings-content">
-					<div class="form-control">
-						<label class="label" for="link-url">URL</label>
-						<input type="text" name="link-url" class="link-url full-width"/>
-					</div>
-					<div class="form-control">
-						<label class="label" for="link-name">Link Name</label>
-						<input type="text" name="link-name" class="link-name full-width"/>
-					</div>
-					<button class="add-link-button small-btn blue-btn">Add Link</button>
-				</div>
-			</div>
+			{{> menuChoices}}
 		</div>
 
 		<div class="menu-layout pure-u-4-7">
@@ -57,8 +25,61 @@
 	</div>
 </template>
 
+<template name="menuChoices">
+	<div class="pages-list light-grey-bg m-r-1">
+		<div class="settings-header">
+			<span class="toggle toggle-active"></span>
+			<span class="epsilon heading">Pages (click to add)</span>
+		</div>
+		<div class="settings-content">
+			{{#if pages}}
+				<ul>
+				{{#each pages}}
+					<li><a href="#" class="page-menu-option">{{title}}</a><li>
+				{{/each}}
+			{{else}}
+				<p> No pages </p>
+			{{/if}}
+		</div>
+	</div>
+	<div class="custom-list light-grey-bg m-r-1">
+		<div class="settings-header">
+			<span class="toggle"></span>
+			<span class="epsilon heading">Custom</span>
+		</div>
+		<div class="settings-content hidden">
+			<div class="form-control">
+				<label class="label" for="link-url">URL</label>
+				<input type="text" name="link-url" class="link-url full-width"/>
+			</div>
+			<div class="form-control">
+				<label class="label" for="link-name">Link Name</label>
+				<input type="text" name="link-name" class="link-name full-width"/>
+			</div>
+			<button class="add-link-button small-btn blue-btn">Add Link</button>
+		</div>
+	</div>
+	<div class="categories-list light-grey-bg m-r-1">
+		<div class="settings-header">
+			<span class="toggle"></span>
+			<span class="epsilon heading">Categories</span>
+		</div>
+		<div class="settings-content hidden">
+			{{#if categories}}
+				<ul>
+					{{#each categories}}
+						<li><a href="#" class="categories-menu-option">{{name}}</a></li>
+					{{/each}}
+				</ul>
+			{{else}}
+				<p>There are no categories</p>
+			{{/if}}
+		</div>
+	</div>
+</template>
+
 <template name="menuLayout">
-<div class="settings-header light-grey-bg">
+	<div class="settings-header light-grey-bg">
 		<span class="toggle toggle-active"></span>
 		<span class="epsilon heading">Menu Layout</span>
 	</div>
@@ -70,9 +91,9 @@
 		<div class="form-control">
 			<label class="label" for="menu-location">Menu location: </label>
 			<select name="menu-location" class="menu-location">
-				<option value="header">Header</option>
-				<option value="footer">Footer</option>
-				<option value="sidebar">Sidebar</option>
+				<option value="header" {{isSelected "header"}}>Header</option>
+				<option value="footer" {{isSelected "footer"}}>Footer</option>
+				<option value="sidebar" {{isSelected "sidebar"}}>Sidebar</option>
 			</select>
 		</div>
 		<div class="menu-layout-structure">

@@ -5,13 +5,20 @@ Categories = new Meteor.Collection('categories');
 Settings = new Meteor.Collection('settings');
 Menus = new Meteor.Collection('menus');
 
+Media = new FS.Collection("media", {
+  stores: [new FS.Store.FileSystem("media", {path: "~/uploads"})]
+});
+
 //CollectionFS collection used for file uploads
-Media = new CollectionFS('media', { autopublish: false });
+/*Media = new CollectionFS('media', { autopublish: false });
 Media.filter({
 	allow: {
 		contentTypes: ['image/*']
 	}
 });
+options:{
+
+}
 
 Media.fileHandlers({
   default: function(options) { // Options contains blob and fileRecord — same is expected in return if should be saved on filesytem, can be modified
@@ -61,6 +68,7 @@ Media.fileHandlers({
 		return { blob: options.blob, fileRecord: options.fileRecord };
 	}
 });
+*/
 
 
 
@@ -274,6 +282,25 @@ Meteor.methods({
 		var menu = _.extend(_.pick(title, 'title'));
 
 		var menuId = Menus.insert(menu)
+
+		return menuId;
+	},
+	updateMenu: function(menuId, menuAttributes, links){
+		var user = Meteor.user();
+	
+		//make sure used is logged in before adding pages
+		if (!user)
+			throw new Meteor.Error(401, "You need to login to add posts");
+
+		if (!menuAttributes.title)
+			throw new Meteor.Error(422, 'Please enter a menu title');
+
+		if (!menuAttributes.location)
+			throw new Meteor.Error(422, 'Please enter a menu location');
+
+		var menu = _.extend(_.pick(menuAttributes, 'title', 'location'));
+
+		var menuId = Menus.update({_id: menuId}, {$set: {title: menu.title, location: menu.location, links: links}});
 
 		return menuId;
 	},
