@@ -3,7 +3,6 @@ Meteor.subscribe('posts');
 Meteor.subscribe('media');
 Meteor.subscribe('categories');
 Meteor.subscribe('menus');
-Meteor.subscribe('media');
 Meteor.subscribe('usernames', function () { 
 	//if there is a user and the username is "Admin", then disallow additional user creation
 	var user = Meteor.users.find().fetch();
@@ -28,6 +27,10 @@ Handlebars.registerHelper('setTitle', function(title){
 
 Handlebars.registerHelper('pages', function(){
 	return Pages.find();
+})
+
+Handlebars.registerHelper('posts', function(){
+	return Posts.find();
 })
 
 Deps.autorun(function(){

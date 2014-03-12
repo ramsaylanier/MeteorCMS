@@ -30,7 +30,7 @@ Template.menuSettings.events({
 		var link = $(e.target).html();
 		var linkURL = "/category/" + encodeURI(link.replace(/\s+/g, '-')).toLowerCase();
 		var menu = Menus.findOne({title: Session.get("currentMenuTitle")});
-		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Page"}}});
+		Menus.update({_id: menu._id}, {$addToSet: {links: {linkTitle: link, linkURL: linkURL, linkType: "Category"}}});
 	},
 	'click .remove-menu-link': function(e){
 		e.preventDefault();

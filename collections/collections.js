@@ -5,20 +5,44 @@ Categories = new Meteor.Collection('categories');
 Settings = new Meteor.Collection('settings');
 Menus = new Meteor.Collection('menus');
 
-Media = new FS.Collection("media", {
-  stores: [new FS.Store.FileSystem("media", {path: "~/uploads"})]
+/*
+thumbnail = new FS.Store.FileSystem("thumbnail", {
+	beforeSave: function () {
+    	
+    }
 });
 
+medium = new FS.Store.FileSystem("medium", {
+	beforeSave: function () {
+    	
+    }
+});
+
+full = new FS.Store.FileSystem("full");
+
+Media = new FS.Collection("media", {
+	stores: [thumbnail, medium, full],
+	filter: {
+	    allow: {
+		    contentTypes: ['image/*'],
+		    extensions: ['jpg', 'png', 'jpeg', 'gif']
+	    },
+	    onInvalid: function (message) {
+		    throwError(message, 'error');
+		}
+	}
+});
+
+FS.debug = true;
+*/
+
 //CollectionFS collection used for file uploads
-/*Media = new CollectionFS('media', { autopublish: false });
+Media = new CollectionFS('media', { autopublish: false });
 Media.filter({
 	allow: {
 		contentTypes: ['image/*']
 	}
 });
-options:{
-
-}
 
 Media.fileHandlers({
   default: function(options) { // Options contains blob and fileRecord — same is expected in return if should be saved on filesytem, can be modified
@@ -30,15 +54,15 @@ Media.fileHandlers({
     var dest = destination.serverFilename;
 
     // Uses meteorite graphicsmagick
-    gm(options.blob, dest).resize(60, 60).quality(90).write(dest, function(err) {
+    gm(options.blob, dest).resize(60).quality(90).write(dest, function(err) {
       if (err) {
-       console.log('GraphicsMagick error ' + err);
+       console.log('Thumb: GraphicsMagick error ' + err);
        return false;
        // False will trigger rerun, could check options.sumFailes
        // if we only want to rerun 2 times (default limit is 3,
        // but sumFailes is reset at server idle + wait period)
       } else {
-        console.log('Finished writing image.');
+        console.log('Thumb: Finished writing image to ' + dest);
          // We only return the url for the file, no blob to save since we took care of it
       }
     });
@@ -51,15 +75,15 @@ Media.fileHandlers({
     var dest = destination.serverFilename;
 
     // Uses meteorite graphicsmagick
-    gm(options.blob, dest).resize(120, 120).quality(90).write(dest, function(err) {
+    gm(options.blob, dest).resize(300).quality(90).write(dest, function(err) {
       if (err) {
-       console.log('GraphicsMagick error ' + err);
+       console.log('Medium: GraphicsMagick error ' + err);
        return false;
        // False will trigger rerun, could check options.sumFailes
        // if we only want to rerun 2 times (default limit is 3,
        // but sumFailes is reset at server idle + wait period)
       } else {
-        console.log('Finished writing image.');
+        console.log('Medium: Finished writing image to ' + dest);
          // We only return the url for the file, no blob to save since we took care of it
       }
 		});
@@ -68,7 +92,7 @@ Media.fileHandlers({
 		return { blob: options.blob, fileRecord: options.fileRecord };
 	}
 });
-*/
+
 
 
 
@@ -93,7 +117,8 @@ Blocks.allow({
 Media.allow({
 	insert: isAdmin,
 	update: isAdmin,
-	remove: isAdmin
+	remove: isAdmin,
+	//download: isAdmin
 })
 
 Categories.allow({
@@ -111,7 +136,7 @@ Settings.allow({
 Menus.allow({
 	insert: isAdmin,
 	update: isAdmin,
-	remove: isAdmin
+	remove: isAdmin,
 })
 
 Meteor.methods({

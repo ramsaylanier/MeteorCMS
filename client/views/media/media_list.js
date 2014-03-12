@@ -1,11 +1,12 @@
-Template.addMedia.events({
+Template.media.events({
   'change .fileUploader': function (e) {
-    var files = e.target.files;
-    for (var i = 0, ln = files.length; i < ln; i++) {
-      Media.insert(files[i], function (err, id) {
-        //Inserted new doc with _id = id, and kicked off the data upload using DDP
-      });
-    }
+    /* Use for CollectionFS V2 when released
+    FS.Utility.eachFile(e, function (file) {
+      Media.insert(file);
+    });
+    */
+  var files = e.target.files;
+    Media.storeFiles(files);
   },
   'click #add-media-btn': function(e) {
     e.preventDefault();
@@ -16,14 +17,8 @@ Template.addMedia.events({
   }
 });
 
-Template.addMedia.files = function() {
-  //show all files that have been published to the client, with most recently uploaded first
-  var files = $('.fileUploader').files;
-  return Media.find(files);
-};
-
 Template.imageList.files = function(){
-  return Media.find({}, { sort: { uploadDate:-1 } });
+  return Media.find();
 }
 
 Template.imageList.events({
@@ -42,6 +37,30 @@ Template.setFeaturedImage.events({
     var url = $(e.target).closest('img').attr('src');
     $('body').find('[name=featured-image]').val(url);
     $('.media-image').attr('src', url);
+    $('.modal').remove();
+  },
+  'click .close-button': function(){
+    $('.modal').remove();
+  }
+})
+
+Template.insertImage.files = function(){
+  return Media.find({}, { sort: { uploadDate:-1 } });
+}
+
+Template.insertImage.events({
+  'click .insert-image': function(e){
+    e.preventDefault();
+
+    //set the value of the editor to include a new image
+    var url = $(e.target).closest('img').attr('src');
+    var oldContent = $('#editor').val();
+    var newContent = oldContent + "</br><img src='" + url +"'/>";
+    $('#editor').val(newContent);
+
+    //update the iframe with the image before saving
+    var iframe = $('#editor').next('iframe');
+    iframe.contents().find('body').append("</br><img src='" + url +"'/>");
     $('.modal').remove();
   },
   'click .close-button': function(){

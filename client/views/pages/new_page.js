@@ -45,9 +45,10 @@ Template.displayPageAdmin.events({
 		$('.editable-slug').toggleClass('hidden');
 		$('#slug').toggleClass('hidden');
 	},
-	'change .fileUploader': function(e) {
-	    var files = e.target.files;
-    	Media.storeFiles(files);
+	'click .add-media-btn': function(e){
+		e.preventDefault();
+		var frag = Meteor.render(Template.insertImage);
+		$('body').append(frag);
 	}
 });
 

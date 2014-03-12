@@ -9,13 +9,9 @@ spin
 accounts-ui
 accounts-password
 moment
-preserve-inputs
 user-session
-collectionFS
-cfs-filesystem
-cfs-handlebars
-cfs-graphicsmagick
 graphicsmagick
 http
 authorization
+collectionFS
 cfs-public-folder

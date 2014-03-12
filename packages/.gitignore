@@ -19,3 +19,12 @@ cfs-tempstore
 cfs-filesystem
 cfs-handlebars
 cfs-graphicsmagick
+iron-router
+spin
+moment
+user-session
+bootstrap-wysiwyg
+reactive-property
+micro-queue
+authorization
+graphicsmagick
