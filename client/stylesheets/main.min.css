@@ -1461,29 +1461,24 @@ p + .drop-cap {
 .table {
   width: 100%;
 }
-/* line 6, sass/_tables.scss */
-.table thead th {
-  padding: 0rem 1rem;
+/* line 5, sass/_tables.scss */
+.table .table-headings {
   font-size: 1.2rem;
 }
-/* line 14, sass/_tables.scss */
-.table tbody tr:nth-of-type(odd) {
+/* line 10, sass/_tables.scss */
+.table .table-row:nth-of-type(even) {
   background-color: white;
 }
-/* line 19, sass/_tables.scss */
-.table tbody tr:hover .row-actions {
+/* line 15, sass/_tables.scss */
+.table .table-row:hover .row-actions {
   opacity: 1.0;
 }
-/* line 24, sass/_tables.scss */
-.table tbody tr td {
-  padding: 1rem;
-}
 
-/* line 32, sass/_tables.scss */
+/* line 23, sass/_tables.scss */
 .row-actions {
   opacity: 0.0;
 }
-/* line 35, sass/_tables.scss */
+/* line 26, sass/_tables.scss */
 .row-actions li {
   display: inline-block;
   padding: 0rem .5rem;

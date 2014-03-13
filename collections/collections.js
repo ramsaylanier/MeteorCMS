@@ -263,11 +263,11 @@ Meteor.methods({
 		return postId;
 	},
 	category: function(categoryAttributes){
-		//ensure post has a title
+		//ensure category has a title
 		if (!categoryAttributes.name)
 			throw new Meteor.Error(422, 'Please enter a category name');
 
-		//ensure post has a slug
+		//ensure category has a slug
 		if (!categoryAttributes.slug)
 			throw new Meteor.Error(422, 'Please enter a category slug');
 
@@ -278,6 +278,23 @@ Meteor.methods({
 		var categoryId = Categories.insert(category);
 
 		return categoryId;
+	},
+	updateCategory: function(categoryId, categoryAttributes){
+		//ensure category has a title
+		if (!categoryAttributes.name)
+			throw new Meteor.Error(422, 'Please enter a category name');
+
+		//ensure category has a slug
+		if (!categoryAttributes.slug)
+			throw new Meteor.Error(422, 'Please enter a category slug');
+
+		var category = _.extend(_.pick(categoryAttributes, 'name', 'slug'), {
+			submitted: new Date().getTime()
+		});
+
+		var updatedCategory = Categories.update(categoryId, category);
+
+		return updatedCategory;
 	},
 	updateSettings: function(settingsID, settingsOptions){
 		var user = Meteor.user();

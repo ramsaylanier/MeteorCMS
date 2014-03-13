@@ -10,7 +10,7 @@ Template.newPost.events({
 
 		var post ={
 			title: $(e.target).find('[name=title]').val(),
-			slug: Session.get('slug'),
+			slug: encodeURI(Session.get('slug').replace(/\s+/g, '-')).toLowerCase(),
 			content: $(e.target).find('[name=editor]').val(),
 			excerpt: $(e.target).find('[name=excerpt]').val(),
 			featuredImage: $(e.target).find('[name=featured-image]').val(),
@@ -30,13 +30,17 @@ Template.newPost.events({
 
 //reset Session variable that stores the slug for New Posts
 Template.newPost.created = function(){
-	var val = $('#title').val();
-	Session.set('slug', encodeURI(val).toLowerCase());
+	Session.set('slug');
 }
 
 Template.displayPostAdmin.rendered = function(){
 	$('#editor').cleditor();
 }
+
+Template.displayPostAdmin.destroyed = function(){
+	Session.set('slug');
+}
+
 
 //live update the slug based on the title being typed in
 Template.displayPostAdmin.events({
@@ -73,7 +77,12 @@ Template.displayPostAdmin.helpers({
 		Posts.find();
 	},
 	value: function(){
-		return Session.get('slug');
+		var slug = Session.get('slug');
+		if (slug == ''){
+			return Posts.findOne({_id: this._id}).slug;
+		} else {
+			return slug;
+		}
 	},
 	url: function(){
 		return Meteor.absoluteUrl();

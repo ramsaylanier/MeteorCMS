@@ -1,45 +1,47 @@
 <template name="postsList">
-	<h2 class="page-title pull-left m-b-1">Posts</h2>
-	<a class="btn blue-btn m-l-1 pull-left" href="{{pathFor 'newPost'}}">Add a new post</a>
+	<header class="posts-header pure-g">
+		<h2 class="page-title pull-left m-b-1">Posts</h2>
+		<a class="btn blue-btn m-l-1 pull-left" href="{{pathFor 'newPost'}}">Add a new post</a>
+	</header>
 
-	<table class="post-table table top-margin-1">
-		<thead>
-			<tr>
-				<th scope="col" id="title" class="column column-title">
-					<span>Title</span>
-				</th>
-				<th scope="col" id="slug" class="column column-slug">
-					<span>Slug</span>
-				</th>
-				<th scope="col" id="category" class="column column-category">
-					<span>Categories</span>
-				</th>
-				<th scope="col" id="created" class="column column-created">
-					<span>Created On</span>
-				</th>
-			</tr>
-		</thead>
-		<tbody>
+	<div class="post-table table top-margin-1">
+		<div class="table-headings pure-g p-1-2">
+			<div id="title" class="column column-title pure-u-1-3">
+				<span>Title</span>
+			</div>
+			<div id="slug" class="column column-slug pure-u-1-3">
+				<span>Slug</span>
+			</div>
+			<div id="category" class="column column-category pure-u-1-6">
+				<span>Categories</span>
+			</div>
+			<div id="created" class="column column-created pure-u-1-6">
+				<span>Created On</span>
+			</div>	
+		</div>
 	{{#each posts}}
-		<tr class="row-{{title}}">
-			<td class="column-title">
+		<div class="table-row row-{{title}} p-1-2 pure-g">
+			<div class="column-title pure-u-1-3">
 				<a href="{{pathFor 'editPost'}}">{{title}}</a>
 				<ul class="row-actions">
 					<li class="edit-post"><a href="{{pathFor 'editPost'}}">Edit</a></li>
 					<li class="delete-post"><a href="#">Delete</a></li>
 				</ul>
-			</td>
-			<td class="column-slug">
+			</div>
+			<div class="column-slug pure-u-1-3">
 				<span>/{{slug}}</span>
-			</td>
-			<td class="column-categories">
-				<span>{{categories}}</span>
-			</td>
-			<td class="column-timestamp">
+			</div>
+			<div class="column-categories pure-u-1-6">
+				{{#if this.categories}}
+					<span>{{this.categories}}</span>
+				{{else}}
+					<span>None</span>
+				{{/if}}
+			</div>
+			<div class="column-timestamp pure-u-1-6">
 				<span>{{prettyDate submitted}}</span>
-			</td>
-		</tr>
+			</div>
+		</div>
 	{{/each}}
-		</tbody>
-	</table>
+	</div>
 </template>

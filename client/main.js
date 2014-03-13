@@ -33,6 +33,10 @@ Handlebars.registerHelper('posts', function(){
 	return Posts.find();
 })
 
+Handlebars.registerHelper('categories', function(){
+	return Categories.find();
+})
+
 Deps.autorun(function(){
 	Meteor.subscribe('settings');
 })

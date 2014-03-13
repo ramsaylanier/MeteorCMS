@@ -13,5 +13,17 @@
 				{{/each}}
 			</select>
 		</div>
+
+		<div class="form-control">
+			<label class="label pure-u-1-6" for="blog-categories">Choose categories to show on Blog</label>
+			<ul class="category-choices">
+				{{#each categories}}
+					<li>
+						<input type="checkbox" name="category-{{name}}" class="category-option" value="{{name}}" {{isChecked ../categories}}/>
+						<label class="label inline" for="category-{{name}}">{{name}}</label>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
 	</div>
 </template>

@@ -29,7 +29,10 @@ Template.newPage.created = function(){
 
 Template.displayPageAdmin.rendered = function(){
 	$('#editor').cleditor();
+}
 
+Template.displayPageAdmin.destroyed = function(){
+	Session.set('slug');
 }
 
 //live update the slug based on the title being typed in

@@ -2,27 +2,18 @@
 .table{
 	width: 100%;
 
-	thead{
-		th{
-			padding: 0rem 1rem;
-			font-size: 1.2rem;
-		}
+	.table-headings{
+		font-size: 1.2rem;
 	}
 
-	tbody{
-		tr{
-			&:nth-of-type(odd){
-				background-color: white;
-			}
+	.table-row{
+		&:nth-of-type(even){
+			background-color: white;
+		}
 
-			&:hover{
-				.row-actions{
-					opacity: 1.0;
-				}
-			}
-
-			td{
-				padding: 1rem;
+		&:hover{
+			.row-actions{
+				opacity: 1.0;
 			}
 		}
 	}

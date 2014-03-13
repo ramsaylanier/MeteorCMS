@@ -10,7 +10,7 @@ Template.editPost.events({
 
 		var postAttributes = {
 			title: $(e.target).find('[name=title]').val(),
-			slug: $(e.target).find('[name=slug]').val(),
+			slug: encodeURI($(e.target).find('[name=slug]').val().replace(/\s+/g, '-')).toLowerCase(),
 			content: $(e.target).find('[name=editor]').val(),
 			excerpt: $(e.target).find('[name=excerpt]').val(),
 			featuredImage: $(e.target).find('[name=featured-image]').val(),
