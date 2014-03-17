@@ -16,7 +16,14 @@ First, install Meteor if you haven't done so. Check out the [Meteor docs](http:/
 ```bash
 $curl https://install.meteor.com/ | sh
 ```
-Also, you might want to install Meteorite [atmosphere.meteor.com](https://atmosphere.meteor.com). Meteorite is a Meteor package manager that allows you to install many unofficial packages for further expansion.
+
+Second, install Node.js (which is required to install Meteorite, described below). You can download the installer [here](http://nodejs.org/download/). 
+
+This, install [Meteorite](https://atmosphere.meteor.com/wtf/app). Meteorite is a Meteor package manager that allows you to install many unofficial packages for further expansion.
+
+```
+npm install -g meteorite
+```
 
 Then, make a new directory for the app
 ```bash
@@ -35,7 +42,7 @@ $ cd MeteorCMS
 $ Meteor
 ```
 
-That's it! You're app should be up and running at [localhost:3000](http://localhost:3000]!
+That's it! You're app should be up and running at [localhost:3000](http://localhost:3000)!
 
 ##Using the Admin Back-End
 
