@@ -25,6 +25,11 @@ This, install [Meteorite](https://atmosphere.meteor.com/wtf/app). Meteorite is a
 $ npm install -g meteorite
 ```
 
+Some installations may require administrator rights, if so use sudo eg: 
+```
+sudo -H npm install -g meteorite 
+```
+
 Then, make a new directory for the app
 ```bash
 $ mkdir MeteorCMS
