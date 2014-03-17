@@ -14,9 +14,21 @@ Here is a [live example](http://meteorCMS.meteor.com/) of the CMS in action. As 
 First, install Meteor if you haven't done so. Check out the [Meteor docs](http://docs.meteor.com/) for more info.
 
 ```bash
-$curl https://install.meteor.com/ | sh
+$ curl https://install.meteor.com/ | sh
 ```
-Also, you might want to install Meteorite [atmosphere.meteor.com](https://atmosphere.meteor.com). Meteorite is a Meteor package manager that allows you to install many unofficial packages for further expansion.
+
+Second, install Node.js (which is required to install Meteorite, described below). You can download the installer [here](http://nodejs.org/download/). 
+
+This, install [Meteorite](https://atmosphere.meteor.com/wtf/app). Meteorite is a Meteor package manager that allows you to install many unofficial packages for further expansion.
+
+```
+$ npm install -g meteorite
+```
+
+Some installations may require administrator rights, if so use sudo eg: 
+```
+sudo -H npm install -g meteorite 
+```
 
 Then, make a new directory for the app
 ```bash
@@ -29,13 +41,18 @@ Next, clone MeteorCMS to the new directory
 $ git clone https://github.com/ramsaylanier/MeteorCMS.git MeteorCMS
 ```
 
-Finally, start the Meteor server
+You might need to update all the Meteorite packages that MeteorCMS depends upon:
 ```bash
-$ cd MeteorCMS
-$ Meteor
+$ cd meteorcms
+$ mrt update
 ```
 
-That's it! You're app should be up and running at [localhost:3000](http://localhost:3000]!
+Lastly, while in the meteorcms directory, start the Meteor server.
+```
+$ meteor
+```
+
+That's it! You're app should be up and running at [localhost:3000](http://localhost:3000)!
 
 ##Using the Admin Back-End
 
