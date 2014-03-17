@@ -14,7 +14,7 @@ Here is a [live example](http://meteorCMS.meteor.com/) of the CMS in action. As 
 First, install Meteor if you haven't done so. Check out the [Meteor docs](http://docs.meteor.com/) for more info.
 
 ```bash
-$curl https://install.meteor.com/ | sh
+$ curl https://install.meteor.com/ | sh
 ```
 
 Second, install Node.js (which is required to install Meteorite, described below). You can download the installer [here](http://nodejs.org/download/). 
@@ -22,7 +22,7 @@ Second, install Node.js (which is required to install Meteorite, described below
 This, install [Meteorite](https://atmosphere.meteor.com/wtf/app). Meteorite is a Meteor package manager that allows you to install many unofficial packages for further expansion.
 
 ```
-npm install -g meteorite
+$ npm install -g meteorite
 ```
 
 Then, make a new directory for the app
