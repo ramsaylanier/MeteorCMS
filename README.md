@@ -41,10 +41,15 @@ Next, clone MeteorCMS to the new directory
 $ git clone https://github.com/ramsaylanier/MeteorCMS.git MeteorCMS
 ```
 
-Finally, start the Meteor server
+You might need to update all the Meteorite packages that MeteorCMS depends upon:
 ```bash
-$ cd MeteorCMS
-$ Meteor
+$ cd meteorcms
+$ mrt update
+```
+
+Lastly, while in the meteorcms directory, start the Meteor server.
+```
+$ meteor
 ```
 
 That's it! You're app should be up and running at [localhost:3000](http://localhost:3000)!
