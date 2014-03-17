@@ -1,0 +1,187 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '-g', 'meteorite' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose cache add [ 'meteorite', null ]
+5 verbose cache add name=undefined spec="meteorite" args=["meteorite",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'meteorite',
+6 verbose parsed url   path: 'meteorite',
+6 verbose parsed url   href: 'meteorite' }
+7 silly lockFile 8f2f99a9-meteorite meteorite
+8 verbose lock meteorite /Users/dianavargas/.npm/8f2f99a9-meteorite.lock
+9 silly lockFile 8f2f99a9-meteorite meteorite
+10 silly lockFile 8f2f99a9-meteorite meteorite
+11 verbose addNamed [ 'meteorite', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile bf6d5fee-meteorite meteorite@
+14 verbose lock meteorite@ /Users/dianavargas/.npm/bf6d5fee-meteorite.lock
+15 silly addNameRange { name: 'meteorite', range: '*', hasData: false }
+16 verbose url raw meteorite
+17 verbose url resolving [ 'https://registry.npmjs.org/', './meteorite' ]
+18 verbose url resolved https://registry.npmjs.org/meteorite
+19 info trying registry request attempt 1 at 09:54:03
+20 verbose etag "BS9S8QAOPJA37ZGI2TE1FVP1"
+21 http GET https://registry.npmjs.org/meteorite
+22 http 304 https://registry.npmjs.org/meteorite
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Mon, 17 Mar 2014 13:54:05 GMT',
+23 silly registry.get     server: 'Apache',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'last-modified': 'Mon, 17 Mar 2014 13:54:05 GMT',
+23 silly registry.get     'cache-control': 'max-age=1',
+23 silly registry.get     etag: '"BS9S8QAOPJA37ZGI2TE1FVP1"',
+23 silly registry.get     'x-served-by': 'cache-d98-DAL',
+23 silly registry.get     'x-cache': 'MISS',
+23 silly registry.get     'x-cache-hits': '0',
+23 silly registry.get     'x-timer': 'S1395064445.396496058,VS0,VE34',
+23 silly registry.get     vary: 'Accept',
+23 silly registry.get     'content-length': '0',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 verbose etag meteorite from cache
+25 silly addNameRange number 2 { name: 'meteorite', range: '*', hasData: true }
+26 silly addNameRange versions [ 'meteorite',
+26 silly addNameRange   [ '0.0.1',
+26 silly addNameRange     '0.0.2',
+26 silly addNameRange     '0.0.3',
+26 silly addNameRange     '0.0.4',
+26 silly addNameRange     '0.0.5',
+26 silly addNameRange     '0.0.6',
+26 silly addNameRange     '0.0.7',
+26 silly addNameRange     '0.0.8',
+26 silly addNameRange     '0.0.9',
+26 silly addNameRange     '0.0.10',
+26 silly addNameRange     '0.0.11',
+26 silly addNameRange     '0.0.12',
+26 silly addNameRange     '0.0.13',
+26 silly addNameRange     '0.0.14',
+26 silly addNameRange     '0.0.15',
+26 silly addNameRange     '0.0.16',
+26 silly addNameRange     '0.0.17',
+26 silly addNameRange     '0.0.18',
+26 silly addNameRange     '0.0.19',
+26 silly addNameRange     '0.1.0',
+26 silly addNameRange     '0.1.1',
+26 silly addNameRange     '0.2.0',
+26 silly addNameRange     '0.2.1',
+26 silly addNameRange     '0.2.2',
+26 silly addNameRange     '0.3.0',
+26 silly addNameRange     '0.3.1',
+26 silly addNameRange     '0.3.3',
+26 silly addNameRange     '0.4.0',
+26 silly addNameRange     '0.4.1',
+26 silly addNameRange     '0.4.2',
+26 silly addNameRange     '0.4.3',
+26 silly addNameRange     '0.4.4',
+26 silly addNameRange     '0.4.5',
+26 silly addNameRange     '0.4.6',
+26 silly addNameRange     '0.4.7',
+26 silly addNameRange     '0.4.8',
+26 silly addNameRange     '0.4.9',
+26 silly addNameRange     '0.5.0',
+26 silly addNameRange     '0.5.1',
+26 silly addNameRange     '0.6.0',
+26 silly addNameRange     '0.6.1',
+26 silly addNameRange     '0.6.2',
+26 silly addNameRange     '0.6.3',
+26 silly addNameRange     '0.6.4',
+26 silly addNameRange     '0.6.5',
+26 silly addNameRange     '0.6.6',
+26 silly addNameRange     '0.6.7',
+26 silly addNameRange     '0.6.8',
+26 silly addNameRange     '0.6.9',
+26 silly addNameRange     '0.6.10',
+26 silly addNameRange     '0.6.11',
+26 silly addNameRange     '0.6.12',
+26 silly addNameRange     '0.6.13',
+26 silly addNameRange     '0.6.14',
+26 silly addNameRange     '0.6.15',
+26 silly addNameRange     '0.6.16',
+26 silly addNameRange     '0.7.0',
+26 silly addNameRange     '0.7.1',
+26 silly addNameRange     '0.7.2' ] ]
+27 verbose addNamed [ 'meteorite', '0.7.2' ]
+28 verbose addNamed [ '0.7.2', '0.7.2' ]
+29 silly lockFile 98cba0f0-meteorite-0-7-2 meteorite@0.7.2
+30 verbose lock meteorite@0.7.2 /Users/dianavargas/.npm/98cba0f0-meteorite-0-7-2.lock
+31 silly lockFile 98cba0f0-meteorite-0-7-2 meteorite@0.7.2
+32 silly lockFile 98cba0f0-meteorite-0-7-2 meteorite@0.7.2
+33 silly lockFile bf6d5fee-meteorite meteorite@
+34 silly lockFile bf6d5fee-meteorite meteorite@
+35 silly resolved [ { name: 'meteorite',
+35 silly resolved     version: '0.7.2',
+35 silly resolved     homepage: 'http://oortcloud.github.com/meteorite',
+35 silly resolved     engines: [ 'node >=0.8.0' ],
+35 silly resolved     description: 'Installer & smart package manager for Meteor',
+35 silly resolved     author:
+35 silly resolved      { name: 'Tom Coleman',
+35 silly resolved        email: 'tom@percolatestudio.com',
+35 silly resolved        url: 'http://percolatestudio.com' },
+35 silly resolved     dependencies:
+35 silly resolved      { ddp: '>=0.3.1',
+35 silly resolved        underscore: '1.3.3',
+35 silly resolved        wrench: '1.3.9',
+35 silly resolved        fstream: '>=0.1.18',
+35 silly resolved        optimist: '>=0.3.4',
+35 silly resolved        prompt: '0.2.11',
+35 silly resolved        colors: '0.6.0-1',
+35 silly resolved        async: '0.2.9',
+35 silly resolved        rolling_timeout_exec: '>=0.0.1' },
+35 silly resolved     devDependencies: { mocha: '>=1.2.2', connect: '>=2.3.6', which: '>=1.0.5' },
+35 silly resolved     scripts:
+35 silly resolved      { test: 'mocha spec/unit spec/acceptance -t 240000 -R spec',
+35 silly resolved        flushcache: 'rm -rf spec/support/cache',
+35 silly resolved        postinstall: 'sh ./completions/postinstall.sh' },
+35 silly resolved     repository:
+35 silly resolved      { type: 'git',
+35 silly resolved        url: 'https://github.com/oortcloud/meteorite.git' },
+35 silly resolved     bin: { mrt: './bin/mrt.js' },
+35 silly resolved     readme: '# Meteorite\n\nMeteorite is a Meteor version manager and package manager. It provides an easy way to run different versions of meteor, use non-core packages, and to install packages from the [Atmosphere package repository](https://atmosphere.meteor.com/). \n\nMeteorite provides the command `mrt`, which can be used to add and install smart packages from atmosphere.\n\n``` sh\n# Create an app based on Meteor\'s devel branch.\n$ mrt create my-app --branch devel\n$ cd my-app\n# Install an Atmosphere package, recursively fetching dependencies.\n$ mrt add router\n# Check for and install any updates, and run the app.\n$ mrt\n```\n\n## Installing Meteorite\n\nMeteorite can be installed via [npm](https://npmjs.org/).\n\n``` sh\n$ npm install -g meteorite\n```\n\n### NOTE:\nIf your system requires root access to install global npm packages, make sure you use the `-H` flag:\n\n``` sh\n$ sudo -H npm install -g meteorite\n```\n\n## Updating from pre-0.6.0 Meteorite\n\nMeteorite now symlinks packages into the `packages/` directory of your app, so it\'s no longer necessary to run `mrt` when you want to start a server. Just make sure you `mrt install` in your app, and delete the `"meteor"` section from your `smart.json`. \n\nSubsequently, you can simply use `meteor` to run your development server, and just `mrt install` to ensure all packages are installed from atmosphere.\n\n### NOTES\n\n- Meteor is not officially supported on windows; you can run it thanks to [Tom Wijman\'s excellent work](http://win.meteor.com). However, meteorite\'s git based approach runs counter to the MSI installation that\'s required to get it working. So meteorite *does not* work under windows right now. Pull Requests which change this would be gladly accepted! Also, see [this blog post](http://www.discovermeteor.com/2013/03/20/using-meteor-and-atmopshere-on-windows/) for some information about how to use it.\n\n- You\'ll also need to ensure you have [git](http://git-scm.com) installed and available in your path. Also, you\'ll need to make sure that `mrt`\'s install location (usually `/usr/local/bin/`) is on your path.\n\n\n## Usage\n\n### `mrt add <package>`\n\nWorks like `meteor add`, but if the package isn\'t one of Meteor\'s included packages, it installs it from [Atmosphere](https://atmosphere.meteor.com).\n\nUnlike `meteor add`, only one package can be added at a time with `mrt add`.\n\n``` sh\n# Add the latest version of the moment package on Atmosphere.\n$ mrt add moment\n# Add a specific version of a package.\n$ mrt add router --pkg-version 0.3.4\n# Meteorite will install page.js too, because router depends on it.\n```\n\n### `mrt remove <package>`\n\nSimilarly, removes a package from `smart.json`, and unlinks it from your project (as well as telling Meteor not to use it).\n\n### `mrt install`\n\nInstall all packages listed in `smart.json` that aren\'t already installed on your machine. Use this command if you are working collaboratively and your colleagues install new packages.\n\n### `mrt update`\n\nInstalls any available updates to the app\'s desired Meteor version and packages.\n\n### `mrt create <name>`\n\nWorks like `meteor create`, but you can specify the desired branch, tag or reference of [Meteor\'s git repository](https://github.com/meteor/meteor) that the app should be based on.\n\n``` sh\n# By default, apps are based on Meteor\'s master branch.\n$ mrt create cool-app\n# You can create apps based on a branch of Meteor\'s repo.\n$ mrt create risky-app --branch devel\n# Or, on a tag (such as version numbers).\n$ mrt create safe-app --tag v0.5.4\n# Or, or on a commit.\n$ mrt create choosy-app --ref a9a717\n```\n\n### `mrt create-package [path/to/]foo`\n\nPuts the basic building blocks down for creating a package named `foo`, (potentially in a sub directory, usually `packages/`).\n\n### `mrt link-package path/to/foo`\n\nLinks `packages/foo` to `path/to/foo` so that you can use a local version without changing `smart.json`. Useful for quick changes to a package you maintain when developing an application. \n\nNote that `mrt install` or `mrt` will _overwrite_ this link if you also have `foo` in your `smart.json` (which you probably will). This may change in the future.\n\n## Options\n\nOptions can be passed at the very end of the command.\n\n### `--verbose`\n\nLog debug information to the console.\n\nExample: `mrt add crypto-sha1 --verbose`\n\n## Deprecated commands\n\nAs Meteorite now installs packages into the `packages/` directory, you can simply run `meteor` to start your app. You may need to run `mrt install` first.\nYou can run any meteor executable you like (e.g. from a checkout somewhere on your machine). \n\n### `mrt`\n\nWorks like `meteor`, but checks and installs the app\'s desired Meteor version and package dependencies before running the app. You may still want to use this, but it\'s no longer the official way to use Meteorite.\n\nIf however you want to use a forked version of Meteor in your project, you can still list it in your `smart.json`, and Meteorite will run it via `mrt`. (Of course you could just run it directly from a checkout too, which may be simpler).\n\n### Other commands\n\nWhen Meteorite is executed for an app, it checks or installs the app\'s desired Meteor version, packages and dependencies, then does the required book-keeping (described below), and finally passes the command onto `meteor`.\n\n## Permission woes?\n\nIt is *not* required that you run `sudo mrt`. If you do so, your home directory will pick up some root-owned files and you\'ll struggle to run `mrt` without `sudo` from then on. This isn\'t good.\n\nTo fix the problem, try cleaning up potentially "sudo-ed" files:\n\n```bash\nsudo mrt uninstall\nsudo mrt uninstall --system\nsudo chown -R `whoami` ~/.npm\n```\n\nIf possible, try not to install Meteorite as root either. If you have permissions problems, make sure you install with `sudo -H npm install -g meteorite`. If you\'ve installed without `-H`, your `~/.npm` directory will be owned by root and you should run the `chown` command above to fix it.\n\n\n\n## How Meteorite works\n\nApps tell Meteorite the Meteor version and packages they want with a file called `smart.json` in their root directory. Meteorite will install those dependencies the next time it is executed within that app.\n\nMeteorite writes to a `smart.lock` file in the app\'s root directory to track the exact versions of its dependencies, even when it\'s set up in a fresh environment. You should check the `smart.lock` file into your app\'s version control, to ensure that other developers are running the same versions of the dependencies. Any changes in `smart.json` take precendency over `smart.lock`. The `smart.lock` file is reset with the `mrt update` command.\n\n### Example `smart.json`\n\nThe `meteor` property is not required: apps will depend on Meteor\'s master branch by default. You can specify `meteor.branch`, `meteor.tag` or `meteor.git` to use alternate branches, tags and forks respectively. Note that `meteor.git` expects an actual URL, use `ssh://git@github.com/meteor/meteor.git` instead of `git@github.com:meteor/meteor.git`.\n\n``` json\n{\n  "packages": {\n    "moment": {},\n    "router": "0.3.4",\n    "roles": {\n      "version": "1.0.1"\n    },\n    "accounts-persona": {\n      "git": "https://github.com/vladikoff/meteor-accounts-persona"\n    },\n    "normalize.css": {\n      "git": "https://github.com/rithis/meteor-normalize.css",\n      "tag": "v2.0.1"\n    },\n    "branch-of-package": {\n      "git": "https://github.com/EventedMind/iron-router.git",\n      "branch": "dev"\n    },\n    "my-experiment": {\n      "path": "/path/to/local/package"\n    }\n  }\n}\n```\n\n## Writing Meteorite packages\n\nMeteorite packages include a `smart.json` file in their root directory to provide information about the package, and to list their dependencies. For an example, see [Meteor Router\'s `smart.json`](https://github.com/tmeasday/meteor-router/blob/master/smart.json).\n\nMeteorite packages also include a `package.js` file in their root directory to tell Meteorite how it should be installed. For an example, see [Meteor Roles\' `package.js`](https://github.com/alanning/meteor-roles/blob/master/roles/package.js).\n\nSee [Atmosphere\'s documentation on writing packages](https://atmosphere.meteor.com/wtf/package) for more information.\n\n## Bash Completion\n\nUse Meteorite\'s bash completion by sourcing it in your .bashrc or .bash_profile.\n\nDepending on where you installed Meteorite:\n\n```bash\nif [ -f /path/to/meteorite/completions/mrt.bash ]; then\n  . /path/to/meteorite/completions/mrt.bash\nfi\n```\n\nAlternatively, you can create a symbolic link under bash_completion.d:\n\n```bash\nln -s /path/to/meteorite/completions/mrt.bash /path/to/bash_completion.d/mrt\n```\n\n## Running Meteorite In a Git Hook Script\n\nIf you encounter checkout errors while running `mrt install` or `mrt update` within a Git hook script, it is because `GIT_DIR` is set to an unexpected value when running within a hook. The solution is to temporarily unset it just before running the `mrt` command.\n\n```bash\n(unset GIT_DIR; mrt update)\n```\n\n## Contributing\n\nContributions to meteorite are very welcome! Please see the [Contribution Guide](https://github.com/oortcloud/meteorite/blob/master/CONTRIBUTING.md) for details.\n',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     bugs: { url: 'https://github.com/oortcloud/meteorite/issues' },
+35 silly resolved     _id: 'meteorite@0.7.2',
+35 silly resolved     _from: 'meteorite@' } ]
+36 info install meteorite@0.7.2 into /usr/local/lib
+37 info installOne meteorite@0.7.2
+38 info /usr/local/lib/node_modules/meteorite unbuild
+39 info preuninstall meteorite@0.7.2
+40 info uninstall meteorite@0.7.2
+41 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild meteorite@0.7.2
+42 verbose /usr/local/bin,[object Object] binRoot
+43 info postuninstall meteorite@0.7.2
+44 info /usr/local/lib/node_modules/meteorite unbuild
+45 info preuninstall meteorite@0.7.2
+46 info uninstall meteorite@0.7.2
+47 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild meteorite@0.7.2
+48 verbose /usr/local/bin,[object Object] binRoot
+49 info postuninstall meteorite@0.7.2
+50 error error rolling back Error: EACCES, unlink '/usr/local/lib/node_modules/meteorite'
+50 error error rolling back  meteorite@0.7.2 { [Error: EACCES, unlink '/usr/local/lib/node_modules/meteorite']
+50 error error rolling back   errno: 3,
+50 error error rolling back   code: 'EACCES',
+50 error error rolling back   path: '/usr/local/lib/node_modules/meteorite' }
+51 error Error: EACCES, unlink '/usr/local/lib/node_modules/meteorite'
+51 error  { [Error: EACCES, unlink '/usr/local/lib/node_modules/meteorite']
+51 error   errno: 3,
+51 error   code: 'EACCES',
+51 error   path: '/usr/local/lib/node_modules/meteorite' }
+52 error Please try running this command again as root/Administrator.
+53 error System Darwin 11.4.2
+54 error command "node" "/usr/local/bin/npm" "install" "-g" "meteorite"
+55 error cwd /Users/dianavargas/MeteorCMS
+56 error node -v v0.10.26
+57 error npm -v 1.4.3
+58 error path /usr/local/lib/node_modules/meteorite
+59 error code EACCES
+60 error errno 3
+61 error stack Error: EACCES, unlink '/usr/local/lib/node_modules/meteorite'
+62 verbose exit [ 3, true ]

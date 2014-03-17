@@ -4,7 +4,6 @@
 		<div class="logo">
 			{{#if settings.headerImage}}
 				<a href="/">
-					{{#constant}}
 					<img class="logo-image" src="{{settings.headerImage}}" 
 					{{#if settings.headerHeight}}
 						height="{{settings.headerHeight}}"
@@ -12,12 +11,9 @@
 					{{#if settings.headerWidth}}
 						width="{{settings.headerWidth}}"
 					{{/if}}/>
-					{{/constant}}
 				</a>
 			{{else}}
-			<h1 class="logo-letter centered pink1">RA</h1>
-			<h1 class="logo-letter centered pink2">MS</h1>
-			<h1 class="logo-letter centered pink3">AY</h1>
+			<h2 class="centered pink1 p-1">Meteor CMS</h2>
 			{{/if}}
 		</div>
 

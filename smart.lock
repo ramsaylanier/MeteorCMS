@@ -8,7 +8,8 @@
       "user-session": {},
       "bootstrap-wysiwyg": {},
       "authorization": {},
-      "graphicsmagick": {}
+      "graphicsmagick": {},
+      "collectionFS": {}
     },
     "packages": {
       "iron-router": {
@@ -45,6 +46,16 @@
         "git": "https://github.com/ewindso/meteor-graphicsmagick.git",
         "tag": "v1.12.2",
         "commit": "795dcb78be6d2b493a547073f98c967e284248e0"
+      },
+      "collectionFS": {
+        "git": "https://github.com/raix/Meteor-CollectionFS.git",
+        "tag": "v0.3.7",
+        "commit": "34d9fb363472e44c6dba4a1473a9e106e107f5a9"
+      },
+      "cfs-public-folder": {
+        "git": "https://github.com/nooitaf/meteor-cfs-public-folder.git",
+        "tag": "v0.0.3",
+        "commit": "581c716424b374efb6f611110002621f9cc9212b"
       }
     }
   }

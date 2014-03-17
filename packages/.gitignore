@@ -28,3 +28,12 @@ reactive-property
 micro-queue
 authorization
 graphicsmagick
+/iron-router
+/spin
+/moment
+/user-session
+/bootstrap-wysiwyg
+/authorization
+/graphicsmagick
+/collectionFS
+/cfs-public-folder
