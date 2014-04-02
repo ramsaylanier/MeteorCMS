@@ -15,12 +15,13 @@
       {{#each files}}
         <li class="file-row row pure-g">
           <div class="pure-u-1-7">
-            <img class="max-100 p-1" src="{{cfsFileUrl "medium"}}"/>
-          </a>
+            <a>
+              <img class="max-100 p-1" src="{{url store='full'}}"/>
+            </a>
 
           </div>
           <div class="pure-u-2-7 p-1">
-            <a href="{{cfsFileUrl 'medium'}}">{{filename}}</a>
+            <a href="{{url store='full'}}">{{filename}}</a>
           </div>
           <div class="pure-u-1-7 p-1">
             <span class="file-size">{{cfsFormattedSize}}</span>
@@ -45,7 +46,7 @@
       {{#each files}}
         <div class="attachment-preview">
           <div class="centered">
-            <a href="#" class="set-featured-image"><img  src="{{cfsFileUrl "default"}}"/></a>
+            <a href="#" class="set-featured-image"><img  src="{{url}}"/></a>
           </div>
         </div>
       {{/each}}
@@ -61,7 +62,7 @@
       {{#each files}}
         <div class="attachment-preview">
           <div class="centered">
-            <a href="#" class="insert-image"><img src="{{cfsFileUrl "default"}}"/></a>
+            <a href="#" class="insert-image"><img src="{{url}}"/></a>
           </div>
         </div>
       {{/each}}

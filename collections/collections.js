@@ -5,17 +5,11 @@ Categories = new Meteor.Collection('categories');
 Settings = new Meteor.Collection('settings');
 Menus = new Meteor.Collection('menus');
 
-/*
-thumbnail = new FS.Store.FileSystem("thumbnail", {
-});
-
-medium = new FS.Store.FileSystem("medium", {
-});
 
 full = new FS.Store.FileSystem("full");
 
 Media = new FS.Collection("media", {
-	stores: [thumbnail, medium, full],
+	stores: [full],
 	filter: {
 	    allow: {
 		    contentTypes: ['image/*'],
@@ -28,11 +22,12 @@ Media = new FS.Collection("media", {
 });
 
 FS.debug = true;
-*/
+
 
 
 //CollectionFS collection used for file uploads
 
+/*
 Media = new CollectionFS('media', { autopublish: false });
 Media.filter({
 	allow: {
@@ -88,7 +83,7 @@ Media.fileHandlers({
 		return { blob: options.blob, fileRecord: options.fileRecord };
 	}
 });
-
+*/
 
 
 Pages.allow({
@@ -112,8 +107,8 @@ Blocks.allow({
 Media.allow({
 	insert: isAdmin,
 	update: isAdmin,
-	remove: isAdmin
-	//download: isAdmin
+	remove: isAdmin,
+	download: isAdmin
 })
 
 Categories.allow({

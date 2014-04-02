@@ -62,8 +62,7 @@ Template.displayPostAdmin.events({
 	},
 	'click #featured-image-btn':function(e){
 		e.preventDefault();
-		var frag = Meteor.render(Template.setFeaturedImage);
-		$('body').append(frag);
+		UI.insert(UI.render(Template.setFeaturedImage), document.body);
 	},
 	'click #remove-image-btn':function(e){
 		e.preventDefault();
@@ -73,9 +72,6 @@ Template.displayPostAdmin.events({
 });
 
 Template.displayPostAdmin.helpers({
-	posts: function(){
-		Posts.find();
-	},
 	value: function(){
 		var slug = Session.get('slug');
 		if (slug == ''){

@@ -13,7 +13,7 @@
 			
 			<div class="edit-slug-box">
 				<span class="sample-slug">
-					Permalink: {{url}}<span class="editable-slug">{{{value}}}</span>
+					Permalink: {{url}}<span class="editable-slug">{{value}}</span>
 					<input id="slug" class="hidden" name="slug" type="text" value="{{slug}}"/>
 				</span>
 				<span class="edit-slug-btn">
@@ -27,7 +27,6 @@
 
 			<div class="form-control">
 				<textarea id="editor" name="editor" rows="10" cols="80">{{{content}}}</textarea>
-            </script>
 			</div>	
 
 			<input type="submit" value="Publish" class="btn"/>
@@ -45,7 +44,7 @@
 				<label class="label" for="template-type">Select Template Type</label>
 				<select type="select" name="template-type" id="template-type">
 					{{#each getTemplates}}
-						<option value="{{this}}" {{isSelected this ../pageTemplate}}>{{this}}</option>
+						<option value="{{this}}" selected={{isSelected this ../pageTemplate}}>{{this}}</option>
 					{{/each}}
 				</select>
 			</div>

@@ -1,11 +1,11 @@
 <template name="layout">
   <div class="container pull-left full-width {{containerTitle}}">
-  	{{yield 'header'}}
+  	{{> yield region='header'}}
     <div class="main">
-    	{{yield 'sidebar'}}
+    	{{> yield region='sidebar'}}
     	<div class="content">
     		{{> errors}}
-    		{{yield}}
+    		{{> yield}}
     	</div>
     </div>
   </div>

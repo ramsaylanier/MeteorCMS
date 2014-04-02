@@ -2,14 +2,16 @@
 Template.headerSettings.rendered = function(){
 	var headerLocation = Settings.findOne().headerLocation;
 	$('.header-location').find('option[value='+headerLocation+']').prop('selected',true);
-	
 }
 
 Template.headerSettings.events({
 	'click #header-image-btn':function(e){
 		e.preventDefault();
-		var frag = Meteor.render(Template.setFeaturedImage);
-		$('body').append(frag);
+		/*var frag = Meteor.render(Template.setFeaturedImage);
+		var frag = UI.render(Template.setFeaturedImage);
+		$('body').append(frag);*/
+
+		UI.insert(UI.render(Template.setFeaturedImage), document.body);
 	},
 	'click #remove-image-btn':function(e){
 		e.preventDefault();

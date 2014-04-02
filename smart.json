@@ -6,6 +6,8 @@
     "user-session": {},
     "bootstrap-wysiwyg": {},
     "collectionFS": {},
-    "roles": {}
+    "roles": {},
+    "graphicsmagick": {},
+    "cfs-public-folder": {}
   }
 }

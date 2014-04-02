@@ -12,7 +12,7 @@ moment
 user-session
 graphicsmagick
 http
-preserve-inputs
-collectionFS
-cfs-public-folder
 roles
+cfs-filesystem
+cfs-public-folder
+collectionFS

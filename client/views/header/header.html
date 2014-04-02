@@ -2,19 +2,14 @@
 	{{setTitle settings.siteTitle}}
 	<header class="header header-{{settings.headerLocation}}" role="header">
 		{{#if settings.headerImage}}
-		{{#constant}}
 			<div class="logo">
 				<a href="/">
-					<img class="logo-image" src="{{settings.headerImage}}" 
-					{{#if settings.headerHeight}}
-						height="{{settings.headerHeight}}"
-					{{/if}}
-					{{#if settings.headerWidth}}
-						width="{{settings.headerWidth}}"
-					{{/if}}/>
+					<img class="logo-image" src="{{settings.headerImage}}"
+					height="{{settings.headerHeight}}"
+					width="{{settings.headerWidth}}"
+					/>
 				</a>
 			</div>
-		{{/constant}}
 		{{/if}}
 
 		<nav class="nav">
@@ -31,6 +26,6 @@
 
 <template name="adminHeader">
 	<header class="admin-header">
-		{{loginButtons align="right"}}
+		{{> loginButtons align="right"}}
 	</header>
 </template>

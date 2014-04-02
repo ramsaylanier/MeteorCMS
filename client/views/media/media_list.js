@@ -1,12 +1,10 @@
 Template.media.events({
   'change .fileUploader': function (e) {
-    /* Use for CollectionFS V2 when released
     FS.Utility.eachFile(e, function (file) {
-      Media.insert(file);
+      Media.insert(file, function(err, fileObj){
+      
+      });
     });
-    */
-  var files = e.target.files;
-    Media.storeFiles(files);
   },
   'click #add-media-btn': function(e) {
     e.preventDefault();

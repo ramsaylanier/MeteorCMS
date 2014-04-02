@@ -17,7 +17,7 @@ Accounts.ui.config({
 	passwordSignupFields: 'USERNAME_AND_EMAIL'
 });
 
-Handlebars.registerHelper('setTitle', function(title){
+UI.registerHelper('setTitle', function(title){
 	if (title){
 		document.title = title;
 	} else {
@@ -25,17 +25,17 @@ Handlebars.registerHelper('setTitle', function(title){
 	}
 });
 
-Handlebars.registerHelper('pages', function(){
+UI.registerHelper('pages', function(){
 	return Pages.find();
-})
+});
 
-Handlebars.registerHelper('posts', function(){
+UI.registerHelper('posts', function(){
 	return Posts.find();
-})
+});
 
-Handlebars.registerHelper('categories', function(){
+UI.registerHelper('categories', function(){
 	return Categories.find();
-})
+});
 
 Deps.autorun(function(){
 	Meteor.subscribe('settings');

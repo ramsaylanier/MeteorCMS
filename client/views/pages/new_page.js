@@ -68,7 +68,7 @@ Template.displayPageAdmin.helpers({
 	},
 	isSelected: function(name, pageTemplate){
 		if (name == pageTemplate){
-			return "selected='selected'";
+			return "selected";
 		}
 	}
 });
