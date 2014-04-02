@@ -20,3 +20,9 @@ if (Pages.find().count() === 0 ){
 		content: 'Welcome to MeteorCMS!'
 	})
 }
+
+if (Meteor.users.find().count() === 1){
+	var user = Meteor.users.findOne();
+	console.log('Admin role added to userId: ' + user.username);
+	Roles.addUsersToRoles(user, "Admin");
+}

@@ -10,10 +10,6 @@ Meteor.publish('posts',function(){
 	return Posts.find();
 });
 
-Meteor.publish('blocks',function(){
-	return Blocks.find();
-});
-
 Meteor.publish('media', function() {
 	return Media.find();
 });
@@ -28,4 +24,16 @@ Meteor.publish('settings', function(){
 
 Meteor.publish('menus', function(){
 	return Menus.find();
+});
+
+Meteor.publish(null, function (){ 
+  return Meteor.roles.find({})
+});
+
+
+//publish all the users to the client if the current user has the Admin role.
+Meteor.publish(null, function(){
+	if (Roles.userIsInRole(this.userId, "Admin")){
+		return Meteor.users.find();
+	}
 });

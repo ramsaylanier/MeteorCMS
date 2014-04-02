@@ -7,9 +7,8 @@
       "moment": {},
       "user-session": {},
       "bootstrap-wysiwyg": {},
-      "authorization": {},
-      "graphicsmagick": {},
-      "collectionFS": {}
+      "collectionFS": {},
+      "roles": {}
     },
     "packages": {
       "iron-router": {
@@ -37,20 +36,15 @@
         "tag": "v0.1.0",
         "commit": "b9b1ffadb42b8bbfade08aaea10e4fbe890d21dd"
       },
-      "authorization": {
-        "git": "https://github.com/deepwell/meteor-authorization.git",
-        "tag": "v2.0.3",
-        "commit": "55b9035f28130ca2a08089c8fc6506c6e54911b4"
-      },
-      "graphicsmagick": {
-        "git": "https://github.com/ewindso/meteor-graphicsmagick.git",
-        "tag": "v1.12.2",
-        "commit": "795dcb78be6d2b493a547073f98c967e284248e0"
-      },
       "collectionFS": {
         "git": "https://github.com/raix/Meteor-CollectionFS.git",
         "tag": "v0.3.7",
         "commit": "34d9fb363472e44c6dba4a1473a9e106e107f5a9"
+      },
+      "roles": {
+        "git": "https://github.com/alanning/meteor-roles.git",
+        "tag": "v1.2.6",
+        "commit": "f2a9058281f8f2fe028767841d7445aadd6893cf"
       },
       "cfs-public-folder": {
         "git": "https://github.com/nooitaf/meteor-cfs-public-folder.git",

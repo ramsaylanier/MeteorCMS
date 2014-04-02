@@ -1,0 +1,49 @@
+<template name="rolesList">
+	<header class="roles-header pure-g">
+		<h2 class="roles-title pull-left m-b-1">Roles</h4>
+	</header>
+
+	<div class="roles-table table top-margin-1">
+	{{#if roles}}
+		<div class="table-headings pure-g p-1-2">
+			<div id="title" class="column column-title pure-u-1-4">
+				<span>Role Type</span>
+			</div>
+			<div id="users" class="column column-title pure-u-3-4">
+				<span>Users</span>
+			</div>
+		</div>
+		{{#each roles}}
+			<div class="table-row row-{{name}} p-1-2 pure-g">
+				<div class="column-title pure-u-1-4">
+					<a href="#">{{name}}</a>
+					<ul class="row-actions">
+						<li><a href="#" class="delete-role" data-role-type="{{name}}">Delete</a></li>
+					</ul>
+				</div>
+				<div class="column-users pure-u-3-4">
+					{{#if roles.users}}
+						<ul class="user-list">
+						{{#each roles.users}}
+							<li class="user-name">{{roles.users.name}}</li>
+						{{/each}}
+						</ul>
+					{{else}}
+						<span> This role has no assigned users</span>
+					{{/if}}
+				</div>
+			</div>
+		{{/each}}
+	{{else}}
+		<span> There are no defined Roles. </span>
+	{{/if}}
+
+	</div>
+
+
+	<div class="form-control">
+		<label class="label" for="role-name">Role Name: </label>
+		<input type="text" name="role-name" class="role-name-field">
+		<button class="btn blue-btn m-l-1 add-role-btn">Add Role</button>
+	</div>
+</template>

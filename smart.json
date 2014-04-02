@@ -5,8 +5,7 @@
     "moment": {},
     "user-session": {},
     "bootstrap-wysiwyg": {},
-    "authorization": {},
-    "graphicsmagick": {},
-    "collectionFS": {}
+    "collectionFS": {},
+    "roles": {}
   }
 }

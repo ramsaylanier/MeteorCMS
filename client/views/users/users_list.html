@@ -1,0 +1,41 @@
+<template name="usersList">
+	<header class="users-header pure-g">
+		<h2 class="title pull-left m-b-1">Users</h2>
+	</header>
+
+	<div class="users-table table top-margin-1">
+		<div class="table-headings pure-g p-1-2">
+			<div id="username" class="column column-title pure-u-1-3">
+				<span>Username</span>
+			</div>
+			<div id="email" class="column column-title pure-u-2-3">
+				<span>Email</span>
+			</div>
+		</div>
+
+		{{#each users}}
+		<div class="table-row row-{{username}} p-1-2 pure-g">
+			<div class="column-username pure-u-1-3">
+				<a href="#">{{username}}</a>
+				<ul class="row-actions">
+					<li><a class="edit-user" href="#" data-username="{{username}}">Edit</a></li>
+					<li><a class="delete-user" href="#" data-username="{{username}}">Delete</a></li>
+				</ul>
+			</div>
+			<div class="column-email pure-u-2-3">
+				<span class="pull-left">{{userEmail this}}</span>
+				<span class="pull-right small">{{this.roles}}</span>
+			</div>
+
+			<div class="edit-user-content pure-g hidden">
+				<button class="btn blue-btn assign-role-btn">Assign Role</button>
+				<select name="assign-role-select">
+					{{#each ../roles}}
+					<option data-role-type="{{name}}">{{name}}</option>
+					{{/each}}
+				</select>
+			</div>
+		{{/each}}
+		</div>
+	</div>
+</template>

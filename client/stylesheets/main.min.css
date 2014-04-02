@@ -44,7 +44,7 @@
   background-color: rgba(35, 34, 33, 0.1);
 }
 
-/* line 17, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -66,50 +66,50 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../.rvm/gems/ruby-1.9.3-p194@rails3tutorial2ndEd/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/*
+/*!
  *
 .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
 
@@ -416,7 +416,7 @@ p + .drop-cap {
 }
 /* line 506, sass/_typeplate.scss */
 .dictionary-style dd:before {
-  content: counter(definitions, decimal) ". ";
+  content: counter(definitions,decimal) ". ";
 }
 
 /**
@@ -1711,33 +1711,34 @@ a:hover {
 }
 
 /* line 67, sass/main.min.scss */
-.spinner {
+#spinner {
   position: absolute;
-  top: 30px;
+  top: 200px;
+  left: 50%;
 }
 
-/* line 74, sass/main.min.scss */
+/* line 75, sass/main.min.scss */
 .featured-image {
   width: 100%;
   max-height: 400px;
   overflow: hidden;
 }
-/* line 79, sass/main.min.scss */
+/* line 80, sass/main.min.scss */
 .featured-image img {
   width: 100%;
 }
 
-/* line 86, sass/main.min.scss */
+/* line 87, sass/main.min.scss */
 .settings {
   position: relative;
 }
-/* line 89, sass/main.min.scss */
+/* line 90, sass/main.min.scss */
 .settings .settings-block {
   position: relative;
   padding: 0rem .5rem;
   margin-bottom: .5rem;
 }
-/* line 94, sass/main.min.scss */
+/* line 95, sass/main.min.scss */
 .settings .settings-block .settings-header {
   position: relative;
   padding: .5rem;
@@ -1747,29 +1748,29 @@ a:hover {
   -o-transition: 300ms;
   transition: 300ms;
 }
-/* line 100, sass/main.min.scss */
+/* line 101, sass/main.min.scss */
 .settings .settings-block .settings-header:hover {
   background-color: rgba(35, 34, 33, 0.2);
 }
-/* line 105, sass/main.min.scss */
+/* line 106, sass/main.min.scss */
 .settings .settings-block .settings-title {
   font-family: "brandon-grotesque", sans-serif;
   font-weight: 600;
 }
-/* line 110, sass/main.min.scss */
+/* line 111, sass/main.min.scss */
 .settings .settings-block .arrow {
   position: absolute;
   right: 2rem;
   top: 1rem;
 }
-/* line 116, sass/main.min.scss */
+/* line 117, sass/main.min.scss */
 .settings .settings-block .settings-content {
   position: relative;
   background-color: white;
   padding: .5rem;
 }
 
-/* line 124, sass/main.min.scss */
+/* line 125, sass/main.min.scss */
 .toggle {
   content: ' ';
   height: 0;
@@ -1787,7 +1788,7 @@ a:hover {
   transition: 300ms;
 }
 
-/* line 137, sass/main.min.scss */
+/* line 138, sass/main.min.scss */
 .toggle-active {
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);

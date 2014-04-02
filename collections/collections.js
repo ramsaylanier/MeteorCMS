@@ -7,15 +7,9 @@ Menus = new Meteor.Collection('menus');
 
 /*
 thumbnail = new FS.Store.FileSystem("thumbnail", {
-	beforeSave: function () {
-    	
-    }
 });
 
 medium = new FS.Store.FileSystem("medium", {
-	beforeSave: function () {
-    	
-    }
 });
 
 full = new FS.Store.FileSystem("full");
@@ -36,7 +30,9 @@ Media = new FS.Collection("media", {
 FS.debug = true;
 */
 
+
 //CollectionFS collection used for file uploads
+
 Media = new CollectionFS('media', { autopublish: false });
 Media.filter({
 	allow: {
@@ -95,7 +91,6 @@ Media.fileHandlers({
 
 
 
-
 Pages.allow({
 	insert: isAdmin,
 	update: isAdmin,
@@ -117,7 +112,7 @@ Blocks.allow({
 Media.allow({
 	insert: isAdmin,
 	update: isAdmin,
-	remove: isAdmin,
+	remove: isAdmin
 	//download: isAdmin
 })
 
@@ -136,7 +131,19 @@ Settings.allow({
 Menus.allow({
 	insert: isAdmin,
 	update: isAdmin,
-	remove: isAdmin,
+	remove: isAdmin
+})
+
+Meteor.roles.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
+})
+
+Meteor.users.allow({
+	insert: isAdmin,
+	update: isAdmin,
+	remove: isAdmin
 })
 
 Meteor.methods({

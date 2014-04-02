@@ -1,8 +1,9 @@
 <template name="header">
 	{{setTitle settings.siteTitle}}
 	<header class="header header-{{settings.headerLocation}}" role="header">
-		<div class="logo">
-			{{#if settings.headerImage}}
+		{{#if settings.headerImage}}
+		{{#constant}}
+			<div class="logo">
 				<a href="/">
 					<img class="logo-image" src="{{settings.headerImage}}" 
 					{{#if settings.headerHeight}}
@@ -12,10 +13,9 @@
 						width="{{settings.headerWidth}}"
 					{{/if}}/>
 				</a>
-			{{else}}
-			<h2 class="centered pink1 p-1">Meteor CMS</h2>
-			{{/if}}
-		</div>
+			</div>
+		{{/constant}}
+		{{/if}}
 
 		<nav class="nav">
 			<ul class="nav-links">
